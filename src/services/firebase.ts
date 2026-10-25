@@ -4,13 +4,13 @@ import { getFirestore, Firestore } from 'firebase/firestore';
 import { getStorage, FirebaseStorage } from 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || '',
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || '',
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || '',
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || '',
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || '',
-  appId: import.meta.env.VITE_FIREBASE_APP_ID || '',
-  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || '',
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || 'AIzaSyAU6xV9bUq8cTah4Iy2iLdx66BLx9UwZKU',
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || 'document-assisstant.firebaseapp.com',
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || 'document-assisstant',
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || 'document-assisstant.firebasestorage.app',
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || '369567549824',
+  appId: import.meta.env.VITE_FIREBASE_APP_ID || '1:369567549824:web:b05cba6bc3272b68889965',
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || 'G-ZBRMG1J7D9',
 };
 
 // Check if credentials are provided and not dummy placeholders
