@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Production build artifacts
+dist/
+build/
+
+# Environment files and credentials (CRITICAL: Never commit secrets)
+.env
+.env.local
+.env.*.local
+server/.env
+server/.env.local
+serviceAccountKey.json
+*.pem
+
+# Firebase debug logs and cache
+firebase-debug.log
+firebase-debug.*.log
+.firebase/
+
+# Editor & OS files
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.idea/
+.vscode/
+*.tsbuildinfo
+
+# Scratch & temporary test scripts
+scratch/
+
+# Large server runtime vector index and generated caches
+server/data/vector_index.json
+server/data/test_uploads/
+server/data/study_coach/attempts/
+server/data/study_summaries/
+
+# Runtime file uploads
+server/uploads/temp/*
+!server/uploads/temp/.gitkeep
+server/uploads/documents/test_*
+server/uploads/documents/user_*
+server/uploads/documents/tester_*
+server/uploads/documents/*DeepSpace*

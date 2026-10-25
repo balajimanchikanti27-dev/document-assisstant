@@ -1,0 +1,30 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Maximum file upload limit: 100MB (104,857,600 bytes)
+    function isValidSize() {
+      return request.resource.size <= 100 * 1024 * 1024;
+    }
+
+    // User document storage path
+    match /users/{userId}/documents/{documentPath=**} {
+      allow read: if isOwner(userId);
+      allow create, update: if isOwner(userId) && isValidSize();
+      allow delete: if isOwner(userId);
+    }
+
+    // Deny all other storage access by default
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

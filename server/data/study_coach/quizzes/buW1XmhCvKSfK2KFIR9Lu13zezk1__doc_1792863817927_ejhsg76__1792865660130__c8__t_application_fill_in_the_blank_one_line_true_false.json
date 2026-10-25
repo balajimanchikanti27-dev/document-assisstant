@@ -1,0 +1,165 @@
+{
+  "quizId": "quiz_1792865761687_nmity",
+  "id": "quiz_1792865761687_nmity",
+  "documentId": "doc_1792863817927_ejhsg76",
+  "documentName": "DBMS_Unit_-_IV_C1_Transactions_Scheduling__1_.pptx",
+  "questions": [
+    {
+      "id": "tf_1",
+      "type": "true_false",
+      "question": "Based on Slide 1, is the following statement accurate: \"22CS201-DBMS\t\t\t\t\t\t\t                                                 Dept.\"?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": "True",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "True",
+      "topic": "22CS201-DBMS\t\t\t\t\t\t\t                                                 Dept. of CSE",
+      "sourceLocation": "Slide 1",
+      "sourceSlide": 1,
+      "sourceSnippet": "22CS201-DBMS\t\t\t\t\t\t\t                                                 Dept. of CSE\n1\nTransaction Processing Concepts",
+      "explanation": "Refer to Slide 1 regarding \"22CS201-DBMS\t\t\t\t\t\t\t                                                 Dept. of CSE\".",
+      "difficulty": "easy"
+    },
+    {
+      "id": "fib_2",
+      "type": "fill_in_the_blank",
+      "question": "Complete the statement from Slide 2: \"Contents\nDepartment of _______ Science & Engineering\n2\nTransaction:\nIntroduction to Transaction Processing\nTransaction and System Concepts\n\"",
+      "correctAnswer": "Computer",
+      "expectedAnswer": "Computer",
+      "acceptableKeywords": [
+        "computer"
+      ],
+      "topic": "Contents",
+      "sourceLocation": "Slide 2",
+      "sourceSlide": 2,
+      "sourceSnippet": "Contents\nDepartment of Computer Science & Engineering\n2\nTransaction:\nIntroduction to Transaction Processing\nTransaction and System Concepts\n",
+      "explanation": "The missing term is \"Computer\" as documented in Slide 2.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "ol_3",
+      "type": "one_line",
+      "question": "In one concise sentence, what is \"Transaction\" as described in Slide 3?",
+      "correctAnswer": "program including a collection of database operations, executed as a logical unit",
+      "expectedAnswer": "program including a collection of database operations, executed as a logical unit",
+      "acceptableKeywords": [
+        "program",
+        "including",
+        "collection",
+        "database",
+        "operations",
+        "executed"
+      ],
+      "topic": "Transaction",
+      "sourceLocation": "Slide 3",
+      "sourceSlide": 3,
+      "sourceSnippet": "Transaction\nDepartment of Computer Science & Engineering\n3\nA transaction is a program including a collection of database operations, execute",
+      "explanation": "Document evidence from Slide 3: \"program including a collection of database operations, executed as a logical unit\"",
+      "difficulty": "easy"
+    },
+    {
+      "id": "la_4",
+      "type": "application",
+      "question": "Provide a detailed examination of \"Transaction\" based on the evidence presented in Slide 4. Discuss its properties, operational rules, and importance.",
+      "correctAnswer": "1. Definition & Core Role: It includes insertion, deletion, modification, or retrieval operation in an application program.\n2. Operational Context: As presented in Slide 4, It includes insertion, deletion, modification, or retrieval operation in an application program.\n3. Analysis: Understanding this mechanism is vital for system consistency.",
+      "expectedAnswer": "1. Definition & Core Role: It includes insertion, deletion, modification, or retrieval operation in an application program.\n2. Operational Context: As presented in Slide 4, It includes insertion, deletion, modification, or retrieval operation in an application program.\n3. Analysis: Understanding this mechanism is vital for system consistency.",
+      "acceptableKeywords": [
+        "includes",
+        "insertion",
+        "deletion",
+        "modification",
+        "retrieval",
+        "operation"
+      ],
+      "topic": "Transaction",
+      "sourceLocation": "Slide 4",
+      "sourceSlide": 4,
+      "sourceSnippet": "Transaction\nDepartment of Computer Science & Engineering\n4\nIn general transaction has two boundaries begin transaction and end transaction.\nIt includes insertion, deletion, modification, or retrieval ",
+      "explanation": "Comprehensive response derived from Slide 4.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "tf_5",
+      "type": "true_false",
+      "question": "Based on Slide 5, is the following statement accurate: \"Transaction processing systems\nDepartment of Computer Science & Engineering\n5\nTransaction processing systems are systems with “ large databa\"?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": "True",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "True",
+      "topic": "Transaction processing systems",
+      "sourceLocation": "Slide 5",
+      "sourceSlide": 5,
+      "sourceSnippet": "Transaction processing systems\nDepartment of Computer Science & Engineering\n5\nTransaction processing systems are systems with “ large databases and hundreds of ",
+      "explanation": "Refer to Slide 5 regarding \"Transaction processing systems\".",
+      "difficulty": "easy"
+    },
+    {
+      "id": "fib_6",
+      "type": "fill_in_the_blank",
+      "question": "Complete the statement from Slide 6: \"write_item () − write the _______ value from main memory to storage.\"",
+      "correctAnswer": "modified",
+      "expectedAnswer": "modified",
+      "acceptableKeywords": [
+        "modified"
+      ],
+      "topic": "Basic database access operations",
+      "sourceLocation": "Slide 6",
+      "sourceSlide": 6,
+      "sourceSnippet": "write_item () − write the modified value from main memory to storage.",
+      "explanation": "The missing term is \"modified\" as documented in Slide 6.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "ol_7",
+      "type": "one_line",
+      "question": "In one concise sentence, what is \"Example\" as described in Slide 7?",
+      "correctAnswer": "Example\nDepartment of Computer Science & Engineering\n7\n\n| BEFORE T: X: 500 | Y: 200 |\n| --- | --- |\n| Transaction T |  |\n| T1 | T2 |\n| read_",
+      "expectedAnswer": "Example\nDepartment of Computer Science & Engineering\n7\n\n| BEFORE T: X: 500 | Y: 200 |\n| --- | --- |\n| Transaction T |  |\n| T1 | T2 |\n| read_",
+      "acceptableKeywords": [
+        "example",
+        "department",
+        "computer",
+        "science",
+        "engineering",
+        "before"
+      ],
+      "topic": "Example",
+      "sourceLocation": "Slide 7",
+      "sourceSlide": 7,
+      "sourceSnippet": "Example\nDepartment of Computer Science & Engineering\n7\n\n| BEFORE T: X: 500 | Y: 200 |\n| --- | --- |\n| Transaction T |  |\n| T1 | T2 |\n| read_",
+      "explanation": "Document evidence from Slide 7: \"Example\nDepartment of Computer Science & Engineering\n7\n\n| BEFORE T: X: 500 | Y: 200 |\n| --- | --- |\n| Transaction T |  |\n| T1 | T2 |\n| read_\"",
+      "difficulty": "easy"
+    },
+    {
+      "id": "la_8",
+      "type": "application",
+      "question": "Provide a detailed examination of \"Why Concurrency Control Is Needed\" based on the evidence presented in Slide 8. Discuss its properties, operational rules, and importance.",
+      "correctAnswer": "1. Definition & Core Role: Why Concurrency Control Is Needed\n2. Operational Context: As presented in Slide 8, Why Concurrency Control Is Needed\n3. Analysis: Understanding this mechanism is vital for system consistency.",
+      "expectedAnswer": "1. Definition & Core Role: Why Concurrency Control Is Needed\n2. Operational Context: As presented in Slide 8, Why Concurrency Control Is Needed\n3. Analysis: Understanding this mechanism is vital for system consistency.",
+      "acceptableKeywords": [
+        "concurrency",
+        "control",
+        "needed",
+        "concurrency",
+        "control",
+        "needed"
+      ],
+      "topic": "Why Concurrency Control Is Needed",
+      "sourceLocation": "Slide 8",
+      "sourceSlide": 8,
+      "sourceSnippet": "Why Concurrency Control Is Needed",
+      "explanation": "Comprehensive response derived from Slide 8.",
+      "difficulty": "hard"
+    }
+  ],
+  "totalQuestions": 8,
+  "mcqCount": 0,
+  "shortAnswerCount": 0,
+  "generatedAt": "2026-10-24T18:16:01.687Z",
+  "modelUsed": "Document-Grounded-Coach-Engine"
+}

@@ -1,0 +1,313 @@
+{
+  "quizId": "quiz_1792895327173_15ba1",
+  "id": "quiz_1792895327173_15ba1",
+  "documentId": "doc_1792895290600_rk28wxw",
+  "documentName": "Normalization.pptx",
+  "questions": [
+    {
+      "id": "mcq_1",
+      "type": "mcq",
+      "question": "According to Slide 1, what is the significance or definition of \"Normalization\"?",
+      "options": [
+        "Normalization\nDef: It is the process of analyzing the given relation schema based on their functional dependencies and primary keys to achie",
+        "First Normal Form(1NF)\nEach attribute should be atomic (simple)\nDisallow multivalued and composite attributes and their combinations\nExample",
+        "Create a separate relation for multivalued attribute along with primary key of a table which is having multivalued attribute\nNormalize the t",
+        "2NF\nIt should be in 1NF\nShould not contain partial dependencies\nDef: A relation is in 1nf and every non-prime attribute is fully functional "
+      ],
+      "correctAnswer": "Normalization\nDef: It is the process of analyzing the given relation schema based on their functional dependencies and primary keys to achie",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "Normalization\nDef: It is the process of analyzing the given relation schema based on their functional dependencies and primary keys to achie",
+      "topic": "Normalization",
+      "sourceLocation": "Slide 1",
+      "sourceSlide": 1,
+      "sourceSnippet": "Normalization\nDef: It is the process of analyzing the given relation schema based on their functional dependencies and primary keys to achieve the desirable pro",
+      "explanation": "In Slide 1, \"Normalization\" is explained: \"Normalization\nDef: It is the process of analyzing the given relation schema based on their functional dependencies and p...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_2",
+      "type": "mcq",
+      "question": "According to Slide 2, what is the significance or definition of \"First Normal Form(1NF)\"?",
+      "options": [
+        "First Normal Form(1NF)\nEach attribute should be atomic (simple)\nDisallow multivalued and composite attributes and their combinations\nExample",
+        "Create a separate relation for multivalued attribute along with primary key of a table which is having multivalued attribute\nNormalize the t",
+        "2NF\nIt should be in 1NF\nShould not contain partial dependencies\nDef: A relation is in 1nf and every non-prime attribute is fully functional ",
+        "part of one of the candidate keys is known as prime attribute"
+      ],
+      "correctAnswer": "First Normal Form(1NF)\nEach attribute should be atomic (simple)\nDisallow multivalued and composite attributes and their combinations\nExample",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "First Normal Form(1NF)\nEach attribute should be atomic (simple)\nDisallow multivalued and composite attributes and their combinations\nExample",
+      "topic": "First Normal Form(1NF)",
+      "sourceLocation": "Slide 2",
+      "sourceSlide": 2,
+      "sourceSnippet": "First Normal Form(1NF)\nEach attribute should be atomic (simple)\nDisallow multivalued and composite attributes and their combinations\nExample: IT IS 1NF\nIT IS NO",
+      "explanation": "In Slide 2, \"First Normal Form(1NF)\" is explained: \"First Normal Form(1NF)\nEach attribute should be atomic (simple)\nDisallow multivalued and composite attributes and their ...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_3",
+      "type": "mcq",
+      "question": "According to Slide 3, what is the significance or definition of \"Slide 3\"?",
+      "options": [
+        "Create a separate relation for multivalued attribute along with primary key of a table which is having multivalued attribute\nNormalize the t",
+        "2NF\nIt should be in 1NF\nShould not contain partial dependencies\nDef: A relation is in 1nf and every non-prime attribute is fully functional ",
+        "part of one of the candidate keys is known as prime attribute",
+        "Q2) EMP_PROJ(ENO,PNO,HOURS,ENAME,PNAME,PLOC)\n{ENO,PNO} -> HOURS\n{ENO} -> ENAME\n{PNO} -> {PNAME,PLOC}\nQ3) R(A,B,C,D,E,F)\nA->B\nB->C\nC->D\nD->E"
+      ],
+      "correctAnswer": "Create a separate relation for multivalued attribute along with primary key of a table which is having multivalued attribute\nNormalize the t",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "Create a separate relation for multivalued attribute along with primary key of a table which is having multivalued attribute\nNormalize the t",
+      "topic": "Slide 3",
+      "sourceLocation": "Slide 3",
+      "sourceSlide": 3,
+      "sourceSnippet": "Create a separate relation for multivalued attribute along with primary key of a table which is having multivalued attribute\nNormalize the table in to 1NF\n\n| DN",
+      "explanation": "In Slide 3, \"Slide 3\" is explained: \"Create a separate relation for multivalued attribute along with primary key of a table which is having multivalued attri...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_4",
+      "type": "mcq",
+      "question": "According to Slide 4, what is the significance or definition of \"2NF\"?",
+      "options": [
+        "2NF\nIt should be in 1NF\nShould not contain partial dependencies\nDef: A relation is in 1nf and every non-prime attribute is fully functional ",
+        "part of one of the candidate keys is known as prime attribute",
+        "Q2) EMP_PROJ(ENO,PNO,HOURS,ENAME,PNAME,PLOC)\n{ENO,PNO} -> HOURS\n{ENO} -> ENAME\n{PNO} -> {PNAME,PLOC}\nQ3) R(A,B,C,D,E,F)\nA->B\nB->C\nC->D\nD->E",
+        "Q4) R(A,B,C,D)\nAB->CD\nC->A\nD->B\nQ5) R(A,B,C,D)\nA->B\nB->C\nC->D"
+      ],
+      "correctAnswer": "2NF\nIt should be in 1NF\nShould not contain partial dependencies\nDef: A relation is in 1nf and every non-prime attribute is fully functional ",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "2NF\nIt should be in 1NF\nShould not contain partial dependencies\nDef: A relation is in 1nf and every non-prime attribute is fully functional ",
+      "topic": "2NF",
+      "sourceLocation": "Slide 4",
+      "sourceSlide": 4,
+      "sourceSnippet": "2NF\nIt should be in 1NF\nShould not contain partial dependencies\nDef: A relation is in 1nf and every non-prime attribute is fully functional dependent on the pri",
+      "explanation": "In Slide 4, \"2NF\" is explained: \"2NF\nIt should be in 1NF\nShould not contain partial dependencies\nDef: A relation is in 1nf and every non-prime attribute ...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_5",
+      "type": "mcq",
+      "question": "According to Slide 5, what is the significance or definition of \"An attribute that is a part of one of the candidate keys is known as prime attribute\"?",
+      "options": [
+        "part of one of the candidate keys is known as prime attribute",
+        "Q2) EMP_PROJ(ENO,PNO,HOURS,ENAME,PNAME,PLOC)\n{ENO,PNO} -> HOURS\n{ENO} -> ENAME\n{PNO} -> {PNAME,PLOC}\nQ3) R(A,B,C,D,E,F)\nA->B\nB->C\nC->D\nD->E",
+        "Q4) R(A,B,C,D)\nAB->CD\nC->A\nD->B\nQ5) R(A,B,C,D)\nA->B\nB->C\nC->D",
+        "Q6) R(A,B,C,D)\nA->B\nB->D\nQ7) R(A,B,C,D)\nA->B\nB->C\nQ8) R(A,B,C,D)\nA->B\nC->D"
+      ],
+      "correctAnswer": "part of one of the candidate keys is known as prime attribute",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "part of one of the candidate keys is known as prime attribute",
+      "topic": "An attribute that is a part of one of the candidate keys is known as prime attribute",
+      "sourceLocation": "Slide 5",
+      "sourceSlide": 5,
+      "sourceSnippet": "An attribute that is a part of one of the candidate keys is known as prime attribute\nAn attribute that are not part of the candidate keys is known as non- prime",
+      "explanation": "In Slide 5, \"An attribute that is a part of one of the candidate keys is known as prime attribute\" is explained: \"part of one of the candidate keys is known as prime attribute...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_6",
+      "type": "mcq",
+      "question": "According to Slide 6, what is the significance or definition of \"Q2) EMP_PROJ(ENO,PNO,HOURS,ENAME,PNAME,PLOC)\"?",
+      "options": [
+        "Q2) EMP_PROJ(ENO,PNO,HOURS,ENAME,PNAME,PLOC)\n{ENO,PNO} -> HOURS\n{ENO} -> ENAME\n{PNO} -> {PNAME,PLOC}\nQ3) R(A,B,C,D,E,F)\nA->B\nB->C\nC->D\nD->E",
+        "Q4) R(A,B,C,D)\nAB->CD\nC->A\nD->B\nQ5) R(A,B,C,D)\nA->B\nB->C\nC->D",
+        "Q6) R(A,B,C,D)\nA->B\nB->D\nQ7) R(A,B,C,D)\nA->B\nB->C\nQ8) R(A,B,C,D)\nA->B\nC->D",
+        "Q9) R(A,B,C,D,E)\nAB->C\nD -> E\nQ10) R(A,B,C,D,E)\nA->B\nB ->E\nC->D"
+      ],
+      "correctAnswer": "Q2) EMP_PROJ(ENO,PNO,HOURS,ENAME,PNAME,PLOC)\n{ENO,PNO} -> HOURS\n{ENO} -> ENAME\n{PNO} -> {PNAME,PLOC}\nQ3) R(A,B,C,D,E,F)\nA->B\nB->C\nC->D\nD->E",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "Q2) EMP_PROJ(ENO,PNO,HOURS,ENAME,PNAME,PLOC)\n{ENO,PNO} -> HOURS\n{ENO} -> ENAME\n{PNO} -> {PNAME,PLOC}\nQ3) R(A,B,C,D,E,F)\nA->B\nB->C\nC->D\nD->E",
+      "topic": "Q2) EMP_PROJ(ENO,PNO,HOURS,ENAME,PNAME,PLOC)",
+      "sourceLocation": "Slide 6",
+      "sourceSlide": 6,
+      "sourceSnippet": "Q2) EMP_PROJ(ENO,PNO,HOURS,ENAME,PNAME,PLOC)\n{ENO,PNO} -> HOURS\n{ENO} -> ENAME\n{PNO} -> {PNAME,PLOC}\nQ3) R(A,B,C,D,E,F)\nA->B\nB->C\nC->D\nD->E",
+      "explanation": "In Slide 6, \"Q2) EMP_PROJ(ENO,PNO,HOURS,ENAME,PNAME,PLOC)\" is explained: \"Q2) EMP_PROJ(ENO,PNO,HOURS,ENAME,PNAME,PLOC)\n{ENO,PNO} -> HOURS\n{ENO} -> ENAME\n{PNO} -> {PNAME,PLOC}\nQ3) R(A,B,C,D,E,F)\n...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_7",
+      "type": "mcq",
+      "question": "According to Slide 7, what is the significance or definition of \"Q4) R(A,B,C,D) - AB->CD\"?",
+      "options": [
+        "Q4) R(A,B,C,D)\nAB->CD\nC->A\nD->B\nQ5) R(A,B,C,D)\nA->B\nB->C\nC->D",
+        "Q6) R(A,B,C,D)\nA->B\nB->D\nQ7) R(A,B,C,D)\nA->B\nB->C\nQ8) R(A,B,C,D)\nA->B\nC->D",
+        "Q9) R(A,B,C,D,E)\nAB->C\nD -> E\nQ10) R(A,B,C,D,E)\nA->B\nB ->E\nC->D",
+        "Q11) R(A,B,C,D,E,F,G,H,I,J)\nAB->C\nAD->GH\nBD->EF\nA->I\nH->J"
+      ],
+      "correctAnswer": "Q4) R(A,B,C,D)\nAB->CD\nC->A\nD->B\nQ5) R(A,B,C,D)\nA->B\nB->C\nC->D",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "Q4) R(A,B,C,D)\nAB->CD\nC->A\nD->B\nQ5) R(A,B,C,D)\nA->B\nB->C\nC->D",
+      "topic": "Q4) R(A,B,C,D) - AB->CD",
+      "sourceLocation": "Slide 7",
+      "sourceSlide": 7,
+      "sourceSnippet": "Q4) R(A,B,C,D)\nAB->CD\nC->A\nD->B\nQ5) R(A,B,C,D)\nA->B\nB->C\nC->D",
+      "explanation": "In Slide 7, \"Q4) R(A,B,C,D) - AB->CD\" is explained: \"Q4) R(A,B,C,D)\nAB->CD\nC->A\nD->B\nQ5) R(A,B,C,D)\nA->B\nB->C\nC->D...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_8",
+      "type": "mcq",
+      "question": "According to Slide 8, what is the significance or definition of \"Q6) R(A,B,C,D) - A->B\"?",
+      "options": [
+        "Q6) R(A,B,C,D)\nA->B\nB->D\nQ7) R(A,B,C,D)\nA->B\nB->C\nQ8) R(A,B,C,D)\nA->B\nC->D",
+        "Q9) R(A,B,C,D,E)\nAB->C\nD -> E\nQ10) R(A,B,C,D,E)\nA->B\nB ->E\nC->D",
+        "Q11) R(A,B,C,D,E,F,G,H,I,J)\nAB->C\nAD->GH\nBD->EF\nA->I\nH->J",
+        "prime attribute(each element of y is a part of some candidate key)"
+      ],
+      "correctAnswer": "Q6) R(A,B,C,D)\nA->B\nB->D\nQ7) R(A,B,C,D)\nA->B\nB->C\nQ8) R(A,B,C,D)\nA->B\nC->D",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "Q6) R(A,B,C,D)\nA->B\nB->D\nQ7) R(A,B,C,D)\nA->B\nB->C\nQ8) R(A,B,C,D)\nA->B\nC->D",
+      "topic": "Q6) R(A,B,C,D) - A->B",
+      "sourceLocation": "Slide 8",
+      "sourceSlide": 8,
+      "sourceSnippet": "Q6) R(A,B,C,D)\nA->B\nB->D\nQ7) R(A,B,C,D)\nA->B\nB->C\nQ8) R(A,B,C,D)\nA->B\nC->D",
+      "explanation": "In Slide 8, \"Q6) R(A,B,C,D) - A->B\" is explained: \"Q6) R(A,B,C,D)\nA->B\nB->D\nQ7) R(A,B,C,D)\nA->B\nB->C\nQ8) R(A,B,C,D)\nA->B\nC->D...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_9",
+      "type": "mcq",
+      "question": "According to Slide 9, what is the significance or definition of \"Q9) R(A,B,C,D,E) - AB->C\"?",
+      "options": [
+        "Q9) R(A,B,C,D,E)\nAB->C\nD -> E\nQ10) R(A,B,C,D,E)\nA->B\nB ->E\nC->D",
+        "Q11) R(A,B,C,D,E,F,G,H,I,J)\nAB->C\nAD->GH\nBD->EF\nA->I\nH->J",
+        "prime attribute(each element of y is a part of some candidate key)",
+        "Examples:\nQ1) R(A,B,C,D)\nAB->C\nC->D\nQ2)\nENO -> {ENAME,DOB,ADDRESS,DNO}\nDNO -> {DNAME,DMGRENO}\n\n| ENAME | ENO | DOB | ADDRESS | DNO | DNAME |"
+      ],
+      "correctAnswer": "Q9) R(A,B,C,D,E)\nAB->C\nD -> E\nQ10) R(A,B,C,D,E)\nA->B\nB ->E\nC->D",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "Q9) R(A,B,C,D,E)\nAB->C\nD -> E\nQ10) R(A,B,C,D,E)\nA->B\nB ->E\nC->D",
+      "topic": "Q9) R(A,B,C,D,E) - AB->C",
+      "sourceLocation": "Slide 9",
+      "sourceSlide": 9,
+      "sourceSnippet": "Q9) R(A,B,C,D,E)\nAB->C\nD -> E\nQ10) R(A,B,C,D,E)\nA->B\nB ->E\nC->D",
+      "explanation": "In Slide 9, \"Q9) R(A,B,C,D,E) - AB->C\" is explained: \"Q9) R(A,B,C,D,E)\nAB->C\nD -> E\nQ10) R(A,B,C,D,E)\nA->B\nB ->E\nC->D...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_10",
+      "type": "mcq",
+      "question": "According to Slide 10, what is the significance or definition of \"Q11) R(A,B,C,D,E,F,G,H,I,J) - AB->C\"?",
+      "options": [
+        "Q11) R(A,B,C,D,E,F,G,H,I,J)\nAB->C\nAD->GH\nBD->EF\nA->I\nH->J",
+        "prime attribute(each element of y is a part of some candidate key)",
+        "Examples:\nQ1) R(A,B,C,D)\nAB->C\nC->D\nQ2)\nENO -> {ENAME,DOB,ADDRESS,DNO}\nDNO -> {DNAME,DMGRENO}\n\n| ENAME | ENO | DOB | ADDRESS | DNO | DNAME |",
+        "Q3)\nISBN -> {PAGE_COUNT,P_ID}\nPAGE_COUNT -> PRICE\nQ4) R(A,B,C,D,E)\nA-> B\nB-> E\nC->D\n\n| ISBN | PRICE | PAGE_COUNT | P_ID |\n| --- | --- | --- "
+      ],
+      "correctAnswer": "Q11) R(A,B,C,D,E,F,G,H,I,J)\nAB->C\nAD->GH\nBD->EF\nA->I\nH->J",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "Q11) R(A,B,C,D,E,F,G,H,I,J)\nAB->C\nAD->GH\nBD->EF\nA->I\nH->J",
+      "topic": "Q11) R(A,B,C,D,E,F,G,H,I,J) - AB->C",
+      "sourceLocation": "Slide 10",
+      "sourceSlide": 10,
+      "sourceSnippet": "Q11) R(A,B,C,D,E,F,G,H,I,J)\nAB->C\nAD->GH\nBD->EF\nA->I\nH->J",
+      "explanation": "In Slide 10, \"Q11) R(A,B,C,D,E,F,G,H,I,J) - AB->C\" is explained: \"Q11) R(A,B,C,D,E,F,G,H,I,J)\nAB->C\nAD->GH\nBD->EF\nA->I\nH->J...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sa_11",
+      "type": "short_answer",
+      "question": "Explain the concept of \"3NF:\" and its primary role according to Slide 11.",
+      "correctAnswer": "prime attribute(each element of y is a part of some candidate key)",
+      "expectedAnswer": "prime attribute(each element of y is a part of some candidate key)",
+      "acceptableKeywords": [
+        "prime",
+        "attributeeach",
+        "element",
+        "part",
+        "some",
+        "candidate"
+      ],
+      "topic": "3NF:",
+      "sourceLocation": "Slide 11",
+      "sourceSlide": 11,
+      "sourceSnippet": "3NF:\nA relation is in 3NF, if there is no transitive dependency for non-prime attributes as well as it is in 2nf.\nA relation is in 3NF, if atleast one of the fo",
+      "explanation": "In Slide 11: \"prime attribute(each element of y is a part of some candidate key)\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sa_12",
+      "type": "short_answer",
+      "question": "Explain the concept of \"Examples:\" and its primary role according to Slide 12.",
+      "correctAnswer": "Examples:\nQ1) R(A,B,C,D)\nAB->C\nC->D\nQ2)\nENO -> {ENAME,DOB,ADDRESS,DNO}\nDNO -> {DNAME,DMGRENO}\n\n| ENAME | ENO | DOB | ADDRESS | DNO | DNAME |",
+      "expectedAnswer": "Examples:\nQ1) R(A,B,C,D)\nAB->C\nC->D\nQ2)\nENO -> {ENAME,DOB,ADDRESS,DNO}\nDNO -> {DNAME,DMGRENO}\n\n| ENAME | ENO | DOB | ADDRESS | DNO | DNAME |",
+      "acceptableKeywords": [
+        "examples",
+        "rabcd",
+        "enamedobaddressdno",
+        "dnamedmgreno",
+        "ename",
+        "address"
+      ],
+      "topic": "Examples:",
+      "sourceLocation": "Slide 12",
+      "sourceSlide": 12,
+      "sourceSnippet": "Examples:\nQ1) R(A,B,C,D)\nAB->C\nC->D\nQ2)\nENO -> {ENAME,DOB,ADDRESS,DNO}\nDNO -> {DNAME,DMGRENO}\n\n| ENAME | ENO | DOB | ADDRESS | DNO | DNAME | DMGR_ENO |\n| --- | ",
+      "explanation": "In Slide 12: \"Examples:\nQ1) R(A,B,C,D)\nAB->C\nC->D\nQ2)\nENO -> {ENAME,DOB,ADDRESS,DNO}\nDNO -> {DNAME,DMGRENO}\n\n| ENAME | ENO | DOB | ADDRESS | DNO | DNAME |\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sa_13",
+      "type": "short_answer",
+      "question": "Explain the concept of \"Q3) - ISBN -> {PAGE_COUNT,P_ID}\" and its primary role according to Slide 13.",
+      "correctAnswer": "Q3)\nISBN -> {PAGE_COUNT,P_ID}\nPAGE_COUNT -> PRICE\nQ4) R(A,B,C,D,E)\nA-> B\nB-> E\nC->D\n\n| ISBN | PRICE | PAGE_COUNT | P_ID |\n| --- | --- | --- ",
+      "expectedAnswer": "Q3)\nISBN -> {PAGE_COUNT,P_ID}\nPAGE_COUNT -> PRICE\nQ4) R(A,B,C,D,E)\nA-> B\nB-> E\nC->D\n\n| ISBN | PRICE | PAGE_COUNT | P_ID |\n| --- | --- | --- ",
+      "acceptableKeywords": [
+        "isbn",
+        "pagecountpid",
+        "pagecount",
+        "price",
+        "rabcde",
+        "isbn"
+      ],
+      "topic": "Q3) - ISBN -> {PAGE_COUNT,P_ID}",
+      "sourceLocation": "Slide 13",
+      "sourceSlide": 13,
+      "sourceSnippet": "Q3)\nISBN -> {PAGE_COUNT,P_ID}\nPAGE_COUNT -> PRICE\nQ4) R(A,B,C,D,E)\nA-> B\nB-> E\nC->D\n\n| ISBN | PRICE | PAGE_COUNT | P_ID |\n| --- | --- | --- | --- |",
+      "explanation": "In Slide 13: \"Q3)\nISBN -> {PAGE_COUNT,P_ID}\nPAGE_COUNT -> PRICE\nQ4) R(A,B,C,D,E)\nA-> B\nB-> E\nC->D\n\n| ISBN | PRICE | PAGE_COUNT | P_ID |\n| --- | --- | --- \"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sa_14",
+      "type": "short_answer",
+      "question": "Explain the concept of \"Q5) R(A,B,C,D,E,F,G,H,I,J) - AB->C\" and its primary role according to Slide 14.",
+      "correctAnswer": "Q5) R(A,B,C,D,E,F,G,H,I,J)\nAB->C\nA->DE\nB->F\nF->GH\nD->IJ\nQ6) R(A,B,C,D,E)\nAB->C\nB->D\nD->E",
+      "expectedAnswer": "Q5) R(A,B,C,D,E,F,G,H,I,J)\nAB->C\nA->DE\nB->F\nF->GH\nD->IJ\nQ6) R(A,B,C,D,E)\nAB->C\nB->D\nD->E",
+      "acceptableKeywords": [
+        "rabcdefghij",
+        "rabcde",
+        "rabcdefghij"
+      ],
+      "topic": "Q5) R(A,B,C,D,E,F,G,H,I,J) - AB->C",
+      "sourceLocation": "Slide 14",
+      "sourceSlide": 14,
+      "sourceSnippet": "Q5) R(A,B,C,D,E,F,G,H,I,J)\nAB->C\nA->DE\nB->F\nF->GH\nD->IJ\nQ6) R(A,B,C,D,E)\nAB->C\nB->D\nD->E",
+      "explanation": "In Slide 14: \"Q5) R(A,B,C,D,E,F,G,H,I,J)\nAB->C\nA->DE\nB->F\nF->GH\nD->IJ\nQ6) R(A,B,C,D,E)\nAB->C\nB->D\nD->E\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sa_15",
+      "type": "short_answer",
+      "question": "Explain the concept of \"Q7) R(A,B,C,D,E,F,G,H,I,J) - AB->C\" and its primary role according to Slide 15.",
+      "correctAnswer": "Q7) R(A,B,C,D,E,F,G,H,I,J)\nAB->C\nAD->GH\nBD->EF\nA->I\nH ->J",
+      "expectedAnswer": "Q7) R(A,B,C,D,E,F,G,H,I,J)\nAB->C\nAD->GH\nBD->EF\nA->I\nH ->J",
+      "acceptableKeywords": [
+        "rabcdefghij",
+        "adgh",
+        "bdef",
+        "rabcdefghij"
+      ],
+      "topic": "Q7) R(A,B,C,D,E,F,G,H,I,J) - AB->C",
+      "sourceLocation": "Slide 15",
+      "sourceSlide": 15,
+      "sourceSnippet": "Q7) R(A,B,C,D,E,F,G,H,I,J)\nAB->C\nAD->GH\nBD->EF\nA->I\nH ->J",
+      "explanation": "In Slide 15: \"Q7) R(A,B,C,D,E,F,G,H,I,J)\nAB->C\nAD->GH\nBD->EF\nA->I\nH ->J\"",
+      "difficulty": "medium"
+    }
+  ],
+  "totalQuestions": 15,
+  "mcqCount": 10,
+  "shortAnswerCount": 5,
+  "generatedAt": "2026-10-25T02:28:47.173Z",
+  "modelUsed": "Document-Grounded-Coach-Engine"
+}

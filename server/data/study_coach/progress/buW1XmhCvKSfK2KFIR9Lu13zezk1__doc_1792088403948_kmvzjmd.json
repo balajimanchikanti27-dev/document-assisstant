@@ -1,0 +1,161 @@
+{
+  "userId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+  "documentId": "doc_1792088403948_kmvzjmd",
+  "documentName": "M2-Unit1.pptx",
+  "totalAttempts": 1,
+  "bestPercentage": 7,
+  "attempts": [
+    {
+      "attemptId": "attempt_1792851154513_gx7g6",
+      "score": 1,
+      "total": 15,
+      "percentage": 7,
+      "date": "2026-10-24T14:12:34.513Z"
+    }
+  ],
+  "currentWeakTopics": [
+    {
+      "topic": "Syllabus",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 2"
+      ],
+      "revisionGuidance": "Review Slide 2 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "Inheritance-Introduction",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 3"
+      ],
+      "revisionGuidance": "Review Slide 3 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "extends Keyword :",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 4"
+      ],
+      "revisionGuidance": "Review Slide 4 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "Types of Inheritance",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 5"
+      ],
+      "revisionGuidance": "Review Slide 5 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "Single-level Inheritance",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 6"
+      ],
+      "revisionGuidance": "Review Slide 6 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "Multilevel Inheritance",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 8"
+      ],
+      "revisionGuidance": "Review Slide 8 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "Slide 10",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 10"
+      ],
+      "revisionGuidance": "Review Slide 10 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "Multiple Inheritance",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 12"
+      ],
+      "revisionGuidance": "Review Slide 12 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "Slide 13",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 13"
+      ],
+      "revisionGuidance": "Review Slide 13 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "Fundamentals of Exceptions",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 3"
+      ],
+      "revisionGuidance": "Review Slide 3 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "The finally Block",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 3"
+      ],
+      "revisionGuidance": "Review Slide 3 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "Exception Classification",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 1"
+      ],
+      "revisionGuidance": "Review Slide 1 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "The throw Keyword",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 3"
+      ],
+      "revisionGuidance": "Review Slide 3 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "Multiple Catch Blocks",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 5"
+      ],
+      "revisionGuidance": "Review Slide 5 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    }
+  ],
+  "lastStudiedAt": "2026-10-24T14:12:34.515Z",
+  "latestScore": 1,
+  "latestPercentage": 7
+}

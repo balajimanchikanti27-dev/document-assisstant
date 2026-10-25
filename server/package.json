@@ -1,0 +1,44 @@
+{
+  "name": "ai-assistant-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "tsx test/fullstack_integration.test.ts && tsx test/advanced_agent_intelligence.test.ts && tsx test/universal_rag.test.ts && tsx test/upload_and_rag_100mb.test.ts && tsx test/gemini_service.test.ts && tsx test/rag.test.ts && tsx test/ppt_rag_evaluation.test.ts",
+    "test:integration": "tsx test/fullstack_integration.test.ts",
+    "test:intelligence": "tsx test/advanced_agent_intelligence.test.ts",
+    "test:universal": "tsx test/universal_rag.test.ts",
+    "test:gemini": "tsx test/gemini_service.test.ts",
+    "test:100mb": "tsx test/upload_and_rag_100mb.test.ts",
+    "test:benchmark": "tsx test/evaluation_benchmark.test.ts",
+    "test:scraping": "tsx test/web_scraping_evaluation.test.ts",
+    "test:vignan": "tsx test/vignan_university_evaluation.test.ts",
+    "test:regression": "tsx test/vignan_web_research_regression.test.ts",
+    "test:ppt": "tsx test/ppt_rag_evaluation.test.ts",
+    "test:diagnostics": "tsx test/master_api_diagnostics.test.ts"
+  },
+  "dependencies": {
+    "@google/genai": "^2.30.0",
+    "@google/generative-ai": "^0.24.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jszip": "^3.10.1",
+    "mammoth": "^1.9.0",
+    "multer": "^1.4.5-lts.1",
+    "pdf-parse": "^1.1.4",
+    "word-extractor": "^1.0.4"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.13.4",
+    "@types/pdf-parse": "^1.1.4",
+    "tsx": "^4.19.3",
+    "typescript": "~5.7.3"
+  }
+}

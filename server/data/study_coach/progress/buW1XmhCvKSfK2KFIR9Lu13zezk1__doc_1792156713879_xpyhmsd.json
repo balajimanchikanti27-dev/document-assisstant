@@ -1,0 +1,75 @@
+{
+  "userId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+  "documentId": "doc_1792156713879_xpyhmsd",
+  "documentName": "Exception_Handling.pptx",
+  "totalAttempts": 4,
+  "bestPercentage": 80,
+  "attempts": [
+    {
+      "attemptId": "attempt_1792865748546_kzxx9",
+      "score": 12,
+      "total": 15,
+      "percentage": 80,
+      "scorePercentage": 80,
+      "date": "2026-10-24T18:15:48.546Z"
+    },
+    {
+      "attemptId": "attempt_1792864066323_cczk4",
+      "score": 12,
+      "total": 15,
+      "percentage": 80,
+      "scorePercentage": 80,
+      "date": "2026-10-24T17:47:46.323Z"
+    },
+    {
+      "attemptId": "attempt_1792862836830_hfb8i",
+      "score": 12,
+      "total": 15,
+      "percentage": 80,
+      "scorePercentage": 80,
+      "date": "2026-10-24T17:27:16.830Z"
+    },
+    {
+      "attemptId": "attempt_1792850939831_9fw8g",
+      "score": 12,
+      "total": 15,
+      "percentage": 80,
+      "date": "2026-10-24T14:08:59.831Z"
+    }
+  ],
+  "currentWeakTopics": [
+    {
+      "topic": "The Finally Block and Resource Cleanup",
+      "topicName": "The Finally Block and Resource Cleanup",
+      "incorrectCount": 2,
+      "totalQuestionsInTopic": 5,
+      "recommendedSlides": [
+        "Slide 3"
+      ],
+      "revisionSlides": [
+        "Slide 3"
+      ],
+      "revisionGuidance": "Review Slide 3 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "recommendedRevision": "Review Slide 3 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "high"
+    },
+    {
+      "topic": "Exception Handling in Java",
+      "topicName": "Exception Handling in Java",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 5,
+      "recommendedSlides": [
+        "Slide 1"
+      ],
+      "revisionSlides": [
+        "Slide 1"
+      ],
+      "revisionGuidance": "Review Slide 1 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "recommendedRevision": "Review Slide 1 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    }
+  ],
+  "lastStudiedAt": "2026-10-24T18:15:48.549Z",
+  "latestScore": 12,
+  "latestPercentage": 80
+}

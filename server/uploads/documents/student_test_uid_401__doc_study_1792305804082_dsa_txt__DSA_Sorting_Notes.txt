@@ -1,0 +1,23 @@
+
+# Data Structures and Algorithms: Sorting Algorithms
+
+## Bubble Sort and Insertion Sort
+Bubble Sort compares adjacent elements and swaps them if they are in wrong order.
+Time Complexity: O(n^2) in worst and average case, O(n) in best case when already sorted.
+Space Complexity: O(1) auxiliary space.
+
+## Merge Sort
+Merge Sort is a Divide and Conquer algorithm. It divides input array into two halves,
+calls itself for the two halves, and then merges the two sorted halves.
+Time Complexity: O(n log n) in all cases (worst, average, and best).
+Space Complexity: O(n) auxiliary space for temporary arrays.
+
+## Quick Sort
+Quick Sort chooses a pivot element and partitions the array around the pivot.
+Time Complexity: O(n log n) average case, but O(n^2) worst case if array is already sorted and first element picked as pivot.
+To prevent O(n^2), Randomized Quick Sort or Median-of-Three pivot selection is used.
+
+## Important Exam Points
+- Merge Sort is stable, while Quick Sort is not stable in its standard implementation.
+- For linked lists, Merge Sort is preferred over Quick Sort because of sequential access.
+- Quick Sort is cache-friendly and in-place, making it faster in practice for random arrays.

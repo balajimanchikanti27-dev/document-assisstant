@@ -1,0 +1,1496 @@
+{
+  "timestamp": "2026-10-25T02:29:35.731Z",
+  "mode": "fixture",
+  "totalQuestions": 50,
+  "passedCount": 50,
+  "failedCount": 0,
+  "averageScore": 0.966,
+  "metrics": {
+    "urlRetrievalSuccessRate": 100,
+    "contentExtractionSuccessRate": 100,
+    "averageRelevance": 87.1,
+    "averageCorrectness": 98.1,
+    "citationValidityRate": 100,
+    "evidenceSupportRate": 97,
+    "averageLatencyMs": 3
+  },
+  "categoryBreakdown": {
+    "A": {
+      "total": 10,
+      "passed": 10,
+      "avgScore": 99.8
+    },
+    "B": {
+      "total": 10,
+      "passed": 10,
+      "avgScore": 98.7
+    },
+    "C": {
+      "total": 10,
+      "passed": 10,
+      "avgScore": 92.5
+    },
+    "D": {
+      "total": 10,
+      "passed": 10,
+      "avgScore": 96.7
+    },
+    "E": {
+      "total": 10,
+      "passed": 10,
+      "avgScore": 95.5
+    }
+  },
+  "results": [
+    {
+      "questionId": "ws_01",
+      "categoryCode": "A",
+      "categoryName": "Basic Web Scraping",
+      "questionNumber": 1,
+      "question": "What is web scraping?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 7
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 268,
+      "answerSnippet": "### Technical Overview: Web Scraping Overview\n\nWeb Scraping OverviewWeb ScrapingWeb scraping is the process of using automated software to extract data from websites. It fetches we...",
+      "citations": [
+        {
+          "title": "Web Scraping Overview",
+          "url": "https://en.wikipedia.org/wiki/Web_scraping",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_02",
+      "categoryCode": "A",
+      "categoryName": "Basic Web Scraping",
+      "questionNumber": 2,
+      "question": "How does web scraping work?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 1
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 306,
+      "answerSnippet": "### Technical Overview: How Web Scraping Works\n\nHow Web Scraping WorksThe Scraping PipelineWeb scraping works in sequential steps: 1. An HTTP GET request is sent to the target URL....",
+      "citations": [
+        {
+          "title": "How Web Scraping Works",
+          "url": "https://en.wikipedia.org/wiki/Web_scraping",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_03",
+      "categoryCode": "A",
+      "categoryName": "Basic Web Scraping",
+      "questionNumber": 3,
+      "question": "What is the difference between web scraping and web crawling?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 1
+      },
+      "retrievedUrlCount": 2,
+      "extractedContentLength": 257,
+      "answerSnippet": "### Technical Overview: Crawling vs Scraping\n\nCrawling vs ScrapingCrawling vs ScrapingWeb crawling involves systematically following links to discover and index URLs across the web...",
+      "citations": [
+        {
+          "title": "Crawling vs Scraping",
+          "url": "https://en.wikipedia.org/wiki/Web_crawler",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_04",
+      "categoryCode": "A",
+      "categoryName": "Basic Web Scraping",
+      "questionNumber": 4,
+      "question": "What are the common tools used for web scraping?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 1
+      },
+      "retrievedUrlCount": 2,
+      "extractedContentLength": 262,
+      "answerSnippet": "### Technical Overview: Web Scraping Tools\n\nWeb Scraping ToolsPopular Scraping LibrariesCommon scraping tools include Python Beautiful Soup for parsing HTML, Scrapy for large-scale...",
+      "citations": [
+        {
+          "title": "Web Scraping Tools",
+          "url": "https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_parser)",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_05",
+      "categoryCode": "A",
+      "categoryName": "Basic Web Scraping",
+      "questionNumber": 5,
+      "question": "What is HTML parsing?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 2,
+      "extractedContentLength": 281,
+      "answerSnippet": "### Technical Overview: HTML Parsing Guide\n\nHTML Parsing GuideUnderstanding HTML ParsingHTML parsing takes raw markup text and constructs a hierarchical Document Object Model (DOM)...",
+      "citations": [
+        {
+          "title": "HTML Parsing Guide",
+          "url": "https://en.wikipedia.org/wiki/HTML_parser",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_06",
+      "categoryCode": "A",
+      "categoryName": "Basic Web Scraping",
+      "questionNumber": 6,
+      "question": "What is the difference between static and JavaScript-rendered websites?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 1
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 340,
+      "answerSnippet": "### Technical Overview: Static vs Client-Rendered Web\n\nStatic vs Client-Rendered WebStatic vs Dynamic PagesStatic websites deliver fully formed HTML in the initial HTTP response, e...",
+      "citations": [
+        {
+          "title": "Static vs Client-Rendered Web",
+          "url": "https://en.wikipedia.org/wiki/Single-page_application",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_07",
+      "categoryCode": "A",
+      "categoryName": "Basic Web Scraping",
+      "questionNumber": 7,
+      "question": "What is the role of CSS selectors in web scraping?",
+      "passed": true,
+      "overallScore": 0.98,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.9,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 251,
+      "answerSnippet": "### Technical Overview: CSS Selectors in Scraping\n\nCSS Selectors in ScrapingCSS SelectorsCSS selectors allow scrapers to target DOM elements using tag names, IDs (e.g. #content), a...",
+      "citations": [
+        {
+          "title": "CSS Selectors in Scraping",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors",
+          "domain": "developer.mozilla.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_08",
+      "categoryCode": "A",
+      "categoryName": "Basic Web Scraping",
+      "questionNumber": 8,
+      "question": "What are XPath expressions?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 260,
+      "answerSnippet": "### Technical Overview: XPath Expressions\n\nXPath ExpressionsXPath OverviewXPath (XML Path Language) is an expression syntax used to navigate and select nodes from an XML or HTML do...",
+      "citations": [
+        {
+          "title": "XPath Expressions",
+          "url": "https://en.wikipedia.org/wiki/XPath",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_09",
+      "categoryCode": "A",
+      "categoryName": "Basic Web Scraping",
+      "questionNumber": 9,
+      "question": "What is the difference between structured and unstructured web data?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 1
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 275,
+      "answerSnippet": "### Technical Overview: Structured vs Unstructured Data\n\nStructured vs Unstructured DataData ClassificationStructured data possesses a defined model with standardized fields, such ...",
+      "citations": [
+        {
+          "title": "Structured vs Unstructured Data",
+          "url": "https://en.wikipedia.org/wiki/Unstructured_data",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_10",
+      "categoryCode": "A",
+      "categoryName": "Basic Web Scraping",
+      "questionNumber": 10,
+      "question": "What are the common challenges in web scraping?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 1
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 267,
+      "answerSnippet": "### Technical Overview: Web Scraping Obstacles\n\nWeb Scraping ObstaclesScraping ChallengesCommon challenges in web scraping include anti-bot defenses like CAPTCHAs and IP rate limit...",
+      "citations": [
+        {
+          "title": "Web Scraping Obstacles",
+          "url": "https://en.wikipedia.org/wiki/Web_scraping",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_11",
+      "categoryCode": "B",
+      "categoryName": "APIs and Scraping Tools",
+      "questionNumber": 11,
+      "question": "What is the difference between a web API and web scraping?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 316,
+      "answerSnippet": "### Technical Overview: Web APIs vs Scraping\n\nWeb APIs vs ScrapingAPI vs ScrapingA web API is an officially supported interface designed for machine-to-machine data exchange with p...",
+      "citations": [
+        {
+          "title": "Web APIs vs Scraping",
+          "url": "https://en.wikipedia.org/wiki/Web_API",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_12",
+      "categoryCode": "B",
+      "categoryName": "APIs and Scraping Tools",
+      "questionNumber": 12,
+      "question": "How can Python Beautiful Soup extract webpage content?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 287,
+      "answerSnippet": "### Technical Overview: Beautiful Soup Usage\n\nBeautiful Soup UsageUsing Beautiful SoupPython Beautiful Soup parses HTML documents into a navigable tree. Developers use methods like...",
+      "citations": [
+        {
+          "title": "Beautiful Soup Usage",
+          "url": "https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_parser)",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_13",
+      "categoryCode": "B",
+      "categoryName": "APIs and Scraping Tools",
+      "questionNumber": 13,
+      "question": "How does Scrapy work?",
+      "passed": true,
+      "overallScore": 0.993,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.97,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 291,
+      "answerSnippet": "### Technical Overview: Scrapy Architecture\n\nScrapy ArchitectureScrapy FrameworkScrapy is an asynchronous application framework for crawling web sites. It uses Spiders to define st...",
+      "citations": [
+        {
+          "title": "Scrapy Architecture",
+          "url": "https://en.wikipedia.org/wiki/Scrapy",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_14",
+      "categoryCode": "B",
+      "categoryName": "APIs and Scraping Tools",
+      "questionNumber": 14,
+      "question": "How can Playwright retrieve content from JavaScript-rendered pages?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 294,
+      "answerSnippet": "### Technical Overview: Playwright Automation\n\nPlaywright AutomationPlaywright for Dynamic Web PagesPlaywright automates modern browser engines like Chromium and WebKit. It loads w...",
+      "citations": [
+        {
+          "title": "Playwright Automation",
+          "url": "https://en.wikipedia.org/wiki/Playwright_(software)",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_15",
+      "categoryCode": "B",
+      "categoryName": "APIs and Scraping Tools",
+      "questionNumber": 15,
+      "question": "What is Firecrawl, and how can it help AI applications?",
+      "passed": true,
+      "overallScore": 0.94,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.7,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 286,
+      "answerSnippet": "### Technical Overview: Firecrawl for AI\n\nFirecrawl for AIFirecrawl and AI PipelinesFirecrawl is an API tool tailored for AI and LLM workflows that crawls websites and turns web pa...",
+      "citations": [
+        {
+          "title": "Firecrawl for AI",
+          "url": "https://en.wikipedia.org/wiki/Web_scraping",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_16",
+      "categoryCode": "B",
+      "categoryName": "APIs and Scraping Tools",
+      "questionNumber": 16,
+      "question": "How can a website's sitemap help discover URLs?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 1
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 253,
+      "answerSnippet": "### Technical Overview: XML Sitemaps\n\nXML SitemapsSitemaps ProtocolAn XML sitemap lists URLs for a site along with metadata such as when each page was last updated (lastmod). It en...",
+      "citations": [
+        {
+          "title": "XML Sitemaps",
+          "url": "https://en.wikipedia.org/wiki/Sitemaps",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_17",
+      "categoryCode": "B",
+      "categoryName": "APIs and Scraping Tools",
+      "questionNumber": 17,
+      "question": "How can robots.txt inform a scraper's access decisions?",
+      "passed": true,
+      "overallScore": 0.974,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.87,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 246,
+      "answerSnippet": "### Technical Overview: Robots Exclusion Protocol\n\nRobots Exclusion Protocolrobots.txt StandardThe robots.txt file provides rules for automated web crawlers. Directives such as Use...",
+      "citations": [
+        {
+          "title": "Robots Exclusion Protocol",
+          "url": "https://en.wikipedia.org/wiki/Robots.txt",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_18",
+      "categoryCode": "B",
+      "categoryName": "APIs and Scraping Tools",
+      "questionNumber": 18,
+      "question": "How can HTTP status codes help diagnose scraping failures?",
+      "passed": true,
+      "overallScore": 0.96,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.8,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 298,
+      "answerSnippet": "### Technical Overview: HTTP Status Diagnostics\n\nHTTP Status DiagnosticsHTTP Status Codes in ScrapingHTTP status codes provide vital diagnostics: 403 Forbidden indicates IP blocks ...",
+      "citations": [
+        {
+          "title": "HTTP Status Diagnostics",
+          "url": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_19",
+      "categoryCode": "B",
+      "categoryName": "APIs and Scraping Tools",
+      "questionNumber": 19,
+      "question": "How should a scraper handle pagination?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 332,
+      "answerSnippet": "### Technical Overview: Handling Pagination\n\nHandling PaginationWeb Pagination StrategiesScrapers handle pagination by either incrementing query parameters (?page=N), parsing the n...",
+      "citations": [
+        {
+          "title": "Handling Pagination",
+          "url": "https://en.wikipedia.org/wiki/Pagination",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_20",
+      "categoryCode": "B",
+      "categoryName": "APIs and Scraping Tools",
+      "questionNumber": 20,
+      "question": "How can scraped HTML be converted into clean Markdown?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 1
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 292,
+      "answerSnippet": "### Technical Overview: HTML to Markdown\n\nHTML to MarkdownConverting HTML to MarkdownConverting HTML to clean Markdown requires stripping boilerplate tags like script, style, and n...",
+      "citations": [
+        {
+          "title": "HTML to Markdown",
+          "url": "https://en.wikipedia.org/wiki/Markdown",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_21",
+      "categoryCode": "C",
+      "categoryName": "Data Extraction and Processing",
+      "questionNumber": 21,
+      "question": "How can a scraper extract page titles and headings?",
+      "passed": true,
+      "overallScore": 0.946,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.73,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 1
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 80,
+      "answerSnippet": "### Technical Overview: Target Document Title\n\nTarget Document TitlePrimary HeadingFirst paragraph.Sub-headingSecond paragraph.\n\n**Evidence Points:**\n- Extract <title> tag text fro...",
+      "citations": [
+        {
+          "title": "Target Document Title",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements",
+          "domain": "developer.mozilla.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_22",
+      "categoryCode": "C",
+      "categoryName": "Data Extraction and Processing",
+      "questionNumber": 22,
+      "question": "How can text be extracted from HTML tables?",
+      "passed": true,
+      "overallScore": 0.85,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.5,
+        "correctness": 1,
+        "evidenceSupport": 0.5,
+        "citationValidity": 1,
+        "latencyMs": 1
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 48,
+      "answerSnippet": "### Technical Overview: Financial Metrics\n\nFinancial MetricsMetricValueRevenue$50MMargin24%\n\n**Evidence Points:**\n- Locate <table> elements and iterate over <tr> (table row) tags\n-...",
+      "citations": [
+        {
+          "title": "Financial Metrics",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table",
+          "domain": "developer.mozilla.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_23",
+      "categoryCode": "C",
+      "categoryName": "Data Extraction and Processing",
+      "questionNumber": 23,
+      "question": "How can duplicate webpage content be detected?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 2,
+      "extractedContentLength": 262,
+      "answerSnippet": "### Technical Overview: Duplicate Content Detection\n\nDuplicate Content DetectionDetecting DuplicatesDuplicate webpage content can be identified through exact text hashing (e.g., SH...",
+      "citations": [
+        {
+          "title": "Duplicate Content Detection",
+          "url": "https://en.wikipedia.org/wiki/MinHash",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_24",
+      "categoryCode": "C",
+      "categoryName": "Data Extraction and Processing",
+      "questionNumber": 24,
+      "question": "How can scraped content be cleaned of navigation menus and advertisements?",
+      "passed": true,
+      "overallScore": 0.748,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.42,
+        "correctness": 0.65,
+        "evidenceSupport": 0.5,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 78,
+      "answerSnippet": "### Technical Overview: Clean Content Article\n\nClean Content ArticleThis is the actual article content containing core facts.\n\n**Evidence Points:**\n- Remove structural boilerplate ...",
+      "citations": [
+        {
+          "title": "Clean Content Article",
+          "url": "https://en.wikipedia.org/wiki/Boilerplate_detection",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_25",
+      "categoryCode": "C",
+      "categoryName": "Data Extraction and Processing",
+      "questionNumber": 25,
+      "question": "How can a scraper identify the canonical URL of a page?",
+      "passed": true,
+      "overallScore": 0.96,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.8,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 56,
+      "answerSnippet": "### Technical Overview: Canonical Article\n\nCanonical ArticleCanonical ArticleAuthoritative content.\n\n**Evidence Points:**\n- Inspect the <link rel=\"canonical\" href=\"...\"> element in...",
+      "citations": [
+        {
+          "title": "Canonical Article",
+          "url": "https://example.com/canonical-article",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_26",
+      "categoryCode": "C",
+      "categoryName": "Data Extraction and Processing",
+      "questionNumber": 26,
+      "question": "How can publication dates be extracted and validated?",
+      "passed": true,
+      "overallScore": 0.927,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.63,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 58,
+      "answerSnippet": "### Technical Overview: Date Extraction Article\n\nDate Extraction ArticleArticle with DatePublished content.\n\n**Evidence Points:**\n- Inspect Open Graph and meta tags (<meta property...",
+      "citations": [
+        {
+          "title": "Date Extraction Article",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time",
+          "domain": "developer.mozilla.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_27",
+      "categoryCode": "C",
+      "categoryName": "Data Extraction and Processing",
+      "questionNumber": 27,
+      "question": "How should missing or malformed content be handled?",
+      "passed": true,
+      "overallScore": 0.98,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.9,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 48,
+      "answerSnippet": "### Technical Overview: Malformed Sample\n\nMalformed SampleUnclosed paragraphNested content\n\n**Evidence Points:**\n- Use resilient HTML parsers (like BeautifulSoup or html5lib) that ...",
+      "citations": [
+        {
+          "title": "Malformed Sample",
+          "url": "https://en.wikipedia.org/wiki/HTML_parser",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_28",
+      "categoryCode": "C",
+      "categoryName": "Data Extraction and Processing",
+      "questionNumber": 28,
+      "question": "How can large webpages be divided into meaningful text chunks?",
+      "passed": true,
+      "overallScore": 0.872,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.55,
+        "correctness": 0.85,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 1
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 77,
+      "answerSnippet": "### Technical Overview: Large Document\n\nLarge DocumentSection 1First segment content.Section 2Second segment content.\n\n**Evidence Points:**\n- Chunk by semantic HTML boundaries (hea...",
+      "citations": [
+        {
+          "title": "Large Document",
+          "url": "https://en.wikipedia.org/wiki/Information_retrieval",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_29",
+      "categoryCode": "C",
+      "categoryName": "Data Extraction and Processing",
+      "questionNumber": 29,
+      "question": "How can scraped data be stored in a database?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 252,
+      "answerSnippet": "### Technical Overview: Database Storage Strategies\n\nDatabase Storage StrategiesPersisting Web DataScraped data can be stored in relational databases (like PostgreSQL) for structur...",
+      "citations": [
+        {
+          "title": "Database Storage Strategies",
+          "url": "https://en.wikipedia.org/wiki/Database",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_30",
+      "categoryCode": "C",
+      "categoryName": "Data Extraction and Processing",
+      "questionNumber": 30,
+      "question": "How can extracted webpage content be converted into embeddings for semantic search?",
+      "passed": true,
+      "overallScore": 0.971,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.86,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 278,
+      "answerSnippet": "### Technical Overview: Text Embeddings for Search\n\nText Embeddings for SearchSemantic EmbeddingsCleaned webpage chunks are transformed into dense vector representations using neur...",
+      "citations": [
+        {
+          "title": "Text Embeddings for Search",
+          "url": "https://en.wikipedia.org/wiki/Word_embedding",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_31",
+      "categoryCode": "D",
+      "categoryName": "AI Research and RAG",
+      "questionNumber": 31,
+      "question": "How can an AI agent use scraped webpages to answer questions?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 264,
+      "answerSnippet": "### Technical Overview: AI Agents with Web RAG\n\nAI Agents with Web RAGRAG AI AgentsAn AI agent answers questions by retrieving live scraped web pages, extracting the most relevant ...",
+      "citations": [
+        {
+          "title": "AI Agents with Web RAG",
+          "url": "https://en.wikipedia.org/wiki/Prompt_engineering#Retrieval-augmented_generation",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_32",
+      "categoryCode": "D",
+      "categoryName": "AI Research and RAG",
+      "questionNumber": 32,
+      "question": "How can the agent identify the most relevant pages for a question?",
+      "passed": true,
+      "overallScore": 0.974,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.87,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 233,
+      "answerSnippet": "### Technical Overview: Relevance Scoring\n\nRelevance ScoringIdentifying Relevant PagesAI agents rank pages using hybrid search that balances dense semantic similarity with BM25 key...",
+      "citations": [
+        {
+          "title": "Relevance Scoring",
+          "url": "https://en.wikipedia.org/wiki/Information_retrieval",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_33",
+      "categoryCode": "D",
+      "categoryName": "AI Research and RAG",
+      "questionNumber": 33,
+      "question": "How can the agent combine Wikipedia results with other websites?",
+      "passed": true,
+      "overallScore": 0.908,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.73,
+        "correctness": 0.85,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 69
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 281,
+      "answerSnippet": "### Technical Overview: Combining Multi-Source Evidence\n\nCombining Multi-Source EvidenceMulti-Source SynthesisThe agent queries the Wikipedia MediaWiki API for authoritative encycl...",
+      "citations": [
+        {
+          "title": "Combining Multi-Source Evidence",
+          "url": "https://en.wikipedia.org/wiki/Wikipedia",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_34",
+      "categoryCode": "D",
+      "categoryName": "AI Research and RAG",
+      "questionNumber": 34,
+      "question": "How can an AI system generate citations from scraped sources?",
+      "passed": true,
+      "overallScore": 0.96,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.8,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 260,
+      "answerSnippet": "### Technical Overview: Citation Generation\n\nCitation GenerationGenerating CitationsAI systems generate citations by tracking source metadata (title, URL, domain) during scraping a...",
+      "citations": [
+        {
+          "title": "Citation Generation",
+          "url": "https://en.wikipedia.org/wiki/Citation",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_35",
+      "categoryCode": "D",
+      "categoryName": "AI Research and RAG",
+      "questionNumber": 35,
+      "question": "How can the agent verify that a source supports a factual claim?",
+      "passed": true,
+      "overallScore": 0.974,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.87,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 214,
+      "answerSnippet": "### Technical Overview: Fact Verification in AI\n\nFact Verification in AIVerifying ClaimsThe agent verifies that claims are supported by checking entity, date, and numeric alignment...",
+      "citations": [
+        {
+          "title": "Fact Verification in AI",
+          "url": "https://en.wikipedia.org/wiki/Natural_language_inference",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_36",
+      "categoryCode": "D",
+      "categoryName": "AI Research and RAG",
+      "questionNumber": 36,
+      "question": "What should the agent do when two websites provide conflicting information?",
+      "passed": true,
+      "overallScore": 0.917,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.59,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 266,
+      "answerSnippet": "### Technical Overview: Handling Conflicting Evidence\n\nHandling Conflicting EvidenceConflicting Source ResolutionWhen sources disagree, an objective agent presents both perspective...",
+      "citations": [
+        {
+          "title": "Handling Conflicting Evidence",
+          "url": "https://en.wikipedia.org/wiki/Critical_thinking",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_37",
+      "categoryCode": "D",
+      "categoryName": "AI Research and RAG",
+      "questionNumber": 37,
+      "question": "How can query rewriting improve webpage retrieval?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 224,
+      "answerSnippet": "### Technical Overview: Query Rewriting\n\nQuery RewritingQuery Rewriting for RAGQuery rewriting improves retrieval by stripping conversational filler, isolating key entities, and pr...",
+      "citations": [
+        {
+          "title": "Query Rewriting",
+          "url": "https://en.wikipedia.org/wiki/Query_expansion",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_38",
+      "categoryCode": "D",
+      "categoryName": "AI Research and RAG",
+      "questionNumber": 38,
+      "question": "How can an agent answer a question requiring multiple sources?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 260,
+      "answerSnippet": "### Technical Overview: Multi-Source Synthesis\n\nMulti-Source SynthesisMulti-Source Query ExecutionTo answer questions requiring multiple sources, the agent decomposes the query int...",
+      "citations": [
+        {
+          "title": "Multi-Source Synthesis",
+          "url": "https://en.wikipedia.org/wiki/Information_integration",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_39",
+      "categoryCode": "D",
+      "categoryName": "AI Research and RAG",
+      "questionNumber": 39,
+      "question": "What should the agent do when scraped content does not answer the question?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 13
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 238,
+      "answerSnippet": "### Technical Overview: Handling Missing Evidence\n\nHandling Missing EvidenceHonest Abstention in AIWhen scraped content does not answer the user question, the agent must avoid hall...",
+      "citations": [
+        {
+          "title": "Handling Missing Evidence",
+          "url": "https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_40",
+      "categoryCode": "D",
+      "categoryName": "AI Research and RAG",
+      "questionNumber": 40,
+      "question": "How can web scraping improve an AI research assistant without replacing its language model?",
+      "passed": true,
+      "overallScore": 0.933,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.66,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 277,
+      "answerSnippet": "### Technical Overview: Augmenting LLMs with Scraping\n\nAugmenting LLMs with ScrapingWeb Scraping and LLM SynergyWeb scraping augments language models by retrieving up-to-date data ...",
+      "citations": [
+        {
+          "title": "Augmenting LLMs with Scraping",
+          "url": "https://en.wikipedia.org/wiki/Prompt_engineering",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_41",
+      "categoryCode": "E",
+      "categoryName": "Advanced Reliability and Security",
+      "questionNumber": 41,
+      "question": "How should a scraper handle timeouts and temporary server errors?",
+      "passed": true,
+      "overallScore": 0.985,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.93,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 236,
+      "answerSnippet": "### Technical Overview: Timeout and Error Handling\n\nTimeout and Error HandlingResilient Request ManagementScrapers handle timeouts using AbortController timeouts and implement expo...",
+      "citations": [
+        {
+          "title": "Timeout and Error Handling",
+          "url": "https://en.wikipedia.org/wiki/Exponential_backoff",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_42",
+      "categoryCode": "E",
+      "categoryName": "Advanced Reliability and Security",
+      "questionNumber": 42,
+      "question": "How can rate limits be respected?",
+      "passed": true,
+      "overallScore": 0.96,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.8,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 238,
+      "answerSnippet": "### Technical Overview: Respecting Rate Limits\n\nRespecting Rate LimitsRate Limiting ComplianceScrapers respect rate limits by monitoring HTTP 429 Retry-After headers, introducing i...",
+      "citations": [
+        {
+          "title": "Respecting Rate Limits",
+          "url": "https://en.wikipedia.org/wiki/Rate_limiting",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_43",
+      "categoryCode": "E",
+      "categoryName": "Advanced Reliability and Security",
+      "questionNumber": 43,
+      "question": "What are the security risks of scraping user-supplied URLs?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 287,
+      "answerSnippet": "### Technical Overview: Scraping Security Risks\n\nScraping Security RisksRisks of Scraping Untrusted URLsScraping user-supplied URLs exposes systems to Server-Side Request Forgery (...",
+      "citations": [
+        {
+          "title": "Scraping Security Risks",
+          "url": "https://en.wikipedia.org/wiki/Server-side_request_forgery",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_44",
+      "categoryCode": "E",
+      "categoryName": "Advanced Reliability and Security",
+      "questionNumber": 44,
+      "question": "How can server-side request forgery be prevented?",
+      "passed": true,
+      "overallScore": 0.843,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.47,
+        "correctness": 1,
+        "evidenceSupport": 0.5,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 253,
+      "answerSnippet": "### Technical Overview: Preventing SSRF\n\nPreventing SSRFSSRF PreventionSSRF is prevented by restricting protocols to HTTP/HTTPS, resolving DNS to verify destination IPs, blocking l...",
+      "citations": [
+        {
+          "title": "Preventing SSRF",
+          "url": "https://en.wikipedia.org/wiki/Server-side_request_forgery",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_45",
+      "categoryCode": "E",
+      "categoryName": "Advanced Reliability and Security",
+      "questionNumber": 45,
+      "question": "Why should a scraper validate redirects and destination IP addresses?",
+      "passed": true,
+      "overallScore": 0.908,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.73,
+        "correctness": 0.85,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 250,
+      "answerSnippet": "### Technical Overview: Redirect and IP Validation\n\nRedirect and IP ValidationValidating RedirectsValidating destination IPs on every redirect hop prevents attackers from bypassing...",
+      "citations": [
+        {
+          "title": "Redirect and IP Validation",
+          "url": "https://en.wikipedia.org/wiki/DNS_rebinding",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_46",
+      "categoryCode": "E",
+      "categoryName": "Advanced Reliability and Security",
+      "questionNumber": 46,
+      "question": "How can sensitive information be excluded from logs?",
+      "passed": true,
+      "overallScore": 0.94,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.7,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 270,
+      "answerSnippet": "### Technical Overview: Secure Logging Practices\n\nSecure Logging PracticesSanitizing Application LogsSensitive data is kept out of logs by applying automated masking regexes to red...",
+      "citations": [
+        {
+          "title": "Secure Logging Practices",
+          "url": "https://en.wikipedia.org/wiki/Data_masking",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_47",
+      "categoryCode": "E",
+      "categoryName": "Advanced Reliability and Security",
+      "questionNumber": 47,
+      "question": "How should an agent detect stale webpage content?",
+      "passed": true,
+      "overallScore": 0.993,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.97,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 29
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 213,
+      "answerSnippet": "### Technical Overview: Detecting Stale Web Content\n\nDetecting Stale Web ContentFreshness DetectionAgents detect stale content by inspecting Last-Modified and ETag HTTP headers, pa...",
+      "citations": [
+        {
+          "title": "Detecting Stale Web Content",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Last-Modified",
+          "domain": "developer.mozilla.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_48",
+      "categoryCode": "E",
+      "categoryName": "Advanced Reliability and Security",
+      "questionNumber": 48,
+      "question": "How can scraping results be evaluated for completeness?",
+      "passed": true,
+      "overallScore": 1,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 253,
+      "answerSnippet": "### Technical Overview: Extraction Quality Checks\n\nExtraction Quality ChecksEvaluating CompletenessScraping results are evaluated for completeness by ensuring required schema field...",
+      "citations": [
+        {
+          "title": "Extraction Quality Checks",
+          "url": "https://en.wikipedia.org/wiki/Data_quality",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_49",
+      "categoryCode": "E",
+      "categoryName": "Advanced Reliability and Security",
+      "questionNumber": 49,
+      "question": "How can prompt injection hidden inside webpage content be handled?",
+      "passed": true,
+      "overallScore": 0.96,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 0.8,
+        "correctness": 1,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 316,
+      "answerSnippet": "### Technical Overview: Prompt Injection Defense\n\nPrompt Injection DefenseDefending Against InjectionPrompt injections hidden in scraped content are mitigated by wrapping scraped t...",
+      "citations": [
+        {
+          "title": "Prompt Injection Defense",
+          "url": "https://en.wikipedia.org/wiki/Prompt_engineering#Prompt_injection",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    },
+    {
+      "questionId": "ws_50",
+      "categoryCode": "E",
+      "categoryName": "Advanced Reliability and Security",
+      "questionNumber": 50,
+      "question": "How can automated tests measure the accuracy of a web-scraping AI agent?",
+      "passed": true,
+      "overallScore": 0.963,
+      "scores": {
+        "urlRetrieval": 1,
+        "contentExtraction": 1,
+        "relevance": 1,
+        "correctness": 0.85,
+        "evidenceSupport": 1,
+        "citationValidity": 1,
+        "latencyMs": 0
+      },
+      "retrievedUrlCount": 1,
+      "extractedContentLength": 275,
+      "answerSnippet": "### Technical Overview: Automated Agent Evaluation\n\nAutomated Agent EvaluationMeasuring Agent AccuracyAutomated evaluation measures web-scraping AI agents across URL retrieval succ...",
+      "citations": [
+        {
+          "title": "Automated Agent Evaluation",
+          "url": "https://en.wikipedia.org/wiki/Software_testing",
+          "domain": "en.wikipedia.org"
+        }
+      ],
+      "failureReasons": []
+    }
+  ]
+}

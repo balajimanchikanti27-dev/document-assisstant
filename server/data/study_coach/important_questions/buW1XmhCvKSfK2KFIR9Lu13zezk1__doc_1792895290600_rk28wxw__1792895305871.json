@@ -1,0 +1,210 @@
+{
+  "documentId": "doc_1792895290600_rk28wxw",
+  "documentName": "Normalization.pptx",
+  "generatedAt": "2026-10-25T02:28:39.613Z",
+  "disclaimer": "AI-generated revision priorities, not guaranteed exam questions. Use to focus your preparation on high-yield topics.",
+  "prioritiesBreakdown": {
+    "high": 11,
+    "medium": 0,
+    "basic": 1
+  },
+  "questions": [
+    {
+      "id": "iq_1",
+      "question": "Define \"Slide 1: Normalization\" and analyze its core principles as detailed in Slide 1.",
+      "importance": "High",
+      "category": "definition",
+      "topic": "Normalization",
+      "suggestedAnswerPoints": [
+        "Def: It is the process of analyzing the given relation schema based on their functional dependencies and primary keys to achieve the desirable properties of",
+        "i ) minimize the redundancy i.e insert, update, delete anomalies",
+        "i i) minimize the null values in tuples"
+      ],
+      "modelAnswer": "Def: It is the process of analyzing the given relation schema based on their functional dependencies and primary keys to achieve the desirable properties of. i ) minimize the redundancy i.e insert, update, delete anomalies. i i) minimize the null values in tuples",
+      "sourceLocation": "Slide 1",
+      "location": "Slide 1",
+      "sourceSlide": 1,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_2",
+      "question": "Provide a comprehensive explanation of \"Slide 2: First Normal Form(1NF)\" (Slide 2) and describe its role in system execution.",
+      "importance": "High",
+      "category": "long_answer",
+      "topic": "First Normal Form(1NF)",
+      "suggestedAnswerPoints": [
+        "First Normal Form(1NF)",
+        "Each attribute should be atomic (simple)",
+        "Disallow multivalued and composite attributes and their combinations"
+      ],
+      "modelAnswer": "First Normal Form(1NF). Each attribute should be atomic (simple). Disallow multivalued and composite attributes and their combinations",
+      "sourceLocation": "Slide 2",
+      "location": "Slide 2",
+      "sourceSlide": 2,
+      "recommendedAnswerLength": "1-2 paragraphs / 5-10 marks"
+    },
+    {
+      "id": "iq_3",
+      "question": "Provide a comprehensive explanation of \"Slide 3\" (Slide 3) and describe its role in system execution.",
+      "importance": "High",
+      "category": "long_answer",
+      "topic": "Slide 3",
+      "suggestedAnswerPoints": [
+        "Create a separate relation for multivalued attribute along with primary key of a table which is having multivalued attribute",
+        "Normalize the table in to 1NF",
+        "| DNO | DNAME | DMGRENO | DLOCATIONS |"
+      ],
+      "modelAnswer": "Create a separate relation for multivalued attribute along with primary key of a table which is having multivalued attribute. Normalize the table in to 1NF. | DNO | DNAME | DMGRENO | DLOCATIONS |",
+      "sourceLocation": "Slide 3",
+      "location": "Slide 3",
+      "sourceSlide": 3,
+      "recommendedAnswerLength": "1-2 paragraphs / 5-10 marks"
+    },
+    {
+      "id": "iq_4",
+      "question": "Summarize the foundational principles of \"Slide 4: 2NF\" introduced in Slide 4.",
+      "importance": "Basic",
+      "category": "conceptual",
+      "topic": "2NF",
+      "suggestedAnswerPoints": [
+        "It should be in 1NF",
+        "Should not contain partial dependencies",
+        "Def: A relation is in 1nf and every non-prime attribute is fully functional dependent on the primary key. ( i.e no partial dependencies allowed )"
+      ],
+      "modelAnswer": "It should be in 1NF. Should not contain partial dependencies. Def: A relation is in 1nf and every non-prime attribute is fully functional dependent on the primary key. ( i.e no partial dependencies allowed )",
+      "sourceLocation": "Slide 4",
+      "location": "Slide 4",
+      "sourceSlide": 4,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_5",
+      "question": "State and explain the operational rules, conditions, or formulas governing \"Slide 5: An attribute that is a part of one of the candidate keys is known as prime attribute\" (Slide 5).",
+      "importance": "High",
+      "category": "process_formula",
+      "topic": "An attribute that is a part of one of the candidate keys is known as prime attribute",
+      "suggestedAnswerPoints": [
+        "An attribute that is a part of one of the candidate keys is known as prime attribute",
+        "An attribute that are not part of the candidate keys is known as non- prime attribute",
+        "CHECK the relation is in 2nf or not, if not convert into 2nf"
+      ],
+      "modelAnswer": "An attribute that is a part of one of the candidate keys is known as prime attribute. An attribute that are not part of the candidate keys is known as non- prime attribute. CHECK the relation is in 2nf or not, if not convert into 2nf",
+      "sourceLocation": "Slide 5",
+      "location": "Slide 5",
+      "sourceSlide": 5,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_6",
+      "question": "State and explain the operational rules, conditions, or formulas governing \"Slide 6: Q2) EMP_PROJ(ENO,PNO,HOURS,ENAME,PNAME,PLOC)\" (Slide 6).",
+      "importance": "High",
+      "category": "process_formula",
+      "topic": "Q2) EMP_PROJ(ENO,PNO,HOURS,ENAME,PNAME,PLOC)",
+      "suggestedAnswerPoints": [
+        "Q2) EMP_PROJ(ENO,PNO,HOURS,ENAME,PNAME,PLOC)",
+        "{ENO,PNO} -> HOURS",
+        "{PNO} -> {PNAME,PLOC}"
+      ],
+      "modelAnswer": "Q2) EMP_PROJ(ENO,PNO,HOURS,ENAME,PNAME,PLOC). {ENO,PNO} -> HOURS. {PNO} -> {PNAME,PLOC}",
+      "sourceLocation": "Slide 6",
+      "location": "Slide 6",
+      "sourceSlide": 6,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_7",
+      "question": "State and explain the operational rules, conditions, or formulas governing \"Slide 7: Q4) R(A,B,C,D) - AB->CD\" (Slide 7).",
+      "importance": "High",
+      "category": "process_formula",
+      "topic": "Q4) R(A,B,C,D) - AB->CD",
+      "suggestedAnswerPoints": [
+        "Core concept and mechanisms defined in Slide 7"
+      ],
+      "modelAnswer": "Core concept and mechanisms defined in Slide 7",
+      "sourceLocation": "Slide 7",
+      "location": "Slide 7",
+      "sourceSlide": 7,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_8",
+      "question": "State and explain the operational rules, conditions, or formulas governing \"Slide 8: Q6) R(A,B,C,D) - A->B\" (Slide 8).",
+      "importance": "High",
+      "category": "process_formula",
+      "topic": "Q6) R(A,B,C,D) - A->B",
+      "suggestedAnswerPoints": [
+        "Core concept and mechanisms defined in Slide 8"
+      ],
+      "modelAnswer": "Core concept and mechanisms defined in Slide 8",
+      "sourceLocation": "Slide 8",
+      "location": "Slide 8",
+      "sourceSlide": 8,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_9",
+      "question": "State and explain the operational rules, conditions, or formulas governing \"Slide 9: Q9) R(A,B,C,D,E) - AB->C\" (Slide 9).",
+      "importance": "High",
+      "category": "process_formula",
+      "topic": "Q9) R(A,B,C,D,E) - AB->C",
+      "suggestedAnswerPoints": [
+        "Q9) R(A,B,C,D,E)",
+        "Q10) R(A,B,C,D,E)"
+      ],
+      "modelAnswer": "Q9) R(A,B,C,D,E). Q10) R(A,B,C,D,E)",
+      "sourceLocation": "Slide 9",
+      "location": "Slide 9",
+      "sourceSlide": 9,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_10",
+      "question": "State and explain the operational rules, conditions, or formulas governing \"Slide 10: Q11) R(A,B,C,D,E,F,G,H,I,J) - AB->C\" (Slide 10).",
+      "importance": "High",
+      "category": "process_formula",
+      "topic": "Q11) R(A,B,C,D,E,F,G,H,I,J) - AB->C",
+      "suggestedAnswerPoints": [
+        "Q11) R(A,B,C,D,E,F,G,H,I,J)"
+      ],
+      "modelAnswer": "Q11) R(A,B,C,D,E,F,G,H,I,J)",
+      "sourceLocation": "Slide 10",
+      "location": "Slide 10",
+      "sourceSlide": 10,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_11",
+      "question": "State and explain the operational rules, conditions, or formulas governing \"Slide 11: 3NF:\" (Slide 11).",
+      "importance": "High",
+      "category": "process_formula",
+      "topic": "3NF:",
+      "suggestedAnswerPoints": [
+        "A relation is in 3NF, if there is no transitive dependency for non-prime attributes as well as it is in 2nf.",
+        "A relation is in 3NF, if atleast one of the following conditions holds in every non-trivial functional dependency X-> Y",
+        "X is a super key"
+      ],
+      "modelAnswer": "A relation is in 3NF, if there is no transitive dependency for non-prime attributes as well as it is in 2nf.. A relation is in 3NF, if atleast one of the following conditions holds in every non-trivial functional dependency X-> Y. X is a super key",
+      "sourceLocation": "Slide 11",
+      "location": "Slide 11",
+      "sourceSlide": 11,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_12",
+      "question": "State and explain the operational rules, conditions, or formulas governing \"Slide 12: Examples:\" (Slide 12).",
+      "importance": "High",
+      "category": "process_formula",
+      "topic": "Examples:",
+      "suggestedAnswerPoints": [
+        "ENO -> {ENAME,DOB,ADDRESS,DNO}",
+        "DNO -> {DNAME,DMGRENO}",
+        "| ENAME | ENO | DOB | ADDRESS | DNO | DNAME | DMGR_ENO |"
+      ],
+      "modelAnswer": "ENO -> {ENAME,DOB,ADDRESS,DNO}. DNO -> {DNAME,DMGRENO}. | ENAME | ENO | DOB | ADDRESS | DNO | DNAME | DMGR_ENO |",
+      "sourceLocation": "Slide 12",
+      "location": "Slide 12",
+      "sourceSlide": 12,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    }
+  ]
+}

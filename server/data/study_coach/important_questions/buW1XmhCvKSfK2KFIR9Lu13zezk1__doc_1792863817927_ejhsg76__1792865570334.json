@@ -1,0 +1,212 @@
+{
+  "documentId": "doc_1792863817927_ejhsg76",
+  "documentName": "DBMS_Unit_-_IV_C1_Transactions_Scheduling__1_.pptx",
+  "generatedAt": "2026-10-24T18:13:28.838Z",
+  "disclaimer": "AI-generated revision priorities, not guaranteed exam questions. Use to focus your preparation on high-yield topics.",
+  "prioritiesBreakdown": {
+    "high": 4,
+    "medium": 5,
+    "basic": 3
+  },
+  "questions": [
+    {
+      "id": "iq_1",
+      "question": "Provide a comprehensive explanation of \"Slide 1: 22CS201-DBMS\t\t\t\t\t\t\t                                                 Dept. of CSE\" (Slide 1) and describe its role in system execution.",
+      "importance": "High",
+      "category": "long_answer",
+      "topic": "22CS201-DBMS\t\t\t\t\t\t\t                                                 Dept. of CSE",
+      "suggestedAnswerPoints": [
+        "CS201-DBMS\t\t\t\t\t\t\t                                                 Dept. of CSE",
+        "Transaction Processing Concepts"
+      ],
+      "modelAnswer": "CS201-DBMS\t\t\t\t\t\t\t                                                 Dept. of CSE. Transaction Processing Concepts",
+      "sourceLocation": "Slide 1",
+      "location": "Slide 1",
+      "sourceSlide": 1,
+      "recommendedAnswerLength": "1-2 paragraphs / 5-10 marks"
+    },
+    {
+      "id": "iq_2",
+      "question": "State and explain the operational rules, conditions, or formulas governing \"Slide 2: Contents\" (Slide 2).",
+      "importance": "High",
+      "category": "process_formula",
+      "topic": "Contents",
+      "suggestedAnswerPoints": [
+        "Introduction to Transaction Processing",
+        "Transaction and System Concepts",
+        "Desirable Properties of Transactions"
+      ],
+      "modelAnswer": "Introduction to Transaction Processing. Transaction and System Concepts. Desirable Properties of Transactions",
+      "sourceLocation": "Slide 2",
+      "location": "Slide 2",
+      "sourceSlide": 2,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_3",
+      "question": "Provide a comprehensive explanation of \"Slide 3: Transaction\" (Slide 3) and describe its role in system execution.",
+      "importance": "High",
+      "category": "long_answer",
+      "topic": "Transaction",
+      "suggestedAnswerPoints": [
+        "A transaction is a program including a collection of database operations, executed as a logical unit .",
+        "In other words, a transaction is focusing on executing a series of operations as a single unit of work.",
+        "It is an atomic process that is either performed into completion entirely or is not performed at all."
+      ],
+      "modelAnswer": "A transaction is a program including a collection of database operations, executed as a logical unit .. In other words, a transaction is focusing on executing a series of operations as a single unit of work.. It is an atomic process that is either performed into completion entirely or is not performed at all.",
+      "sourceLocation": "Slide 3",
+      "location": "Slide 3",
+      "sourceSlide": 3,
+      "recommendedAnswerLength": "1-2 paragraphs / 5-10 marks"
+    },
+    {
+      "id": "iq_4",
+      "question": "Summarize the foundational principles of \"Slide 4: Transaction\" introduced in Slide 4.",
+      "importance": "Basic",
+      "category": "conceptual",
+      "topic": "Transaction",
+      "suggestedAnswerPoints": [
+        "In general transaction has two boundaries begin transaction and end transaction.",
+        "It includes insertion, deletion, modification, or retrieval operation in an application program."
+      ],
+      "modelAnswer": "In general transaction has two boundaries begin transaction and end transaction.. It includes insertion, deletion, modification, or retrieval operation in an application program.",
+      "sourceLocation": "Slide 4",
+      "location": "Slide 4",
+      "sourceSlide": 4,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_5",
+      "question": "What are the critical aspects and exam takeaways for \"Slide 5: Transaction processing systems\" according to Slide 5?",
+      "importance": "Medium",
+      "category": "short_answer",
+      "topic": "Transaction processing systems",
+      "suggestedAnswerPoints": [
+        "Transaction processing systems",
+        "Transaction processing systems are systems with “ large databases and hundreds of concurrent users” that are executing database transactions.",
+        "Examples of such systems are"
+      ],
+      "modelAnswer": "Transaction processing systems. Transaction processing systems are systems with “ large databases and hundreds of concurrent users” that are executing database transactions.. Examples of such systems are",
+      "sourceLocation": "Slide 5",
+      "location": "Slide 5",
+      "sourceSlide": 5,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_6",
+      "question": "Summarize the foundational principles of \"Slide 6: Basic database access operations\" introduced in Slide 6.",
+      "importance": "Basic",
+      "category": "conceptual",
+      "topic": "Basic database access operations",
+      "suggestedAnswerPoints": [
+        "Basic database access operations",
+        "read_item () − reads data item from storage to main memory.",
+        "write_item () − write the modified value from main memory to storage."
+      ],
+      "modelAnswer": "Basic database access operations. read_item () − reads data item from storage to main memory.. write_item () − write the modified value from main memory to storage.",
+      "sourceLocation": "Slide 6",
+      "location": "Slide 6",
+      "sourceSlide": 6,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_7",
+      "question": "State and explain the operational rules, conditions, or formulas governing \"Slide 7: Example\" (Slide 7).",
+      "importance": "High",
+      "category": "process_formula",
+      "topic": "Example",
+      "suggestedAnswerPoints": [
+        "| BEFORE T: X: 500 | Y: 200 |",
+        "| Transaction T |  |",
+        "| read_item (X) | read_item (Y) |"
+      ],
+      "modelAnswer": "| BEFORE T: X: 500 | Y: 200 |. | Transaction T |  |. | read_item (X) | read_item (Y) |",
+      "sourceLocation": "Slide 7",
+      "location": "Slide 7",
+      "sourceSlide": 7,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_8",
+      "question": "Summarize the foundational principles of \"Slide 8: Why Concurrency Control Is Needed\" introduced in Slide 8.",
+      "importance": "Basic",
+      "category": "conceptual",
+      "topic": "Why Concurrency Control Is Needed",
+      "suggestedAnswerPoints": [
+        "Why Concurrency Control Is Needed"
+      ],
+      "modelAnswer": "Why Concurrency Control Is Needed",
+      "sourceLocation": "Slide 8",
+      "location": "Slide 8",
+      "sourceSlide": 8,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_9",
+      "question": "What are the critical aspects and exam takeaways for \"Slide 9: Transaction Operations\" according to Slide 9?",
+      "importance": "Medium",
+      "category": "short_answer",
+      "topic": "Transaction Operations",
+      "suggestedAnswerPoints": [
+        "Transaction Operations",
+        "The low level operations performed in a transaction are −",
+        "begin_transaction − A marker that specifies start of transaction execution."
+      ],
+      "modelAnswer": "Transaction Operations. The low level operations performed in a transaction are −. begin_transaction − A marker that specifies start of transaction execution.",
+      "sourceLocation": "Slide 9",
+      "location": "Slide 9",
+      "sourceSlide": 9,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_10",
+      "question": "Define \"Slide 10: Transaction and system concepts\" and analyze its core principles as detailed in Slide 10.",
+      "importance": "Medium",
+      "category": "definition",
+      "topic": "Transaction and system concepts",
+      "suggestedAnswerPoints": [
+        "Transaction and system concepts",
+        "Transaction states:",
+        "Partially committed state"
+      ],
+      "modelAnswer": "Transaction and system concepts. Transaction states:. Partially committed state",
+      "sourceLocation": "Slide 10",
+      "location": "Slide 10",
+      "sourceSlide": 10,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_11",
+      "question": "Define \"Slide 11: States\" and analyze its core principles as detailed in Slide 11.",
+      "importance": "Medium",
+      "category": "definition",
+      "topic": "States",
+      "suggestedAnswerPoints": [
+        "Active State − The initial state where the transaction enters is the active state. The transaction remains in this state while it is executing read or write operations.",
+        "Partially Committed − The transaction enters this state after the last statement of the transaction has been executed."
+      ],
+      "modelAnswer": "Active State − The initial state where the transaction enters is the active state. The transaction remains in this state while it is executing read or write operations.. Partially Committed − The transaction enters this state after the last statement of the transaction has been executed.",
+      "sourceLocation": "Slide 11",
+      "location": "Slide 11",
+      "sourceSlide": 11,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_12",
+      "question": "Define \"Slide 12: States\" and analyze its core principles as detailed in Slide 12.",
+      "importance": "Medium",
+      "category": "definition",
+      "topic": "States",
+      "suggestedAnswerPoints": [
+        "Committed − The transaction enters this state after successful completion of the transaction and system checks have issued commit signal.",
+        "Failed − The transaction goes from partially committed state or active state to failed state when it is discovered that normal execution can no longer proceed or system checks fail.",
+        "Rollback/Aborted − This signals that the transaction has ended unsuccessfully, so that any changes or effects that the transaction may have applied to the database must be undone."
+      ],
+      "modelAnswer": "Committed − The transaction enters this state after successful completion of the transaction and system checks have issued commit signal.. Failed − The transaction goes from partially committed state or active state to failed state when it is discovered that normal execution can no longer proceed or system checks fail.. Rollback/Aborted − This signals that the transaction has ended unsuccessfully, so that any changes or effects that the transaction may have applied to the database must be undone.",
+      "sourceLocation": "Slide 12",
+      "location": "Slide 12",
+      "sourceSlide": 12,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    }
+  ]
+}

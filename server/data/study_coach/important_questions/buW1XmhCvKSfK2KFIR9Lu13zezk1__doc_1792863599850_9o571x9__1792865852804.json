@@ -1,0 +1,210 @@
+{
+  "documentId": "doc_1792863599850_9o571x9",
+  "documentName": "M2-Unit1.pptx",
+  "generatedAt": "2026-10-24T18:18:53.402Z",
+  "disclaimer": "AI-generated revision priorities, not guaranteed exam questions. Use to focus your preparation on high-yield topics.",
+  "prioritiesBreakdown": {
+    "high": 3,
+    "medium": 4,
+    "basic": 5
+  },
+  "questions": [
+    {
+      "id": "iq_1",
+      "question": "Provide a comprehensive explanation of \"Slide 1: M2:Unit-1 - Inheritance, Packages Interfaces &Exception handling\" (Slide 1) and describe its role in system execution.",
+      "importance": "High",
+      "category": "long_answer",
+      "topic": "M2:Unit-1 - Inheritance, Packages Interfaces &Exception handling",
+      "suggestedAnswerPoints": [
+        "M2:Unit-1 - Inheritance, Packages , Interfaces &Exception handling"
+      ],
+      "modelAnswer": "M2:Unit-1 - Inheritance, Packages , Interfaces &Exception handling",
+      "sourceLocation": "Slide 1",
+      "location": "Slide 1",
+      "sourceSlide": 1,
+      "recommendedAnswerLength": "1-2 paragraphs / 5-10 marks"
+    },
+    {
+      "id": "iq_2",
+      "question": "Compare and contrast the key mechanisms discussed in \"Slide 2: Syllabus\" (Slide 2).",
+      "importance": "High",
+      "category": "comparison",
+      "topic": "Syllabus",
+      "suggestedAnswerPoints": [
+        "Inheritance  Basic ,Types of inheritance,  Member access rules, Usage of super key word, Method overriding, Using final, Abstract classes, Differences between abstract classes and interfaces, Defining an interface, Implementing interface, Applying interfaces, Variables in interface and Extending interfaces. Defining , creating and accessing a package ,Importing packages ,Access control in package"
+      ],
+      "modelAnswer": "Inheritance  Basic ,Types of inheritance,  Member access rules, Usage of super key word, Method overriding, Using final, Abstract classes, Differences between abstract classes and interfaces, Defining an interface, Implementing interface, Applying interfaces, Variables in interface and Extending interfaces. Defining , creating and accessing a package ,Importing packages ,Access control in package",
+      "sourceLocation": "Slide 2",
+      "location": "Slide 2",
+      "sourceSlide": 2,
+      "recommendedAnswerLength": "3-4 bullet comparison / 5 marks"
+    },
+    {
+      "id": "iq_3",
+      "question": "Provide a comprehensive explanation of \"Slide 3: Inheritance-Introduction\" (Slide 3) and describe its role in system execution.",
+      "importance": "High",
+      "category": "long_answer",
+      "topic": "Inheritance-Introduction",
+      "suggestedAnswerPoints": [
+        "Inheritance-Introduction",
+        "Inheritance is an important feature of object oriented  programming.",
+        "Inheritance can be defined as the process where one class acquires the properties methods and fields of another class."
+      ],
+      "modelAnswer": "Inheritance-Introduction. Inheritance is an important feature of object oriented  programming.. Inheritance can be defined as the process where one class acquires the properties methods and fields of another class.",
+      "sourceLocation": "Slide 3",
+      "location": "Slide 3",
+      "sourceSlide": 3,
+      "recommendedAnswerLength": "1-2 paragraphs / 5-10 marks"
+    },
+    {
+      "id": "iq_4",
+      "question": "Summarize the foundational principles of \"Slide 4: extends Keyword :\" introduced in Slide 4.",
+      "importance": "Basic",
+      "category": "conceptual",
+      "topic": "extends Keyword :",
+      "suggestedAnswerPoints": [
+        "extends Keyword :",
+        "extends is the keyword used to inherit the properties of a class.",
+        "syntax of extends keyword."
+      ],
+      "modelAnswer": "extends Keyword :. extends is the keyword used to inherit the properties of a class.. syntax of extends keyword.",
+      "sourceLocation": "Slide 4",
+      "location": "Slide 4",
+      "sourceSlide": 4,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_5",
+      "question": "What are the critical aspects and exam takeaways for \"Slide 5: Types of Inheritance\" according to Slide 5?",
+      "importance": "Medium",
+      "category": "short_answer",
+      "topic": "Types of Inheritance",
+      "suggestedAnswerPoints": [
+        "Types of Inheritance",
+        "Inheritance is generally of five types : single level, multilevel, multiple, hierarchical and hybrid."
+      ],
+      "modelAnswer": "Types of Inheritance. Inheritance is generally of five types : single level, multilevel, multiple, hierarchical and hybrid.",
+      "sourceLocation": "Slide 5",
+      "location": "Slide 5",
+      "sourceSlide": 5,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_6",
+      "question": "Summarize the foundational principles of \"Slide 6: Single-level Inheritance\" introduced in Slide 6.",
+      "importance": "Basic",
+      "category": "conceptual",
+      "topic": "Single-level Inheritance",
+      "suggestedAnswerPoints": [
+        "Single-level Inheritance",
+        "In single level inheritance, there is just one base and one derived class. It is represented as follows :"
+      ],
+      "modelAnswer": "Single-level Inheritance. In single level inheritance, there is just one base and one derived class. It is represented as follows :",
+      "sourceLocation": "Slide 6",
+      "location": "Slide 6",
+      "sourceSlide": 6,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_7",
+      "question": "What are the critical aspects and exam takeaways for \"Slide 8: Multilevel Inheritance\" according to Slide 8?",
+      "importance": "Medium",
+      "category": "short_answer",
+      "topic": "Multilevel Inheritance",
+      "suggestedAnswerPoints": [
+        "Multilevel Inheritance",
+        "In multilevel inheritance, there is one base class and one derived class at the same time at one level.",
+        "At the next level, the derived class becomes base class for the next derived class and so on. This is shown as:"
+      ],
+      "modelAnswer": "Multilevel Inheritance. In multilevel inheritance, there is one base class and one derived class at the same time at one level.. At the next level, the derived class becomes base class for the next derived class and so on. This is shown as:",
+      "sourceLocation": "Slide 8",
+      "location": "Slide 8",
+      "sourceSlide": 8,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_8",
+      "question": "Summarize the foundational principles of \"Slide 10\" introduced in Slide 10.",
+      "importance": "Basic",
+      "category": "conceptual",
+      "topic": "Slide 10",
+      "suggestedAnswerPoints": [
+        "The class A and class B together form one level, class B and class C together form another level and so on.",
+        "For class B, class A is the parent and for class C, class B is the parent; thus in this inheritance level, A can be called the grandparent of class C, and class C the grandchild of class A"
+      ],
+      "modelAnswer": "The class A and class B together form one level, class B and class C together form another level and so on.. For class B, class A is the parent and for class C, class B is the parent; thus in this inheritance level, A can be called the grandparent of class C, and class C the grandchild of class A",
+      "sourceLocation": "Slide 10",
+      "location": "Slide 10",
+      "sourceSlide": 10,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_9",
+      "question": "What are the critical aspects and exam takeaways for \"Slide 12: Multiple Inheritance\" according to Slide 12?",
+      "importance": "Medium",
+      "category": "short_answer",
+      "topic": "Multiple Inheritance",
+      "suggestedAnswerPoints": [
+        "Multiple Inheritance",
+        "In a multiple inheritance, a child can have more than one parent, i.e., a child can inherit properties from more than one class.",
+        "Java does not support Multiple inheritance ,to implement this we can use the concept of interfaces"
+      ],
+      "modelAnswer": "Multiple Inheritance. In a multiple inheritance, a child can have more than one parent, i.e., a child can inherit properties from more than one class.. Java does not support Multiple inheritance ,to implement this we can use the concept of interfaces",
+      "sourceLocation": "Slide 12",
+      "location": "Slide 12",
+      "sourceSlide": 12,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_10",
+      "question": "Summarize the foundational principles of \"Slide 13\" introduced in Slide 13.",
+      "importance": "Basic",
+      "category": "conceptual",
+      "topic": "Slide 13",
+      "suggestedAnswerPoints": [
+        "Unfortunately, Java does not support the multiple inheritances through classes though it supports using interfaces",
+        "That is, in Java one cannot write the following syntax:",
+        "class A { } class B {     }"
+      ],
+      "modelAnswer": "Unfortunately, Java does not support the multiple inheritances through classes though it supports using interfaces. That is, in Java one cannot write the following syntax:. class A { } class B {     }",
+      "sourceLocation": "Slide 13",
+      "location": "Slide 13",
+      "sourceSlide": 13,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_11",
+      "question": "What are the critical aspects and exam takeaways for \"Slide 14: Hierarchical Inheritance\" according to Slide 14?",
+      "importance": "Medium",
+      "category": "short_answer",
+      "topic": "Hierarchical Inheritance",
+      "suggestedAnswerPoints": [
+        "Hierarchical Inheritance",
+        "In this type of inheritance, multiple classes share the same base class.",
+        "That is, numbers of classes inherit the properties of one common base class."
+      ],
+      "modelAnswer": "Hierarchical Inheritance. In this type of inheritance, multiple classes share the same base class.. That is, numbers of classes inherit the properties of one common base class.",
+      "sourceLocation": "Slide 14",
+      "location": "Slide 14",
+      "sourceSlide": 14,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_12",
+      "question": "Summarize the foundational principles of \"Slide 16: Hybrid  Inheritance\" introduced in Slide 16.",
+      "importance": "Basic",
+      "category": "conceptual",
+      "topic": "Hybrid  Inheritance",
+      "suggestedAnswerPoints": [
+        "Hybrid  Inheritance",
+        "Hybrid Inheritance is a combination of both Single Inheritance and Multiple Inheritance.",
+        "Since in Java Multiple Inheritance is not supported directly we can achieve Hybrid inheritance also through Interfaces only."
+      ],
+      "modelAnswer": "Hybrid  Inheritance. Hybrid Inheritance is a combination of both Single Inheritance and Multiple Inheritance.. Since in Java Multiple Inheritance is not supported directly we can achieve Hybrid inheritance also through Interfaces only.",
+      "sourceLocation": "Slide 16",
+      "location": "Slide 16",
+      "sourceSlide": 16,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    }
+  ]
+}

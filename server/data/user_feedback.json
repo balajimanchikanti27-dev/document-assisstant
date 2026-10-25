@@ -1,0 +1,34 @@
+[
+  {
+    "id": "fb_1792473664120_voywei",
+    "timestamp": 1792473664120,
+    "messageId": "msg_test_03",
+    "conversationId": "chat_02",
+    "userId": "user_eval_b",
+    "mode": "document",
+    "rating": "dislike",
+    "category": "missing_citation",
+    "comment": "Need page number."
+  },
+  {
+    "id": "fb_1792473664118_1yjf1c",
+    "timestamp": 1792473664118,
+    "messageId": "msg_test_02",
+    "conversationId": "chat_01",
+    "userId": "user_eval_a",
+    "mode": "research",
+    "rating": "like",
+    "category": "accurate"
+  },
+  {
+    "id": "fb_1792473664118_91mwsv",
+    "timestamp": 1792473664118,
+    "messageId": "msg_test_01",
+    "conversationId": "chat_01",
+    "userId": "user_eval_a",
+    "mode": "document",
+    "rating": "like",
+    "category": "accurate",
+    "comment": "Precise slide citation."
+  }
+]

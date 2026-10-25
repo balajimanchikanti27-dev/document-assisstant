@@ -1,0 +1,112 @@
+{
+  "documentId": "doc_1792156713879_xpyhmsd",
+  "documentName": "Exception_Handling.pptx",
+  "generatedAt": "2026-10-24T18:16:01.641Z",
+  "disclaimer": "AI-generated revision priorities, not guaranteed exam questions. Use to focus your preparation on high-yield topics.",
+  "prioritiesBreakdown": {
+    "high": 3,
+    "medium": 1,
+    "basic": 2
+  },
+  "questions": [
+    {
+      "id": "iq_1",
+      "question": "Provide a comprehensive explanation of \"Slide 1: Exception Handling in Java\" (Slide 1) and describe its role in system execution.",
+      "importance": "High",
+      "category": "long_answer",
+      "topic": "Exception Handling in Java",
+      "suggestedAnswerPoints": [
+        "Exception Handling in Java",
+        "An exception is an abnormal condition that arises in a code sequence at runtime.",
+        "Java exception handling is managed via five keywords: try, catch, throw, throws, and finally."
+      ],
+      "modelAnswer": "Exception Handling in Java. An exception is an abnormal condition that arises in a code sequence at runtime.. Java exception handling is managed via five keywords: try, catch, throw, throws, and finally.",
+      "sourceLocation": "Slide 1",
+      "location": "Slide 1",
+      "sourceSlide": 1,
+      "recommendedAnswerLength": "1-2 paragraphs / 5-10 marks"
+    },
+    {
+      "id": "iq_2",
+      "question": "Compare and contrast the key mechanisms discussed in \"Slide 2: Checked vs Unchecked Exceptions\" (Slide 2).",
+      "importance": "High",
+      "category": "comparison",
+      "topic": "Checked vs Unchecked Exceptions",
+      "suggestedAnswerPoints": [
+        "Checked vs Unchecked Exceptions",
+        "Checked exceptions are checked at compile-time by the Java compiler.",
+        "Examples of checked exceptions include IOException and SQLException."
+      ],
+      "modelAnswer": "Checked vs Unchecked Exceptions. Checked exceptions are checked at compile-time by the Java compiler.. Examples of checked exceptions include IOException and SQLException.",
+      "sourceLocation": "Slide 2",
+      "location": "Slide 2",
+      "sourceSlide": 2,
+      "recommendedAnswerLength": "3-4 bullet comparison / 5 marks"
+    },
+    {
+      "id": "iq_3",
+      "question": "Provide a comprehensive explanation of \"Slide 3: The Finally Block and Resource Cleanup\" (Slide 3) and describe its role in system execution.",
+      "importance": "High",
+      "category": "long_answer",
+      "topic": "The Finally Block and Resource Cleanup",
+      "suggestedAnswerPoints": [
+        "The Finally Block and Resource Cleanup",
+        "The finally block always executes when the try block exits, regardless of whether an exception occurred.",
+        "Use finally or try-with-resources to close network sockets, database connections, and file streams."
+      ],
+      "modelAnswer": "The Finally Block and Resource Cleanup. The finally block always executes when the try block exits, regardless of whether an exception occurred.. Use finally or try-with-resources to close network sockets, database connections, and file streams.",
+      "sourceLocation": "Slide 3",
+      "location": "Slide 3",
+      "sourceSlide": 3,
+      "recommendedAnswerLength": "1-2 paragraphs / 5-10 marks"
+    },
+    {
+      "id": "iq_4",
+      "question": "Explain the significance and practical application of the following point from \"Slide 1: Exception Handling in Java\" (Slide 1): \"An exception is an abnormal condition that arises in a code sequence at runtime.\".",
+      "importance": "Basic",
+      "category": "application",
+      "topic": "Exception Handling in Java",
+      "suggestedAnswerPoints": [
+        "An exception is an abnormal condition that arises in a code sequence at runtime.",
+        "Derived from Slide 1"
+      ],
+      "modelAnswer": "An exception is an abnormal condition that arises in a code sequence at runtime.",
+      "sourceLocation": "Slide 1",
+      "location": "Slide 1",
+      "sourceSlide": 1,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_5",
+      "question": "Explain the significance and practical application of the following point from \"Slide 2: Checked vs Unchecked Exceptions\" (Slide 2): \"Checked exceptions are checked at compile-time by the Java compiler.\".",
+      "importance": "Medium",
+      "category": "application",
+      "topic": "Checked vs Unchecked Exceptions",
+      "suggestedAnswerPoints": [
+        "Checked exceptions are checked at compile-time by the Java compiler.",
+        "Derived from Slide 2"
+      ],
+      "modelAnswer": "Checked exceptions are checked at compile-time by the Java compiler.",
+      "sourceLocation": "Slide 2",
+      "location": "Slide 2",
+      "sourceSlide": 2,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    },
+    {
+      "id": "iq_6",
+      "question": "Explain the significance and practical application of the following point from \"Slide 3: The Finally Block and Resource Cleanup\" (Slide 3): \"The finally block always executes when the try block exits, regardless of whether an exception occur\".",
+      "importance": "Basic",
+      "category": "application",
+      "topic": "The Finally Block and Resource Cleanup",
+      "suggestedAnswerPoints": [
+        "The finally block always executes when the try block exits, regardless of whether an exception occurred.",
+        "Derived from Slide 3"
+      ],
+      "modelAnswer": "The finally block always executes when the try block exits, regardless of whether an exception occurred.",
+      "sourceLocation": "Slide 3",
+      "location": "Slide 3",
+      "sourceSlide": 3,
+      "recommendedAnswerLength": "2-3 sentences / 3 marks"
+    }
+  ]
+}

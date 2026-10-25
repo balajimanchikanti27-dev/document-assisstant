@@ -1,0 +1,318 @@
+{
+  "quizId": "quiz_1792865942531_ma3up",
+  "id": "quiz_1792865942531_ma3up",
+  "documentId": "doc_1792863599850_9o571x9",
+  "documentName": "M2-Unit1.pptx",
+  "questions": [
+    {
+      "id": "mcq_1",
+      "type": "mcq",
+      "question": "According to Slide 1, what is the significance or definition of \"M2:Unit-1 - Inheritance, Packages Interfaces &Exception handling\"?",
+      "options": [
+        "M2:Unit-1 - Inheritance, Packages , Interfaces &Exception handling",
+        "Defining , creating and accessing a package ,Importing packages ,Access control in package",
+        "important feature of object oriented  programming",
+        "syntax of extends keyword."
+      ],
+      "correctAnswer": "M2:Unit-1 - Inheritance, Packages , Interfaces &Exception handling",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "M2:Unit-1 - Inheritance, Packages , Interfaces &Exception handling",
+      "topic": "M2:Unit-1 - Inheritance, Packages Interfaces &Exception handling",
+      "sourceLocation": "Slide 1",
+      "sourceSlide": 1,
+      "sourceSnippet": "M2:Unit-1 - Inheritance, Packages , Interfaces &Exception handling",
+      "explanation": "In Slide 1, \"M2:Unit-1 - Inheritance, Packages Interfaces &Exception handling\" is explained: \"M2:Unit-1 - Inheritance, Packages , Interfaces &Exception handling...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_2",
+      "type": "mcq",
+      "question": "According to Slide 2, what is the significance or definition of \"Syllabus\"?",
+      "options": [
+        "Defining , creating and accessing a package ,Importing packages ,Access control in package",
+        "important feature of object oriented  programming",
+        "syntax of extends keyword.",
+        "Types of Inheritance\nInheritance is generally of five types : single level, multilevel, multiple, hierarchical and hybrid."
+      ],
+      "correctAnswer": "Defining , creating and accessing a package ,Importing packages ,Access control in package",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "Defining , creating and accessing a package ,Importing packages ,Access control in package",
+      "topic": "Syllabus",
+      "sourceLocation": "Slide 2",
+      "sourceSlide": 2,
+      "sourceSnippet": "Syllabus\nInheritance  Basic ,Types of inheritance,  Member access rules, Usage of super key word, Method overriding, Using final, Abstract classes, Differences ",
+      "explanation": "In Slide 2, \"Syllabus\" is explained: \"Defining , creating and accessing a package ,Importing packages ,Access control in package...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_3",
+      "type": "mcq",
+      "question": "According to Slide 3, what is the significance or definition of \"Inheritance-Introduction\"?",
+      "options": [
+        "important feature of object oriented  programming",
+        "syntax of extends keyword.",
+        "Types of Inheritance\nInheritance is generally of five types : single level, multilevel, multiple, hierarchical and hybrid.",
+        "It is represented as follows :"
+      ],
+      "correctAnswer": "important feature of object oriented  programming",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "important feature of object oriented  programming",
+      "topic": "Inheritance-Introduction",
+      "sourceLocation": "Slide 3",
+      "sourceSlide": 3,
+      "sourceSnippet": "Inheritance-Introduction\nInheritance is an important feature of object oriented  programming.\nInheritance can be defined as the process where one class acquires",
+      "explanation": "In Slide 3, \"Inheritance-Introduction\" is explained: \"important feature of object oriented  programming...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_4",
+      "type": "mcq",
+      "question": "According to Slide 4, what is the significance or definition of \"extends Keyword :\"?",
+      "options": [
+        "syntax of extends keyword.",
+        "Types of Inheritance\nInheritance is generally of five types : single level, multilevel, multiple, hierarchical and hybrid.",
+        "It is represented as follows :",
+        "At the next level, the derived class becomes base class for the next derived class and so on."
+      ],
+      "correctAnswer": "syntax of extends keyword.",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "syntax of extends keyword.",
+      "topic": "extends Keyword :",
+      "sourceLocation": "Slide 4",
+      "sourceSlide": 4,
+      "sourceSnippet": "extends Keyword :\nextends is the keyword used to inherit the properties of a class.\nsyntax of extends keyword.",
+      "explanation": "In Slide 4, \"extends Keyword :\" is explained: \"syntax of extends keyword....\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_5",
+      "type": "mcq",
+      "question": "According to Slide 5, what is the significance or definition of \"Types of Inheritance\"?",
+      "options": [
+        "Types of Inheritance\nInheritance is generally of five types : single level, multilevel, multiple, hierarchical and hybrid.",
+        "It is represented as follows :",
+        "At the next level, the derived class becomes base class for the next derived class and so on.",
+        "The class A and class B together form one level, class B and class C together form another level and so on."
+      ],
+      "correctAnswer": "Types of Inheritance\nInheritance is generally of five types : single level, multilevel, multiple, hierarchical and hybrid.",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "Types of Inheritance\nInheritance is generally of five types : single level, multilevel, multiple, hierarchical and hybrid.",
+      "topic": "Types of Inheritance",
+      "sourceLocation": "Slide 5",
+      "sourceSlide": 5,
+      "sourceSnippet": "Types of Inheritance\nInheritance is generally of five types : single level, multilevel, multiple, hierarchical and hybrid.",
+      "explanation": "In Slide 5, \"Types of Inheritance\" is explained: \"Types of Inheritance\nInheritance is generally of five types : single level, multilevel, multiple, hierarchical and hybri...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_6",
+      "type": "mcq",
+      "question": "According to Slide 6, what is the significance or definition of \"Single-level Inheritance\"?",
+      "options": [
+        "It is represented as follows :",
+        "At the next level, the derived class becomes base class for the next derived class and so on.",
+        "The class A and class B together form one level, class B and class C together form another level and so on.",
+        "Java does not support Multiple inheritance ,to implement this we can use the concept of interfaces"
+      ],
+      "correctAnswer": "It is represented as follows :",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "It is represented as follows :",
+      "topic": "Single-level Inheritance",
+      "sourceLocation": "Slide 6",
+      "sourceSlide": 6,
+      "sourceSnippet": "Single-level Inheritance\nIn single level inheritance, there is just one base and one derived class. It is represented as follows :",
+      "explanation": "In Slide 6, \"Single-level Inheritance\" is explained: \"It is represented as follows :...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_7",
+      "type": "mcq",
+      "question": "According to Slide 8, what is the significance or definition of \"Multilevel Inheritance\"?",
+      "options": [
+        "At the next level, the derived class becomes base class for the next derived class and so on.",
+        "The class A and class B together form one level, class B and class C together form another level and so on.",
+        "Java does not support Multiple inheritance ,to implement this we can use the concept of interfaces",
+        "Unfortunately, Java does not support the multiple inheritances through classes though it supports using interfaces\nThat is, in Java one cann"
+      ],
+      "correctAnswer": "At the next level, the derived class becomes base class for the next derived class and so on.",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "At the next level, the derived class becomes base class for the next derived class and so on.",
+      "topic": "Multilevel Inheritance",
+      "sourceLocation": "Slide 8",
+      "sourceSlide": 8,
+      "sourceSnippet": "Multilevel Inheritance\nIn multilevel inheritance, there is one base class and one derived class at the same time at one level.\nAt the next level, the derived cl",
+      "explanation": "In Slide 8, \"Multilevel Inheritance\" is explained: \"At the next level, the derived class becomes base class for the next derived class and so on....\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_8",
+      "type": "mcq",
+      "question": "According to Slide 10, what is the significance or definition of \"Slide 10\"?",
+      "options": [
+        "The class A and class B together form one level, class B and class C together form another level and so on.",
+        "Java does not support Multiple inheritance ,to implement this we can use the concept of interfaces",
+        "Unfortunately, Java does not support the multiple inheritances through classes though it supports using interfaces\nThat is, in Java one cann",
+        "That is, numbers of classes inherit the properties of one common base class."
+      ],
+      "correctAnswer": "The class A and class B together form one level, class B and class C together form another level and so on.",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "The class A and class B together form one level, class B and class C together form another level and so on.",
+      "topic": "Slide 10",
+      "sourceLocation": "Slide 10",
+      "sourceSlide": 10,
+      "sourceSnippet": "The class A and class B together form one level, class B and class C together form another level and so on.\nFor class B, class A is the parent and for class C, ",
+      "explanation": "In Slide 10, \"Slide 10\" is explained: \"The class A and class B together form one level, class B and class C together form another level and so on....\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_9",
+      "type": "mcq",
+      "question": "According to Slide 12, what is the significance or definition of \"Multiple Inheritance\"?",
+      "options": [
+        "Java does not support Multiple inheritance ,to implement this we can use the concept of interfaces",
+        "Unfortunately, Java does not support the multiple inheritances through classes though it supports using interfaces\nThat is, in Java one cann",
+        "That is, numbers of classes inherit the properties of one common base class.",
+        "combination of both Single Inheritance and Multiple Inheritance"
+      ],
+      "correctAnswer": "Java does not support Multiple inheritance ,to implement this we can use the concept of interfaces",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "Java does not support Multiple inheritance ,to implement this we can use the concept of interfaces",
+      "topic": "Multiple Inheritance",
+      "sourceLocation": "Slide 12",
+      "sourceSlide": 12,
+      "sourceSnippet": "Multiple Inheritance\nIn a multiple inheritance, a child can have more than one parent, i.e., a child can inherit properties from more than one class.\nJava does ",
+      "explanation": "In Slide 12, \"Multiple Inheritance\" is explained: \"Java does not support Multiple inheritance ,to implement this we can use the concept of interfaces...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_10",
+      "type": "mcq",
+      "question": "According to Slide 13, what is the significance or definition of \"Slide 13\"?",
+      "options": [
+        "Unfortunately, Java does not support the multiple inheritances through classes though it supports using interfaces\nThat is, in Java one cann",
+        "That is, numbers of classes inherit the properties of one common base class.",
+        "combination of both Single Inheritance and Multiple Inheritance",
+        "Why use inheritance in java\nFor Method Overriding (so runtime polymorphism can be achieved).\nFor Code Reusability."
+      ],
+      "correctAnswer": "Unfortunately, Java does not support the multiple inheritances through classes though it supports using interfaces\nThat is, in Java one cann",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "Unfortunately, Java does not support the multiple inheritances through classes though it supports using interfaces\nThat is, in Java one cann",
+      "topic": "Slide 13",
+      "sourceLocation": "Slide 13",
+      "sourceSlide": 13,
+      "sourceSnippet": "Unfortunately, Java does not support the multiple inheritances through classes though it supports using interfaces\nThat is, in Java one cannot write the followi",
+      "explanation": "In Slide 13, \"Slide 13\" is explained: \"Unfortunately, Java does not support the multiple inheritances through classes though it supports using interfaces\nThat ...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sa_11",
+      "type": "short_answer",
+      "question": "Explain the concept of \"Hierarchical Inheritance\" and its primary role according to Slide 14.",
+      "correctAnswer": "That is, numbers of classes inherit the properties of one common base class.",
+      "expectedAnswer": "That is, numbers of classes inherit the properties of one common base class.",
+      "acceptableKeywords": [
+        "numbers",
+        "classes",
+        "inherit",
+        "properties",
+        "common",
+        "base"
+      ],
+      "topic": "Hierarchical Inheritance",
+      "sourceLocation": "Slide 14",
+      "sourceSlide": 14,
+      "sourceSnippet": "Hierarchical Inheritance\nIn this type of inheritance, multiple classes share the same base class.\nThat is, numbers of classes inherit the properties of one comm",
+      "explanation": "In Slide 14: \"That is, numbers of classes inherit the properties of one common base class.\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sa_12",
+      "type": "short_answer",
+      "question": "Explain the concept of \"Hybrid  Inheritance\" and its primary role according to Slide 16.",
+      "correctAnswer": "combination of both Single Inheritance and Multiple Inheritance",
+      "expectedAnswer": "combination of both Single Inheritance and Multiple Inheritance",
+      "acceptableKeywords": [
+        "combination",
+        "both",
+        "single",
+        "inheritance",
+        "multiple",
+        "inheritance"
+      ],
+      "topic": "Hybrid  Inheritance",
+      "sourceLocation": "Slide 16",
+      "sourceSlide": 16,
+      "sourceSnippet": "Hybrid  Inheritance\nHybrid Inheritance is a combination of both Single Inheritance and Multiple Inheritance.\nSince in Java Multiple Inheritance is not supported",
+      "explanation": "In Slide 16: \"combination of both Single Inheritance and Multiple Inheritance\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sa_13",
+      "type": "short_answer",
+      "question": "Explain the concept of \"Why use inheritance in java\" and its primary role according to Slide 18.",
+      "correctAnswer": "Why use inheritance in java\nFor Method Overriding (so runtime polymorphism can be achieved).\nFor Code Reusability.",
+      "expectedAnswer": "Why use inheritance in java\nFor Method Overriding (so runtime polymorphism can be achieved).\nFor Code Reusability.",
+      "acceptableKeywords": [
+        "inheritance",
+        "java",
+        "method",
+        "overriding",
+        "runtime",
+        "polymorphism"
+      ],
+      "topic": "Why use inheritance in java",
+      "sourceLocation": "Slide 18",
+      "sourceSlide": 18,
+      "sourceSnippet": "Why use inheritance in java\nFor Method Overriding (so runtime polymorphism can be achieved).\nFor Code Reusability.",
+      "explanation": "In Slide 18: \"Why use inheritance in java\nFor Method Overriding (so runtime polymorphism can be achieved).\nFor Code Reusability.\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sa_14",
+      "type": "short_answer",
+      "question": "Explain the concept of \"Super Keyword\" and its primary role according to Slide 19.",
+      "correctAnswer": "reference variable that is used to refer parent class objects",
+      "expectedAnswer": "reference variable that is used to refer parent class objects",
+      "acceptableKeywords": [
+        "reference",
+        "variable",
+        "used",
+        "refer",
+        "parent",
+        "class"
+      ],
+      "topic": "Super Keyword",
+      "sourceLocation": "Slide 19",
+      "sourceSlide": 19,
+      "sourceSnippet": "Super Keyword\nThe super keyword in java is a reference variable that is used to refer parent class objects.\nThe keyword “super” came into the picture with the c",
+      "explanation": "In Slide 19: \"reference variable that is used to refer parent class objects\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sa_15",
+      "type": "short_answer",
+      "question": "Explain the concept of \"class SuperKeyword {\" and its primary role according to Slide 20.",
+      "correctAnswer": "class SuperKeyword {\nint a = 120;\nclass Keyword extends SuperKeyword {\nint a = 180;\nvoid display() {\nSystem.out.println (“Value of  a is: \" ",
+      "expectedAnswer": "class SuperKeyword {\nint a = 120;\nclass Keyword extends SuperKeyword {\nint a = 180;\nvoid display() {\nSystem.out.println (“Value of  a is: \" ",
+      "acceptableKeywords": [
+        "class",
+        "superkeyword",
+        "class",
+        "keyword",
+        "extends",
+        "superkeyword"
+      ],
+      "topic": "class SuperKeyword {",
+      "sourceLocation": "Slide 20",
+      "sourceSlide": 20,
+      "sourceSnippet": "class SuperKeyword {\nint a = 120;\nclass Keyword extends SuperKeyword {\nint a = 180;\nvoid display() {\nSystem.out.println (“Value of  a is: \" + super.a );   }\ncla",
+      "explanation": "In Slide 20: \"class SuperKeyword {\nint a = 120;\nclass Keyword extends SuperKeyword {\nint a = 180;\nvoid display() {\nSystem.out.println (“Value of  a is: \" \"",
+      "difficulty": "medium"
+    }
+  ],
+  "totalQuestions": 15,
+  "mcqCount": 10,
+  "shortAnswerCount": 5,
+  "generatedAt": "2026-10-24T18:19:02.531Z",
+  "modelUsed": "Document-Grounded-Coach-Engine"
+}

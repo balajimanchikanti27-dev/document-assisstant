@@ -1,0 +1,206 @@
+{
+  "userId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+  "documentId": "doc_1792863817927_ejhsg76",
+  "documentName": "DBMS_Unit_-_IV_C1_Transactions_Scheduling__1_.pptx",
+  "totalAttempts": 1,
+  "bestPercentage": 13,
+  "attempts": [
+    {
+      "attemptId": "attempt_1792865116630_ln6mi",
+      "score": 2,
+      "total": 15,
+      "percentage": 13,
+      "scorePercentage": 13,
+      "date": "2026-10-24T18:05:16.630Z"
+    }
+  ],
+  "currentWeakTopics": [
+    {
+      "topic": "States",
+      "topicName": "States",
+      "incorrectCount": 2,
+      "totalQuestionsInTopic": 2,
+      "recommendedSlides": [
+        "Slide 11",
+        "Slide 12"
+      ],
+      "revisionSlides": [
+        "Slide 11",
+        "Slide 12"
+      ],
+      "revisionGuidance": "Review Slide 11, Slide 12 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "recommendedRevision": "Review Slide 11, Slide 12 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "high"
+    },
+    {
+      "topic": "22CS201-DBMS\t\t\t\t\t\t\t                                                 Dept. of CSE",
+      "topicName": "22CS201-DBMS\t\t\t\t\t\t\t                                                 Dept. of CSE",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 1"
+      ],
+      "revisionSlides": [
+        "Slide 1"
+      ],
+      "revisionGuidance": "Review Slide 1 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "recommendedRevision": "Review Slide 1 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "Transaction",
+      "topicName": "Transaction",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 2,
+      "recommendedSlides": [
+        "Slide 3",
+        "Slide 4"
+      ],
+      "revisionSlides": [
+        "Slide 3",
+        "Slide 4"
+      ],
+      "revisionGuidance": "Review Slide 3, Slide 4 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "recommendedRevision": "Review Slide 3, Slide 4 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "Transaction processing systems",
+      "topicName": "Transaction processing systems",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 5"
+      ],
+      "revisionSlides": [
+        "Slide 5"
+      ],
+      "revisionGuidance": "Review Slide 5 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "recommendedRevision": "Review Slide 5 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "Basic database access operations",
+      "topicName": "Basic database access operations",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 6"
+      ],
+      "revisionSlides": [
+        "Slide 6"
+      ],
+      "revisionGuidance": "Review Slide 6 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "recommendedRevision": "Review Slide 6 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "Example",
+      "topicName": "Example",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 7"
+      ],
+      "revisionSlides": [
+        "Slide 7"
+      ],
+      "revisionGuidance": "Review Slide 7 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "recommendedRevision": "Review Slide 7 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "Why Concurrency Control Is Needed",
+      "topicName": "Why Concurrency Control Is Needed",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 8"
+      ],
+      "revisionSlides": [
+        "Slide 8"
+      ],
+      "revisionGuidance": "Review Slide 8 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "recommendedRevision": "Review Slide 8 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "Transaction Operations",
+      "topicName": "Transaction Operations",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 9"
+      ],
+      "revisionSlides": [
+        "Slide 9"
+      ],
+      "revisionGuidance": "Review Slide 9 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "recommendedRevision": "Review Slide 9 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "Transaction and system concepts",
+      "topicName": "Transaction and system concepts",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 10"
+      ],
+      "revisionSlides": [
+        "Slide 10"
+      ],
+      "revisionGuidance": "Review Slide 10 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "recommendedRevision": "Review Slide 10 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "Transaction States or State Transition Diagram",
+      "topicName": "Transaction States or State Transition Diagram",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 13"
+      ],
+      "revisionSlides": [
+        "Slide 13"
+      ],
+      "revisionGuidance": "Review Slide 13 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "recommendedRevision": "Review Slide 13 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "System  log",
+      "topicName": "System  log",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 14"
+      ],
+      "revisionSlides": [
+        "Slide 14"
+      ],
+      "revisionGuidance": "Review Slide 14 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "recommendedRevision": "Review Slide 14 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    },
+    {
+      "topic": "Slide 15",
+      "topicName": "Slide 15",
+      "incorrectCount": 1,
+      "totalQuestionsInTopic": 1,
+      "recommendedSlides": [
+        "Slide 15"
+      ],
+      "revisionSlides": [
+        "Slide 15"
+      ],
+      "revisionGuidance": "Review Slide 15 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "recommendedRevision": "Review Slide 15 focusing on core syntax, rules, and common pitfalls. Practice with direct code examples.",
+      "priority": "medium"
+    }
+  ],
+  "lastStudiedAt": "2026-10-24T18:05:16.633Z",
+  "latestScore": 2,
+  "latestPercentage": 13
+}

@@ -1,0 +1,318 @@
+{
+  "quizId": "quiz_1792865761540_w5qza",
+  "id": "quiz_1792865761540_w5qza",
+  "documentId": "doc_1792863817927_ejhsg76",
+  "documentName": "DBMS_Unit_-_IV_C1_Transactions_Scheduling__1_.pptx",
+  "questions": [
+    {
+      "id": "mcq_1",
+      "type": "mcq",
+      "question": "According to Slide 1, what is the significance or definition of \"22CS201-DBMS\t\t\t\t\t\t\t                                                 Dept. of CSE\"?",
+      "options": [
+        "22CS201-DBMS\t\t\t\t\t\t\t                                                 Dept.",
+        "Contents\nDepartment of Computer Science & Engineering\n2\nTransaction:\nIntroduction to Transaction Processing\nTransaction and System Concepts\n",
+        "program including a collection of database operations, executed as a logical unit",
+        "It includes insertion, deletion, modification, or retrieval operation in an application program."
+      ],
+      "correctAnswer": "22CS201-DBMS\t\t\t\t\t\t\t                                                 Dept.",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "22CS201-DBMS\t\t\t\t\t\t\t                                                 Dept.",
+      "topic": "22CS201-DBMS\t\t\t\t\t\t\t                                                 Dept. of CSE",
+      "sourceLocation": "Slide 1",
+      "sourceSlide": 1,
+      "sourceSnippet": "22CS201-DBMS\t\t\t\t\t\t\t                                                 Dept. of CSE\n1\nTransaction Processing Concepts",
+      "explanation": "In Slide 1, \"22CS201-DBMS\t\t\t\t\t\t\t                                                 Dept. of CSE\" is explained: \"22CS201-DBMS\t\t\t\t\t\t\t                                                 Dept....\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_2",
+      "type": "mcq",
+      "question": "According to Slide 2, what is the significance or definition of \"Contents\"?",
+      "options": [
+        "Contents\nDepartment of Computer Science & Engineering\n2\nTransaction:\nIntroduction to Transaction Processing\nTransaction and System Concepts\n",
+        "program including a collection of database operations, executed as a logical unit",
+        "It includes insertion, deletion, modification, or retrieval operation in an application program.",
+        "Transaction processing systems\nDepartment of Computer Science & Engineering\n5\nTransaction processing systems are systems with “ large databa"
+      ],
+      "correctAnswer": "Contents\nDepartment of Computer Science & Engineering\n2\nTransaction:\nIntroduction to Transaction Processing\nTransaction and System Concepts\n",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "Contents\nDepartment of Computer Science & Engineering\n2\nTransaction:\nIntroduction to Transaction Processing\nTransaction and System Concepts\n",
+      "topic": "Contents",
+      "sourceLocation": "Slide 2",
+      "sourceSlide": 2,
+      "sourceSnippet": "Contents\nDepartment of Computer Science & Engineering\n2\nTransaction:\nIntroduction to Transaction Processing\nTransaction and System Concepts\nDesirable Properties",
+      "explanation": "In Slide 2, \"Contents\" is explained: \"Contents\nDepartment of Computer Science & Engineering\n2\nTransaction:\nIntroduction to Transaction Processing\nTransaction ...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_3",
+      "type": "mcq",
+      "question": "According to Slide 3, what is the significance or definition of \"Transaction\"?",
+      "options": [
+        "program including a collection of database operations, executed as a logical unit",
+        "It includes insertion, deletion, modification, or retrieval operation in an application program.",
+        "Transaction processing systems\nDepartment of Computer Science & Engineering\n5\nTransaction processing systems are systems with “ large databa",
+        "write_item () − write the modified value from main memory to storage."
+      ],
+      "correctAnswer": "program including a collection of database operations, executed as a logical unit",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "program including a collection of database operations, executed as a logical unit",
+      "topic": "Transaction",
+      "sourceLocation": "Slide 3",
+      "sourceSlide": 3,
+      "sourceSnippet": "Transaction\nDepartment of Computer Science & Engineering\n3\nA transaction is a program including a collection of database operations, executed as a logical unit ",
+      "explanation": "In Slide 3, \"Transaction\" is explained: \"program including a collection of database operations, executed as a logical unit...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_4",
+      "type": "mcq",
+      "question": "According to Slide 4, what is the significance or definition of \"Transaction\"?",
+      "options": [
+        "It includes insertion, deletion, modification, or retrieval operation in an application program.",
+        "Transaction processing systems\nDepartment of Computer Science & Engineering\n5\nTransaction processing systems are systems with “ large databa",
+        "write_item () − write the modified value from main memory to storage.",
+        "Example\nDepartment of Computer Science & Engineering\n7\n\n| BEFORE T: X: 500 | Y: 200 |\n| --- | --- |\n| Transaction T |  |\n| T1 | T2 |\n| read_"
+      ],
+      "correctAnswer": "It includes insertion, deletion, modification, or retrieval operation in an application program.",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "It includes insertion, deletion, modification, or retrieval operation in an application program.",
+      "topic": "Transaction",
+      "sourceLocation": "Slide 4",
+      "sourceSlide": 4,
+      "sourceSnippet": "Transaction\nDepartment of Computer Science & Engineering\n4\nIn general transaction has two boundaries begin transaction and end transaction.\nIt includes insertio",
+      "explanation": "In Slide 4, \"Transaction\" is explained: \"It includes insertion, deletion, modification, or retrieval operation in an application program....\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_5",
+      "type": "mcq",
+      "question": "According to Slide 5, what is the significance or definition of \"Transaction processing systems\"?",
+      "options": [
+        "Transaction processing systems\nDepartment of Computer Science & Engineering\n5\nTransaction processing systems are systems with “ large databa",
+        "write_item () − write the modified value from main memory to storage.",
+        "Example\nDepartment of Computer Science & Engineering\n7\n\n| BEFORE T: X: 500 | Y: 200 |\n| --- | --- |\n| Transaction T |  |\n| T1 | T2 |\n| read_",
+        "Why Concurrency Control Is Needed"
+      ],
+      "correctAnswer": "Transaction processing systems\nDepartment of Computer Science & Engineering\n5\nTransaction processing systems are systems with “ large databa",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "Transaction processing systems\nDepartment of Computer Science & Engineering\n5\nTransaction processing systems are systems with “ large databa",
+      "topic": "Transaction processing systems",
+      "sourceLocation": "Slide 5",
+      "sourceSlide": 5,
+      "sourceSnippet": "Transaction processing systems\nDepartment of Computer Science & Engineering\n5\nTransaction processing systems are systems with “ large databases and hundreds of ",
+      "explanation": "In Slide 5, \"Transaction processing systems\" is explained: \"Transaction processing systems\nDepartment of Computer Science & Engineering\n5\nTransaction processing systems are systems...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_6",
+      "type": "mcq",
+      "question": "According to Slide 6, what is the significance or definition of \"Basic database access operations\"?",
+      "options": [
+        "write_item () − write the modified value from main memory to storage.",
+        "Example\nDepartment of Computer Science & Engineering\n7\n\n| BEFORE T: X: 500 | Y: 200 |\n| --- | --- |\n| Transaction T |  |\n| T1 | T2 |\n| read_",
+        "Why Concurrency Control Is Needed",
+        "read_item or write_item − Database operations that may be interleaved with main memory operations as a part of transaction."
+      ],
+      "correctAnswer": "write_item () − write the modified value from main memory to storage.",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "write_item () − write the modified value from main memory to storage.",
+      "topic": "Basic database access operations",
+      "sourceLocation": "Slide 6",
+      "sourceSlide": 6,
+      "sourceSnippet": "Basic database access operations\nDepartment of Computer Science & Engineering\n6\nread_item () − reads data item from storage to main memory.\nwrite_item () − writ",
+      "explanation": "In Slide 6, \"Basic database access operations\" is explained: \"write_item () − write the modified value from main memory to storage....\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_7",
+      "type": "mcq",
+      "question": "According to Slide 7, what is the significance or definition of \"Example\"?",
+      "options": [
+        "Example\nDepartment of Computer Science & Engineering\n7\n\n| BEFORE T: X: 500 | Y: 200 |\n| --- | --- |\n| Transaction T |  |\n| T1 | T2 |\n| read_",
+        "Why Concurrency Control Is Needed",
+        "read_item or write_item − Database operations that may be interleaved with main memory operations as a part of transaction.",
+        "Transaction and system concepts\nDepartment of Computer Science & Engineering\n10\nTransaction states:\nActive state\nPartially committed state\nC"
+      ],
+      "correctAnswer": "Example\nDepartment of Computer Science & Engineering\n7\n\n| BEFORE T: X: 500 | Y: 200 |\n| --- | --- |\n| Transaction T |  |\n| T1 | T2 |\n| read_",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "Example\nDepartment of Computer Science & Engineering\n7\n\n| BEFORE T: X: 500 | Y: 200 |\n| --- | --- |\n| Transaction T |  |\n| T1 | T2 |\n| read_",
+      "topic": "Example",
+      "sourceLocation": "Slide 7",
+      "sourceSlide": 7,
+      "sourceSnippet": "Example\nDepartment of Computer Science & Engineering\n7\n\n| BEFORE T: X: 500 | Y: 200 |\n| --- | --- |\n| Transaction T |  |\n| T1 | T2 |\n| read_item (X) | read_item",
+      "explanation": "In Slide 7, \"Example\" is explained: \"Example\nDepartment of Computer Science & Engineering\n7\n\n| BEFORE T: X: 500 | Y: 200 |\n| --- | --- |\n| Transaction T |  |...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_8",
+      "type": "mcq",
+      "question": "According to Slide 8, what is the significance or definition of \"Why Concurrency Control Is Needed\"?",
+      "options": [
+        "Why Concurrency Control Is Needed",
+        "read_item or write_item − Database operations that may be interleaved with main memory operations as a part of transaction.",
+        "Transaction and system concepts\nDepartment of Computer Science & Engineering\n10\nTransaction states:\nActive state\nPartially committed state\nC",
+        "The transaction remains in this state while it is executing read or write operations."
+      ],
+      "correctAnswer": "Why Concurrency Control Is Needed",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "Why Concurrency Control Is Needed",
+      "topic": "Why Concurrency Control Is Needed",
+      "sourceLocation": "Slide 8",
+      "sourceSlide": 8,
+      "sourceSnippet": "Why Concurrency Control Is Needed",
+      "explanation": "In Slide 8, \"Why Concurrency Control Is Needed\" is explained: \"Why Concurrency Control Is Needed...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_9",
+      "type": "mcq",
+      "question": "According to Slide 9, what is the significance or definition of \"Transaction Operations\"?",
+      "options": [
+        "read_item or write_item − Database operations that may be interleaved with main memory operations as a part of transaction.",
+        "Transaction and system concepts\nDepartment of Computer Science & Engineering\n10\nTransaction states:\nActive state\nPartially committed state\nC",
+        "The transaction remains in this state while it is executing read or write operations.",
+        "Rollback/Aborted − This signals that the transaction has ended unsuccessfully, so that any changes or effects that the transaction may have applied to the database must be undone."
+      ],
+      "correctAnswer": "read_item or write_item − Database operations that may be interleaved with main memory operations as a part of transaction.",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "read_item or write_item − Database operations that may be interleaved with main memory operations as a part of transaction.",
+      "topic": "Transaction Operations",
+      "sourceLocation": "Slide 9",
+      "sourceSlide": 9,
+      "sourceSnippet": "Transaction Operations\nDepartment of Computer Science & Engineering\n9\nThe low level operations performed in a transaction are −\nbegin_transaction − A marker tha",
+      "explanation": "In Slide 9, \"Transaction Operations\" is explained: \"read_item or write_item − Database operations that may be interleaved with main memory operations as a part of transacti...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_10",
+      "type": "mcq",
+      "question": "According to Slide 10, what is the significance or definition of \"Transaction and system concepts\"?",
+      "options": [
+        "Transaction and system concepts\nDepartment of Computer Science & Engineering\n10\nTransaction states:\nActive state\nPartially committed state\nC",
+        "The transaction remains in this state while it is executing read or write operations.",
+        "Rollback/Aborted − This signals that the transaction has ended unsuccessfully, so that any changes or effects that the transaction may have applied to the database must be undone.",
+        "Transaction States or State Transition Diagram\nDepartment of Computer Science & Engineering\n13"
+      ],
+      "correctAnswer": "Transaction and system concepts\nDepartment of Computer Science & Engineering\n10\nTransaction states:\nActive state\nPartially committed state\nC",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "Transaction and system concepts\nDepartment of Computer Science & Engineering\n10\nTransaction states:\nActive state\nPartially committed state\nC",
+      "topic": "Transaction and system concepts",
+      "sourceLocation": "Slide 10",
+      "sourceSlide": 10,
+      "sourceSnippet": "Transaction and system concepts\nDepartment of Computer Science & Engineering\n10\nTransaction states:\nActive state\nPartially committed state\nCommitted state\nFaile",
+      "explanation": "In Slide 10, \"Transaction and system concepts\" is explained: \"Transaction and system concepts\nDepartment of Computer Science & Engineering\n10\nTransaction states:\nActive state\nPartial...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sa_11",
+      "type": "short_answer",
+      "question": "Explain the concept of \"States\" and its primary role according to Slide 11.",
+      "correctAnswer": "The transaction remains in this state while it is executing read or write operations.",
+      "expectedAnswer": "The transaction remains in this state while it is executing read or write operations.",
+      "acceptableKeywords": [
+        "transaction",
+        "remains",
+        "state",
+        "while",
+        "executing",
+        "read"
+      ],
+      "topic": "States",
+      "sourceLocation": "Slide 11",
+      "sourceSlide": 11,
+      "sourceSnippet": "States\nDepartment of Computer Science & Engineering\n11\nActive State − The initial state where the transaction enters is the active state. The transaction remain",
+      "explanation": "In Slide 11: \"The transaction remains in this state while it is executing read or write operations.\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sa_12",
+      "type": "short_answer",
+      "question": "Explain the concept of \"States\" and its primary role according to Slide 12.",
+      "correctAnswer": "Rollback/Aborted − This signals that the transaction has ended unsuccessfully, so that any changes or effects that the transaction may have applied to the database must be undone.",
+      "expectedAnswer": "Rollback/Aborted − This signals that the transaction has ended unsuccessfully, so that any changes or effects that the transaction may have applied to the database must be undone.",
+      "acceptableKeywords": [
+        "rollbackaborted",
+        "signals",
+        "transaction",
+        "ended",
+        "unsuccessfully",
+        "changes"
+      ],
+      "topic": "States",
+      "sourceLocation": "Slide 12",
+      "sourceSlide": 12,
+      "sourceSnippet": "States\nDepartment of Computer Science & Engineering\n12\nCommitted − The transaction enters this state after successful completion of the transaction and system c",
+      "explanation": "In Slide 12: \"Rollback/Aborted − This signals that the transaction has ended unsuccessfully, so that any changes or effects that the transaction may have applied to the database must be undone.\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sa_13",
+      "type": "short_answer",
+      "question": "Explain the concept of \"Transaction States or State Transition Diagram\" and its primary role according to Slide 13.",
+      "correctAnswer": "Transaction States or State Transition Diagram\nDepartment of Computer Science & Engineering\n13",
+      "expectedAnswer": "Transaction States or State Transition Diagram\nDepartment of Computer Science & Engineering\n13",
+      "acceptableKeywords": [
+        "transaction",
+        "states",
+        "state",
+        "transition",
+        "diagram",
+        "department"
+      ],
+      "topic": "Transaction States or State Transition Diagram",
+      "sourceLocation": "Slide 13",
+      "sourceSlide": 13,
+      "sourceSnippet": "Transaction States or State Transition Diagram\nDepartment of Computer Science & Engineering\n13",
+      "explanation": "In Slide 13: \"Transaction States or State Transition Diagram\nDepartment of Computer Science & Engineering\n13\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sa_14",
+      "type": "short_answer",
+      "question": "Explain the concept of \"System  log\" and its primary role according to Slide 14.",
+      "correctAnswer": "System  log\nDepartment of Computer Science & Engineering\n14\nTo keep a track of all transaction operations system maintains log\nTransaction r",
+      "expectedAnswer": "System  log\nDepartment of Computer Science & Engineering\n14\nTo keep a track of all transaction operations system maintains log\nTransaction r",
+      "acceptableKeywords": [
+        "system",
+        "department",
+        "computer",
+        "science",
+        "engineering",
+        "keep"
+      ],
+      "topic": "System  log",
+      "sourceLocation": "Slide 14",
+      "sourceSlide": 14,
+      "sourceSnippet": "System  log\nDepartment of Computer Science & Engineering\n14\nTo keep a track of all transaction operations system maintains log\nTransaction refers unique transac",
+      "explanation": "In Slide 14: \"System  log\nDepartment of Computer Science & Engineering\n14\nTo keep a track of all transaction operations system maintains log\nTransaction r\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sa_15",
+      "type": "short_answer",
+      "question": "Explain the concept of \"Slide 15\" and its primary role according to Slide 15.",
+      "correctAnswer": "[ write_item , T, X, old_value , new_value ]: Indicates that transaction T has changed the value of database item X from old_value to new_value .",
+      "expectedAnswer": "[ write_item , T, X, old_value , new_value ]: Indicates that transaction T has changed the value of database item X from old_value to new_value .",
+      "acceptableKeywords": [
+        "writeitem",
+        "oldvalue",
+        "newvalue",
+        "indicates",
+        "transaction",
+        "changed"
+      ],
+      "topic": "Slide 15",
+      "sourceLocation": "Slide 15",
+      "sourceSlide": 15,
+      "sourceSnippet": "In these entries, T refers to a unique transaction-id that is generated automatically by the system for each transaction and that is used to identify each trans",
+      "explanation": "In Slide 15: \"[ write_item , T, X, old_value , new_value ]: Indicates that transaction T has changed the value of database item X from old_value to new_value .\"",
+      "difficulty": "medium"
+    }
+  ],
+  "totalQuestions": 15,
+  "mcqCount": 10,
+  "shortAnswerCount": 5,
+  "generatedAt": "2026-10-24T18:16:01.541Z",
+  "modelUsed": "Document-Grounded-Coach-Engine"
+}

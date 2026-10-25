@@ -1,0 +1,318 @@
+{
+  "quizId": "quiz_1792865727776_k7zx4",
+  "id": "quiz_1792865727776_k7zx4",
+  "documentId": "doc_1792156713879_xpyhmsd",
+  "documentName": "Exception_Handling.pptx",
+  "questions": [
+    {
+      "id": "mcq_1",
+      "type": "mcq",
+      "question": "According to Slide 1, what is the significance or definition of \"Exception Handling in Java\"?",
+      "options": [
+        "abnormal condition that arises in a code sequence at runtime",
+        "Examples of checked exceptions include IOException and SQLException.",
+        "Use finally or try-with-resources to close network sockets, database connections, and file streams.",
+        "A transient condition that automatically rolls back upon subsequent read operations."
+      ],
+      "correctAnswer": "abnormal condition that arises in a code sequence at runtime",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "abnormal condition that arises in a code sequence at runtime",
+      "topic": "Exception Handling in Java",
+      "sourceLocation": "Slide 1",
+      "sourceSlide": 1,
+      "sourceSnippet": "Exception Handling in Java\nAn exception is an abnormal condition that arises in a code sequence at runtime.\nJava exception handling is managed via five keywords",
+      "explanation": "In Slide 1, \"Exception Handling in Java\" is explained: \"abnormal condition that arises in a code sequence at runtime...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_2",
+      "type": "mcq",
+      "question": "According to Slide 2, what is the significance or definition of \"Checked vs Unchecked Exceptions\"?",
+      "options": [
+        "Examples of checked exceptions include IOException and SQLException.",
+        "Use finally or try-with-resources to close network sockets, database connections, and file streams.",
+        "abnormal condition that arises in a code sequence at runtime",
+        "A transient condition that automatically rolls back upon subsequent read operations."
+      ],
+      "correctAnswer": "Examples of checked exceptions include IOException and SQLException.",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "Examples of checked exceptions include IOException and SQLException.",
+      "topic": "Checked vs Unchecked Exceptions",
+      "sourceLocation": "Slide 2",
+      "sourceSlide": 2,
+      "sourceSnippet": "Checked vs Unchecked Exceptions\nChecked exceptions are checked at compile-time by the Java compiler.\nExamples of checked exceptions include IOException and SQLE",
+      "explanation": "In Slide 2, \"Checked vs Unchecked Exceptions\" is explained: \"Examples of checked exceptions include IOException and SQLException....\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_3",
+      "type": "mcq",
+      "question": "According to Slide 3, what is the significance or definition of \"The Finally Block and Resource Cleanup\"?",
+      "options": [
+        "Use finally or try-with-resources to close network sockets, database connections, and file streams.",
+        "abnormal condition that arises in a code sequence at runtime",
+        "Examples of checked exceptions include IOException and SQLException.",
+        "A transient condition that automatically rolls back upon subsequent read operations."
+      ],
+      "correctAnswer": "Use finally or try-with-resources to close network sockets, database connections, and file streams.",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "Use finally or try-with-resources to close network sockets, database connections, and file streams.",
+      "topic": "The Finally Block and Resource Cleanup",
+      "sourceLocation": "Slide 3",
+      "sourceSlide": 3,
+      "sourceSnippet": "The Finally Block and Resource Cleanup\nThe finally block always executes when the try block exits, regardless of whether an exception occurred.\nUse finally or t",
+      "explanation": "In Slide 3, \"The Finally Block and Resource Cleanup\" is explained: \"Use finally or try-with-resources to close network sockets, database connections, and file streams....\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_4",
+      "type": "mcq",
+      "question": "According to Slide 1, what is the significance or definition of \"Exception Handling in Java\"?",
+      "options": [
+        "abnormal condition that arises in a code sequence at runtime",
+        "Examples of checked exceptions include IOException and SQLException.",
+        "Use finally or try-with-resources to close network sockets, database connections, and file streams.",
+        "A transient condition that automatically rolls back upon subsequent read operations."
+      ],
+      "correctAnswer": "abnormal condition that arises in a code sequence at runtime",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "abnormal condition that arises in a code sequence at runtime",
+      "topic": "Exception Handling in Java",
+      "sourceLocation": "Slide 1",
+      "sourceSlide": 1,
+      "sourceSnippet": "Exception Handling in Java\nAn exception is an abnormal condition that arises in a code sequence at runtime.\nJava exception handling is managed via five keywords",
+      "explanation": "In Slide 1, \"Exception Handling in Java\" is explained: \"abnormal condition that arises in a code sequence at runtime...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_5",
+      "type": "mcq",
+      "question": "According to Slide 2, what is the significance or definition of \"Checked vs Unchecked Exceptions\"?",
+      "options": [
+        "Examples of checked exceptions include IOException and SQLException.",
+        "Use finally or try-with-resources to close network sockets, database connections, and file streams.",
+        "abnormal condition that arises in a code sequence at runtime",
+        "A transient condition that automatically rolls back upon subsequent read operations."
+      ],
+      "correctAnswer": "Examples of checked exceptions include IOException and SQLException.",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "Examples of checked exceptions include IOException and SQLException.",
+      "topic": "Checked vs Unchecked Exceptions",
+      "sourceLocation": "Slide 2",
+      "sourceSlide": 2,
+      "sourceSnippet": "Checked vs Unchecked Exceptions\nChecked exceptions are checked at compile-time by the Java compiler.\nExamples of checked exceptions include IOException and SQLE",
+      "explanation": "In Slide 2, \"Checked vs Unchecked Exceptions\" is explained: \"Examples of checked exceptions include IOException and SQLException....\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_6",
+      "type": "mcq",
+      "question": "According to Slide 3, what is the significance or definition of \"The Finally Block and Resource Cleanup\"?",
+      "options": [
+        "Use finally or try-with-resources to close network sockets, database connections, and file streams.",
+        "abnormal condition that arises in a code sequence at runtime",
+        "Examples of checked exceptions include IOException and SQLException.",
+        "A transient condition that automatically rolls back upon subsequent read operations."
+      ],
+      "correctAnswer": "Use finally or try-with-resources to close network sockets, database connections, and file streams.",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "Use finally or try-with-resources to close network sockets, database connections, and file streams.",
+      "topic": "The Finally Block and Resource Cleanup",
+      "sourceLocation": "Slide 3",
+      "sourceSlide": 3,
+      "sourceSnippet": "The Finally Block and Resource Cleanup\nThe finally block always executes when the try block exits, regardless of whether an exception occurred.\nUse finally or t",
+      "explanation": "In Slide 3, \"The Finally Block and Resource Cleanup\" is explained: \"Use finally or try-with-resources to close network sockets, database connections, and file streams....\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_7",
+      "type": "mcq",
+      "question": "According to Slide 1, what is the significance or definition of \"Exception Handling in Java\"?",
+      "options": [
+        "abnormal condition that arises in a code sequence at runtime",
+        "Examples of checked exceptions include IOException and SQLException.",
+        "Use finally or try-with-resources to close network sockets, database connections, and file streams.",
+        "A transient condition that automatically rolls back upon subsequent read operations."
+      ],
+      "correctAnswer": "abnormal condition that arises in a code sequence at runtime",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "abnormal condition that arises in a code sequence at runtime",
+      "topic": "Exception Handling in Java",
+      "sourceLocation": "Slide 1",
+      "sourceSlide": 1,
+      "sourceSnippet": "Exception Handling in Java\nAn exception is an abnormal condition that arises in a code sequence at runtime.\nJava exception handling is managed via five keywords",
+      "explanation": "In Slide 1, \"Exception Handling in Java\" is explained: \"abnormal condition that arises in a code sequence at runtime...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_8",
+      "type": "mcq",
+      "question": "According to Slide 2, what is the significance or definition of \"Checked vs Unchecked Exceptions\"?",
+      "options": [
+        "Examples of checked exceptions include IOException and SQLException.",
+        "Use finally or try-with-resources to close network sockets, database connections, and file streams.",
+        "abnormal condition that arises in a code sequence at runtime",
+        "A transient condition that automatically rolls back upon subsequent read operations."
+      ],
+      "correctAnswer": "Examples of checked exceptions include IOException and SQLException.",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "Examples of checked exceptions include IOException and SQLException.",
+      "topic": "Checked vs Unchecked Exceptions",
+      "sourceLocation": "Slide 2",
+      "sourceSlide": 2,
+      "sourceSnippet": "Checked vs Unchecked Exceptions\nChecked exceptions are checked at compile-time by the Java compiler.\nExamples of checked exceptions include IOException and SQLE",
+      "explanation": "In Slide 2, \"Checked vs Unchecked Exceptions\" is explained: \"Examples of checked exceptions include IOException and SQLException....\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_9",
+      "type": "mcq",
+      "question": "According to Slide 3, what is the significance or definition of \"The Finally Block and Resource Cleanup\"?",
+      "options": [
+        "Use finally or try-with-resources to close network sockets, database connections, and file streams.",
+        "abnormal condition that arises in a code sequence at runtime",
+        "Examples of checked exceptions include IOException and SQLException.",
+        "A transient condition that automatically rolls back upon subsequent read operations."
+      ],
+      "correctAnswer": "Use finally or try-with-resources to close network sockets, database connections, and file streams.",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "Use finally or try-with-resources to close network sockets, database connections, and file streams.",
+      "topic": "The Finally Block and Resource Cleanup",
+      "sourceLocation": "Slide 3",
+      "sourceSlide": 3,
+      "sourceSnippet": "The Finally Block and Resource Cleanup\nThe finally block always executes when the try block exits, regardless of whether an exception occurred.\nUse finally or t",
+      "explanation": "In Slide 3, \"The Finally Block and Resource Cleanup\" is explained: \"Use finally or try-with-resources to close network sockets, database connections, and file streams....\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "mcq_10",
+      "type": "mcq",
+      "question": "According to Slide 1, what is the significance or definition of \"Exception Handling in Java\"?",
+      "options": [
+        "abnormal condition that arises in a code sequence at runtime",
+        "Examples of checked exceptions include IOException and SQLException.",
+        "Use finally or try-with-resources to close network sockets, database connections, and file streams.",
+        "A transient condition that automatically rolls back upon subsequent read operations."
+      ],
+      "correctAnswer": "abnormal condition that arises in a code sequence at runtime",
+      "correctOptionIndex": 0,
+      "expectedAnswer": "abnormal condition that arises in a code sequence at runtime",
+      "topic": "Exception Handling in Java",
+      "sourceLocation": "Slide 1",
+      "sourceSlide": 1,
+      "sourceSnippet": "Exception Handling in Java\nAn exception is an abnormal condition that arises in a code sequence at runtime.\nJava exception handling is managed via five keywords",
+      "explanation": "In Slide 1, \"Exception Handling in Java\" is explained: \"abnormal condition that arises in a code sequence at runtime...\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sa_11",
+      "type": "short_answer",
+      "question": "Explain the concept of \"Checked vs Unchecked Exceptions\" and its primary role according to Slide 2.",
+      "correctAnswer": "Examples of checked exceptions include IOException and SQLException.",
+      "expectedAnswer": "Examples of checked exceptions include IOException and SQLException.",
+      "acceptableKeywords": [
+        "examples",
+        "checked",
+        "exceptions",
+        "include",
+        "ioexception",
+        "sqlexception"
+      ],
+      "topic": "Checked vs Unchecked Exceptions",
+      "sourceLocation": "Slide 2",
+      "sourceSlide": 2,
+      "sourceSnippet": "Checked vs Unchecked Exceptions\nChecked exceptions are checked at compile-time by the Java compiler.\nExamples of checked exceptions include IOException and SQLE",
+      "explanation": "In Slide 2: \"Examples of checked exceptions include IOException and SQLException.\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sa_12",
+      "type": "short_answer",
+      "question": "Explain the concept of \"The Finally Block and Resource Cleanup\" and its primary role according to Slide 3.",
+      "correctAnswer": "Use finally or try-with-resources to close network sockets, database connections, and file streams.",
+      "expectedAnswer": "Use finally or try-with-resources to close network sockets, database connections, and file streams.",
+      "acceptableKeywords": [
+        "finally",
+        "trywithresources",
+        "close",
+        "network",
+        "sockets",
+        "database"
+      ],
+      "topic": "The Finally Block and Resource Cleanup",
+      "sourceLocation": "Slide 3",
+      "sourceSlide": 3,
+      "sourceSnippet": "The Finally Block and Resource Cleanup\nThe finally block always executes when the try block exits, regardless of whether an exception occurred.\nUse finally or t",
+      "explanation": "In Slide 3: \"Use finally or try-with-resources to close network sockets, database connections, and file streams.\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sa_13",
+      "type": "short_answer",
+      "question": "Explain the concept of \"Exception Handling in Java\" and its primary role according to Slide 1.",
+      "correctAnswer": "abnormal condition that arises in a code sequence at runtime",
+      "expectedAnswer": "abnormal condition that arises in a code sequence at runtime",
+      "acceptableKeywords": [
+        "abnormal",
+        "condition",
+        "arises",
+        "code",
+        "sequence",
+        "runtime"
+      ],
+      "topic": "Exception Handling in Java",
+      "sourceLocation": "Slide 1",
+      "sourceSlide": 1,
+      "sourceSnippet": "Exception Handling in Java\nAn exception is an abnormal condition that arises in a code sequence at runtime.\nJava exception handling is managed via five keywords",
+      "explanation": "In Slide 1: \"abnormal condition that arises in a code sequence at runtime\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sa_14",
+      "type": "short_answer",
+      "question": "Explain the concept of \"Checked vs Unchecked Exceptions\" and its primary role according to Slide 2.",
+      "correctAnswer": "Examples of checked exceptions include IOException and SQLException.",
+      "expectedAnswer": "Examples of checked exceptions include IOException and SQLException.",
+      "acceptableKeywords": [
+        "examples",
+        "checked",
+        "exceptions",
+        "include",
+        "ioexception",
+        "sqlexception"
+      ],
+      "topic": "Checked vs Unchecked Exceptions",
+      "sourceLocation": "Slide 2",
+      "sourceSlide": 2,
+      "sourceSnippet": "Checked vs Unchecked Exceptions\nChecked exceptions are checked at compile-time by the Java compiler.\nExamples of checked exceptions include IOException and SQLE",
+      "explanation": "In Slide 2: \"Examples of checked exceptions include IOException and SQLException.\"",
+      "difficulty": "medium"
+    },
+    {
+      "id": "sa_15",
+      "type": "short_answer",
+      "question": "Explain the concept of \"The Finally Block and Resource Cleanup\" and its primary role according to Slide 3.",
+      "correctAnswer": "Use finally or try-with-resources to close network sockets, database connections, and file streams.",
+      "expectedAnswer": "Use finally or try-with-resources to close network sockets, database connections, and file streams.",
+      "acceptableKeywords": [
+        "finally",
+        "trywithresources",
+        "close",
+        "network",
+        "sockets",
+        "database"
+      ],
+      "topic": "The Finally Block and Resource Cleanup",
+      "sourceLocation": "Slide 3",
+      "sourceSlide": 3,
+      "sourceSnippet": "The Finally Block and Resource Cleanup\nThe finally block always executes when the try block exits, regardless of whether an exception occurred.\nUse finally or t",
+      "explanation": "In Slide 3: \"Use finally or try-with-resources to close network sockets, database connections, and file streams.\"",
+      "difficulty": "medium"
+    }
+  ],
+  "totalQuestions": 15,
+  "mcqCount": 10,
+  "shortAnswerCount": 5,
+  "generatedAt": "2026-10-24T18:15:27.776Z",
+  "modelUsed": "Document-Grounded-Coach-Engine"
+}
