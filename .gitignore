@@ -82,3 +82,5 @@ server/uploads/documents/*
 !server/uploads/documents/student_test_uid_401__*
 !server/uploads/documents/anonymous__*
 !server/uploads/documents/user1__*
+
+.vercel
