@@ -40,6 +40,8 @@ scratch/
 server/data/vector_index.json
 server/data/test_uploads/
 server/data/study_coach/attempts/
+server/data/study_coach/quizzes/
+server/data/study_coach/progress/
 server/data/study_summaries/
 
 # Runtime file uploads
