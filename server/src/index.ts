@@ -85,11 +85,11 @@ if (!fs.existsSync(permanentDocumentsDir)) {
 
 // Multer disk storage streams 100MB files directly to disk without memory buffering
 const diskStorage = multer.diskStorage({
-  destination: (_req, _file, cb) => {
+  destination: (_req: any, _file: any, cb: (error: Error | null, destination: string) => void) => {
     cb(null, tempUploadDir);
   },
-  filename: (_req, file, cb) => {
-    const safeName = file.originalname.replace(/[^a-zA-Z0-9._-]/g, '_');
+  filename: (_req: any, file: any, cb: (error: Error | null, filename: string) => void) => {
+    const safeName = (file?.originalname || 'document').replace(/[^a-zA-Z0-9._-]/g, '_');
     const unique = `doc_${Date.now()}_${Math.random().toString(36).substring(2, 8)}_${safeName}`;
     cb(null, unique);
   },
