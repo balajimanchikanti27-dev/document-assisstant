@@ -1,11 +1,15 @@
 # Dependencies
 node_modules/
+server/node_modules/
 /.pnp
 .pnp.js
 
 # Production build artifacts
 dist/
 build/
+server/dist/
+server/build/
+.vercel/
 
 # Environment files and credentials (CRITICAL: Never commit secrets)
 .env
@@ -13,8 +17,12 @@ build/
 .env.*.local
 server/.env
 server/.env.local
+server/.env.*.local
 serviceAccountKey.json
+*service-account*.json
+firebase-adminsdk*.json
 *.pem
+*.key
 
 # Firebase debug logs and cache
 firebase-debug.log
@@ -31,7 +39,23 @@ Thumbs.db
 *.sw?
 .idea/
 .vscode/
+
+# Build caches & logs
 *.tsbuildinfo
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.cache/
+.vite/
+.eslintcache
+
+# Python bytecode and caches
+__pycache__/
+server/__pycache__/
+*.py[cod]
+*$py.class
 
 # Scratch & temporary test scripts
 scratch/
@@ -42,12 +66,19 @@ server/data/test_uploads/
 server/data/study_coach/attempts/
 server/data/study_coach/quizzes/
 server/data/study_coach/progress/
+server/data/study_coach/important_questions/
 server/data/study_summaries/
 
-# Runtime file uploads
+# Runtime file uploads (Exclude dynamic user uploads while preserving existing repository test baselines)
 server/uploads/temp/*
 !server/uploads/temp/.gitkeep
-server/uploads/documents/test_*
-server/uploads/documents/user_*
-server/uploads/documents/tester_*
-server/uploads/documents/*DeepSpace*
+server/uploads/documents/*
+!server/uploads/documents/.gitkeep
+!server/uploads/documents/buW1XmhCvKSfK2KFIR9Lu13zezk1__doc_1792156713879_xpyhmsd__Exception_Handling.pptx
+!server/uploads/documents/buW1XmhCvKSfK2KFIR9Lu13zezk1__doc_1792863599850_9o571x9__M2-Unit1.pptx
+!server/uploads/documents/buW1XmhCvKSfK2KFIR9Lu13zezk1__doc_1792863817927_ejhsg76__DBMS_Unit_-_IV_C1_Transactions_Scheduling__1_.pptx
+!server/uploads/documents/buW1XmhCvKSfK2KFIR9Lu13zezk1__doc_1792895290600_rk28wxw__Normalization.pptx
+!server/uploads/documents/doc_db_architecture_v1_Database_Architecture.md
+!server/uploads/documents/student_test_uid_401__*
+!server/uploads/documents/anonymous__*
+!server/uploads/documents/user1__*
