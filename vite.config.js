@@ -1,12 +1,12 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import path from 'path';
+import { fileURLToPath, URL } from 'node:url';
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [react()],
     resolve: {
         alias: {
-            '@': path.resolve(__dirname, './src'),
+            '@': fileURLToPath(new URL('./src', import.meta.url)),
         },
     },
     server: {
@@ -19,7 +19,7 @@ export default defineConfig({
                 secure: false,
                 configure: function (proxy) {
                     proxy.on('error', function (err, req) {
-                        console.warn("[vite proxy error] ".concat(req.method, " ").concat(req.url, ":"), err.message);
+                        console.warn("[vite proxy error] ".concat(req === null || req === void 0 ? void 0 : req.method, " ").concat(req === null || req === void 0 ? void 0 : req.url, ":"), err === null || err === void 0 ? void 0 : err.message);
                     });
                 },
             },

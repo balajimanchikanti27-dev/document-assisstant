@@ -350,35 +350,14 @@ export class GeminiService {
       }));
     }
 
-    // 4. Call Gemini Model with Timeout and Error Mapping
+    // 4. Call Gemini Model with Timeout, Fallback, and Error Mapping
     try {
-      const model = this.genAI.getGenerativeModel({
-        model: this.modelName,
-        systemInstruction,
-        generationConfig: {
-          temperature: mode === 'document' ? 0.1 : 0.3,
-          maxOutputTokens: mode === 'document' ? 1024 : 1500,
-          topP: 0.95,
-        },
-        safetySettings: [
-          {
-            category: HarmCategory.HARM_CATEGORY_HARASSMENT,
-            threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-          },
-          {
-            category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
-            threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-          },
-          {
-            category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
-            threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-          },
-          {
-            category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
-            threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-          },
-        ],
-      });
+      const candidateModels = [
+        this.modelName,
+        'gemini-1.5-flash',
+        'gemini-2.0-flash',
+        'gemini-1.5-pro',
+      ].filter((m, idx, arr) => Boolean(m) && arr.indexOf(m) === idx);
 
       // Prepare payload: multimodal parts if image is present
       const contentParts: any[] = [prompt];
@@ -391,12 +370,65 @@ export class GeminiService {
         });
       }
 
-      // Wrap API call with timeout
-      const result = await this.executeWithTimeout(
-        () => model.generateContent(contentParts.length === 1 ? contentParts[0] : contentParts),
-        timeoutMs,
-        signal
-      );
+      let result: any = null;
+      let effectiveModelUsed = this.modelName;
+      let lastErr: any = null;
+
+      for (const candModel of candidateModels) {
+        try {
+          const model = this.genAI.getGenerativeModel({
+            model: candModel,
+            systemInstruction,
+            generationConfig: {
+              temperature: mode === 'document' ? 0.1 : 0.3,
+              maxOutputTokens: mode === 'document' ? 1024 : 1500,
+              topP: 0.95,
+            },
+            safetySettings: [
+              {
+                category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+                threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+              },
+              {
+                category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+                threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+              },
+              {
+                category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+                threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+              },
+              {
+                category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+                threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+              },
+            ],
+          });
+
+          result = await this.executeWithTimeout(
+            () => model.generateContent(contentParts.length === 1 ? contentParts[0] : contentParts),
+            timeoutMs,
+            signal
+          );
+
+          effectiveModelUsed = candModel;
+          break; // successfully generated
+        } catch (err: any) {
+          lastErr = err;
+          const msg = err?.message || '';
+          const status = err?.status || err?.statusCode;
+          // If model is unsupported/not found, try next candidate model
+          if (status === 404 || msg.includes('models/') || msg.includes('not found')) {
+            console.warn(`[GEMINI API] Model "${candModel}" not available, trying next fallback model...`);
+            continue;
+          }
+          // For timeouts, auth errors, and rate limits, throw immediately
+          throw err;
+        }
+      }
+
+      if (!result && lastErr) {
+        throw lastErr;
+      }
 
       const latencyMs = Date.now() - startTime;
       const rawText = result.response.text()?.trim() || '';
@@ -618,8 +650,12 @@ export class GeminiService {
     }
 
     if (status === 404 || message.includes('models/') || message.includes('not found')) {
+      const isFormatInvalid = this.apiKey && !this.apiKey.startsWith('AIzaSy');
+      const hint = isFormatInvalid
+        ? ' Note: Your GEMINI_API_KEY does not appear to be a valid Google AI Studio key (keys start with "AIzaSy..."). Please obtain a key from https://aistudio.google.com/app/apikey and update it in your Render dashboard environment variables and server/.env.'
+        : ' Check GEMINI_MODEL or update GEMINI_API_KEY in your Render dashboard environment variables and server/.env.';
       throw new GeminiModelError(
-        `Gemini model "${this.modelName}" was not found or is unsupported for your API key. Check GEMINI_MODEL in server/.env.`
+        `Gemini model "${this.modelName}" was not found or is unsupported for your API key.${hint}`
       );
     }
 

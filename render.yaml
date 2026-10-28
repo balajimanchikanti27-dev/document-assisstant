@@ -3,8 +3,8 @@ services:
     name: ai-assistant-backend
     runtime: node
     plan: free
-    buildCommand: npm install && npm --prefix server install && npm run build:all
-    startCommand: npm start
+    buildCommand: npm --prefix server install && npm --prefix server run build
+    startCommand: npm --prefix server start
     envVars:
       - key: NODE_ENV
         value: production
