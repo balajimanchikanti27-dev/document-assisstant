@@ -14,7 +14,17 @@ export class EmbeddingService {
   }
 
   public refreshClient(): void {
-    const apiKey = process.env.GEMINI_API_KEY?.trim();
+    let apiKey = process.env.GEMINI_API_KEY?.trim() || '';
+    if (apiKey.startsWith('GEMINI_API_KEY=')) {
+      apiKey = apiKey.substring('GEMINI_API_KEY='.length).trim();
+    }
+    if (
+      (apiKey.startsWith('"') && apiKey.endsWith('"')) ||
+      (apiKey.startsWith("'") && apiKey.endsWith("'"))
+    ) {
+      apiKey = apiKey.slice(1, -1).trim();
+    }
+
     if (apiKey && apiKey !== 'your_gemini_api_key_here' && apiKey.length > 10) {
       if (apiKey !== this.currentApiKey) {
         try {

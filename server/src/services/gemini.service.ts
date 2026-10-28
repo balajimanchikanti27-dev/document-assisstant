@@ -129,8 +129,20 @@ export class GeminiService {
    * Reload configuration from process.env (supports dynamic test/runtime overrides)
    */
   public reloadConfiguration(): void {
-    const rawKey = process.env.GEMINI_API_KEY?.trim() || '';
+    let rawKey = process.env.GEMINI_API_KEY?.trim() || '';
     this.modelName = process.env.GEMINI_MODEL?.trim() || 'gemini-1.5-flash';
+
+    // Strip accidental variable name prefix if full line was pasted
+    if (rawKey.startsWith('GEMINI_API_KEY=')) {
+      rawKey = rawKey.substring('GEMINI_API_KEY='.length).trim();
+    }
+    // Strip surrounding quotes
+    if (
+      (rawKey.startsWith('"') && rawKey.endsWith('"')) ||
+      (rawKey.startsWith("'") && rawKey.endsWith("'"))
+    ) {
+      rawKey = rawKey.slice(1, -1).trim();
+    }
 
     if (rawKey && rawKey !== 'your_gemini_api_key_here') {
       this.apiKey = rawKey;
@@ -639,13 +651,16 @@ export class GeminiService {
 
     if (status === 400 || message.includes('API_KEY_INVALID') || message.includes('API key not valid')) {
       throw new GeminiAuthenticationError(
-        'Gemini API authentication failed. The provided GEMINI_API_KEY is invalid or unauthorized.'
+        'Gemini API authentication failed (HTTP 400: API key not valid). ' +
+        'Please check that your GEMINI_API_KEY was created from https://aistudio.google.com/app/apikey, ' +
+        'contains no quotes, and that any IP restrictions in Google Cloud are removed.'
       );
     }
 
-    if (status === 403 || message.includes('PERMISSION_DENIED')) {
+    if (status === 403 || message.includes('PERMISSION_DENIED') || message.includes('blocked')) {
       throw new GeminiAuthenticationError(
-        'Gemini API request denied. Ensure your API key has permission to access the Gemini API.'
+        'Gemini API request denied (HTTP 403: PERMISSION_DENIED). ' +
+        'If you set IP restrictions (e.g. 74.220.48.0/24) in Google Cloud Console, remove them by setting Application restrictions to "None".'
       );
     }
 
