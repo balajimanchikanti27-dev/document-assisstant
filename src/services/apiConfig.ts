@@ -11,10 +11,29 @@ export const getApiBaseUrl = (): string => {
   if (typeof envUrl === 'string' && envUrl.trim().length > 0) {
     return envUrl.trim().replace(/\/+$/, '');
   }
-  if (typeof window !== 'undefined' && window.location?.origin) {
-    return window.location.origin;
+
+  if (typeof window !== 'undefined' && window.location) {
+    const hostname = window.location.hostname || '';
+
+    // If running on static hosting platforms (Vercel, Firebase Hosting, Netlify, etc.)
+    // direct all API traffic to the persistent production backend on Render.
+    if (
+      hostname.endsWith('.vercel.app') ||
+      hostname.endsWith('.firebaseapp.com') ||
+      hostname.endsWith('.web.app') ||
+      hostname.endsWith('.netlify.app') ||
+      hostname.endsWith('.github.io')
+    ) {
+      return 'https://ai-assistant-backend-fbc3.onrender.com';
+    }
+
+    // When running directly on Render or unified host, use the same origin
+    if (window.location.origin) {
+      return window.location.origin;
+    }
   }
-  return 'http://localhost:5000';
+
+  return 'https://ai-assistant-backend-fbc3.onrender.com';
 };
 
 export const API_BASE_URL = getApiBaseUrl();
