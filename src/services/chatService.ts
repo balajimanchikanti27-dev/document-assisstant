@@ -13,7 +13,7 @@ import {
 import { db, isFirebaseConfigured, auth } from './firebase';
 import { ChatSession, ChatMessage, AssistantMode } from '../types';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+import { API_BASE_URL } from './apiConfig';
 
 async function getAuthHeaders(userId?: string): Promise<Record<string, string>> {
   const headers: Record<string, string> = {

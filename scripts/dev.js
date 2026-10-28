@@ -40,9 +40,9 @@ async function main() {
   }
 
   console.log(`[dev] Starting Vite dev server on port 3000...`);
-  const viteProc = spawn('npx vite', {
+  const viteProc = spawn(process.execPath, ['./node_modules/vite/bin/vite.js'], {
     stdio: 'inherit',
-    shell: true,
+    shell: false,
   });
 
   const cleanup = () => {

@@ -20,7 +20,7 @@ import { UserDocument, UploadStage } from '../types';
 export const SUPPORTED_FILE_EXTENSIONS = ['.pdf', '.ppt', '.pptx', '.doc', '.docx', '.txt', '.md'];
 export const MAX_FILE_SIZE_BYTES = 100 * 1024 * 1024; // 100MB per file
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+import { API_BASE_URL } from './apiConfig';
 
 export interface FileValidationError {
   file: File;

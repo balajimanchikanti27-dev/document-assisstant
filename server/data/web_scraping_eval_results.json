@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-25T02:29:35.731Z",
+  "timestamp": "2026-10-26T07:22:35.731Z",
   "mode": "fixture",
   "totalQuestions": 50,
   "passedCount": 50,
@@ -12,7 +12,7 @@
     "averageCorrectness": 98.1,
     "citationValidityRate": 100,
     "evidenceSupportRate": 97,
-    "averageLatencyMs": 3
+    "averageLatencyMs": 0
   },
   "categoryBreakdown": {
     "A": {
@@ -57,7 +57,7 @@
         "correctness": 1,
         "evidenceSupport": 1,
         "citationValidity": 1,
-        "latencyMs": 7
+        "latencyMs": 2
       },
       "retrievedUrlCount": 1,
       "extractedContentLength": 268,
@@ -144,7 +144,7 @@
         "correctness": 1,
         "evidenceSupport": 1,
         "citationValidity": 1,
-        "latencyMs": 1
+        "latencyMs": 0
       },
       "retrievedUrlCount": 2,
       "extractedContentLength": 262,
@@ -202,7 +202,7 @@
         "correctness": 1,
         "evidenceSupport": 1,
         "citationValidity": 1,
-        "latencyMs": 1
+        "latencyMs": 0
       },
       "retrievedUrlCount": 1,
       "extractedContentLength": 340,
@@ -231,7 +231,7 @@
         "correctness": 1,
         "evidenceSupport": 1,
         "citationValidity": 1,
-        "latencyMs": 0
+        "latencyMs": 1
       },
       "retrievedUrlCount": 1,
       "extractedContentLength": 251,
@@ -289,7 +289,7 @@
         "correctness": 1,
         "evidenceSupport": 1,
         "citationValidity": 1,
-        "latencyMs": 1
+        "latencyMs": 0
       },
       "retrievedUrlCount": 1,
       "extractedContentLength": 275,
@@ -318,7 +318,7 @@
         "correctness": 1,
         "evidenceSupport": 1,
         "citationValidity": 1,
-        "latencyMs": 1
+        "latencyMs": 0
       },
       "retrievedUrlCount": 1,
       "extractedContentLength": 267,
@@ -376,7 +376,7 @@
         "correctness": 1,
         "evidenceSupport": 1,
         "citationValidity": 1,
-        "latencyMs": 0
+        "latencyMs": 1
       },
       "retrievedUrlCount": 1,
       "extractedContentLength": 287,
@@ -492,7 +492,7 @@
         "correctness": 1,
         "evidenceSupport": 1,
         "citationValidity": 1,
-        "latencyMs": 1
+        "latencyMs": 0
       },
       "retrievedUrlCount": 1,
       "extractedContentLength": 253,
@@ -550,7 +550,7 @@
         "correctness": 1,
         "evidenceSupport": 1,
         "citationValidity": 1,
-        "latencyMs": 0
+        "latencyMs": 1
       },
       "retrievedUrlCount": 1,
       "extractedContentLength": 298,
@@ -608,7 +608,7 @@
         "correctness": 1,
         "evidenceSupport": 1,
         "citationValidity": 1,
-        "latencyMs": 1
+        "latencyMs": 0
       },
       "retrievedUrlCount": 1,
       "extractedContentLength": 292,
@@ -637,7 +637,7 @@
         "correctness": 1,
         "evidenceSupport": 1,
         "citationValidity": 1,
-        "latencyMs": 1
+        "latencyMs": 0
       },
       "retrievedUrlCount": 1,
       "extractedContentLength": 80,
@@ -782,7 +782,7 @@
         "correctness": 1,
         "evidenceSupport": 1,
         "citationValidity": 1,
-        "latencyMs": 0
+        "latencyMs": 1
       },
       "retrievedUrlCount": 1,
       "extractedContentLength": 58,
@@ -898,7 +898,7 @@
         "correctness": 1,
         "evidenceSupport": 1,
         "citationValidity": 1,
-        "latencyMs": 0
+        "latencyMs": 1
       },
       "retrievedUrlCount": 1,
       "extractedContentLength": 278,
@@ -956,7 +956,7 @@
         "correctness": 1,
         "evidenceSupport": 1,
         "citationValidity": 1,
-        "latencyMs": 0
+        "latencyMs": 1
       },
       "retrievedUrlCount": 1,
       "extractedContentLength": 233,
@@ -985,7 +985,7 @@
         "correctness": 0.85,
         "evidenceSupport": 1,
         "citationValidity": 1,
-        "latencyMs": 69
+        "latencyMs": 0
       },
       "retrievedUrlCount": 1,
       "extractedContentLength": 281,
@@ -1043,7 +1043,7 @@
         "correctness": 1,
         "evidenceSupport": 1,
         "citationValidity": 1,
-        "latencyMs": 0
+        "latencyMs": 1
       },
       "retrievedUrlCount": 1,
       "extractedContentLength": 214,
@@ -1101,7 +1101,7 @@
         "correctness": 1,
         "evidenceSupport": 1,
         "citationValidity": 1,
-        "latencyMs": 0
+        "latencyMs": 1
       },
       "retrievedUrlCount": 1,
       "extractedContentLength": 224,
@@ -1159,7 +1159,7 @@
         "correctness": 1,
         "evidenceSupport": 1,
         "citationValidity": 1,
-        "latencyMs": 13
+        "latencyMs": 0
       },
       "retrievedUrlCount": 1,
       "extractedContentLength": 238,
@@ -1362,7 +1362,7 @@
         "correctness": 1,
         "evidenceSupport": 1,
         "citationValidity": 1,
-        "latencyMs": 0
+        "latencyMs": 1
       },
       "retrievedUrlCount": 1,
       "extractedContentLength": 270,
@@ -1391,7 +1391,7 @@
         "correctness": 1,
         "evidenceSupport": 1,
         "citationValidity": 1,
-        "latencyMs": 29
+        "latencyMs": 0
       },
       "retrievedUrlCount": 1,
       "extractedContentLength": 213,

@@ -10,8 +10,9 @@
     "status": "ready",
     "stage": "indexed",
     "chunkCount": 0,
+    "pageCount": 2,
     "createdAt": 1792299538581.2644,
-    "updatedAt": 1792895261216,
+    "updatedAt": 1793001905527,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -26,8 +27,9 @@
     "status": "ready",
     "stage": "indexed",
     "chunkCount": 0,
+    "slideCount": 3,
     "createdAt": 1792299530919.263,
-    "updatedAt": 1792895261218,
+    "updatedAt": 1793001905529,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -43,7 +45,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792302963873,
-    "updatedAt": 1792895260997,
+    "updatedAt": 1793001905451,
     "processingVersion": "v2.1",
     "quarantined": true,
     "quarantineReason": "Ownership could not be verified from upload records or authenticated chat sessions"
@@ -60,7 +62,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792302963874,
-    "updatedAt": 1792895260999,
+    "updatedAt": 1793001905462,
     "processingVersion": "v2.1",
     "quarantined": true,
     "quarantineReason": "Ownership could not be verified from upload records or authenticated chat sessions"
@@ -77,7 +79,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792302963876,
-    "updatedAt": 1792895261216,
+    "updatedAt": 1793001905527,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -93,7 +95,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792302963877,
-    "updatedAt": 1792895261217,
+    "updatedAt": 1793001905528,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -109,7 +111,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792302963878,
-    "updatedAt": 1792895261020,
+    "updatedAt": 1793001905476,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -125,7 +127,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792302963878,
-    "updatedAt": 1792895261022,
+    "updatedAt": 1793001905476,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -141,7 +143,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792302963879,
-    "updatedAt": 1792895261024,
+    "updatedAt": 1793001905477,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -157,7 +159,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792302963880,
-    "updatedAt": 1792895261025,
+    "updatedAt": 1793001905478,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -173,7 +175,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792302963881,
-    "updatedAt": 1792895261030,
+    "updatedAt": 1793001905479,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -189,7 +191,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792302963882,
-    "updatedAt": 1792895261031,
+    "updatedAt": 1793001905481,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -205,7 +207,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792302963883,
-    "updatedAt": 1792895261033,
+    "updatedAt": 1793001905481,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -221,7 +223,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792302963885,
-    "updatedAt": 1792895261034,
+    "updatedAt": 1793001905482,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -237,7 +239,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792302963886,
-    "updatedAt": 1792895261037,
+    "updatedAt": 1793001905483,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -253,7 +255,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792302963887,
-    "updatedAt": 1792895261039,
+    "updatedAt": 1793001905484,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -269,7 +271,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792302963888,
-    "updatedAt": 1792895261209,
+    "updatedAt": 1793001905519,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -285,7 +287,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792302963888,
-    "updatedAt": 1792895261215,
+    "updatedAt": 1793001905526,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -301,7 +303,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792302963892,
-    "updatedAt": 1792895261218,
+    "updatedAt": 1793001905530,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -509,7 +511,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792303707070,
-    "updatedAt": 1792895261065,
+    "updatedAt": 1793001905493,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -526,7 +528,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792303710383,
-    "updatedAt": 1792895261198,
+    "updatedAt": 1793001905506,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -558,7 +560,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792303805811,
-    "updatedAt": 1792895261066,
+    "updatedAt": 1793001905494,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -575,7 +577,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792303808451,
-    "updatedAt": 1792895261199,
+    "updatedAt": 1793001905507,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -607,7 +609,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792303931053,
-    "updatedAt": 1792895261067,
+    "updatedAt": 1793001905495,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -623,7 +625,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792304069139.9922,
-    "updatedAt": 1792895261040,
+    "updatedAt": 1793001905484,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -639,7 +641,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792304118752.985,
-    "updatedAt": 1792895261041,
+    "updatedAt": 1793001905484,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -655,7 +657,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792304074252.8818,
-    "updatedAt": 1792895261052,
+    "updatedAt": 1793001905489,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -671,7 +673,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792304123582.8455,
-    "updatedAt": 1792895261054,
+    "updatedAt": 1793001905489,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -687,7 +689,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792304063544.6797,
-    "updatedAt": 1792895261069,
+    "updatedAt": 1793001905496,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -703,7 +705,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792304113417.7434,
-    "updatedAt": 1792895261070,
+    "updatedAt": 1793001905497,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -719,7 +721,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792304066533.8616,
-    "updatedAt": 1792895261181,
+    "updatedAt": 1793001905502,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -735,7 +737,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792304116358.8435,
-    "updatedAt": 1792895261182,
+    "updatedAt": 1793001905502,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -751,7 +753,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792304071749.8203,
-    "updatedAt": 1792895261200,
+    "updatedAt": 1793001905507,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -767,7 +769,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792304121200.4868,
-    "updatedAt": 1792895261200,
+    "updatedAt": 1793001905508,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -832,7 +834,7 @@
     "chunkCount": 0,
     "slideCount": 6,
     "createdAt": 1792305722709,
-    "updatedAt": 1792895261008,
+    "updatedAt": 1793001905470,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -865,7 +867,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792305725567,
-    "updatedAt": 1792895261009,
+    "updatedAt": 1793001905470,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -882,7 +884,7 @@
     "chunkCount": 0,
     "slideCount": 6,
     "createdAt": 1792305766297,
-    "updatedAt": 1792895261010,
+    "updatedAt": 1793001905471,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -915,7 +917,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792305769074,
-    "updatedAt": 1792895261011,
+    "updatedAt": 1793001905472,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -932,7 +934,7 @@
     "chunkCount": 0,
     "slideCount": 6,
     "createdAt": 1792305801796,
-    "updatedAt": 1792895261012,
+    "updatedAt": 1793001905472,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -965,7 +967,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792305804083,
-    "updatedAt": 1792895261013,
+    "updatedAt": 1793001905472,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -982,7 +984,7 @@
     "chunkCount": 0,
     "slideCount": 6,
     "createdAt": 1792305833137,
-    "updatedAt": 1792895261014,
+    "updatedAt": 1793001905473,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1015,7 +1017,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792305835576,
-    "updatedAt": 1792895261015,
+    "updatedAt": 1793001905473,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1048,7 +1050,7 @@
     "chunkCount": 0,
     "pageCount": 39,
     "createdAt": 1792305876363,
-    "updatedAt": 1792895261167,
+    "updatedAt": 1793001905497,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1065,7 +1067,7 @@
     "chunkCount": 0,
     "slideCount": 2,
     "createdAt": 1792305878881,
-    "updatedAt": 1792895261183,
+    "updatedAt": 1793001905502,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1082,7 +1084,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792305881392,
-    "updatedAt": 1792895261042,
+    "updatedAt": 1793001905485,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1099,7 +1101,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792305883883,
-    "updatedAt": 1792895261201,
+    "updatedAt": 1793001905509,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1116,7 +1118,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792305886398,
-    "updatedAt": 1792895261055,
+    "updatedAt": 1793001905490,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1149,7 +1151,7 @@
     "chunkCount": 0,
     "pageCount": 39,
     "createdAt": 1792470183040,
-    "updatedAt": 1792895261169,
+    "updatedAt": 1793001905498,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1166,7 +1168,7 @@
     "chunkCount": 0,
     "slideCount": 2,
     "createdAt": 1792470187887,
-    "updatedAt": 1792895261184,
+    "updatedAt": 1793001905503,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1183,7 +1185,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792470192717,
-    "updatedAt": 1792895261043,
+    "updatedAt": 1793001905485,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1200,7 +1202,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792470197185,
-    "updatedAt": 1792895261202,
+    "updatedAt": 1793001905510,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1217,7 +1219,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792470204795,
-    "updatedAt": 1792895261056,
+    "updatedAt": 1793001905490,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1233,7 +1235,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792471224654,
-    "updatedAt": 1792895261213,
+    "updatedAt": 1793001905524,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1250,7 +1252,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792471250123,
-    "updatedAt": 1792895261213,
+    "updatedAt": 1793001905523,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1266,7 +1268,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792471014481.8916,
-    "updatedAt": 1792895261044,
+    "updatedAt": 1793001905486,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1282,7 +1284,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792471020758.372,
-    "updatedAt": 1792895261057,
+    "updatedAt": 1793001905490,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1298,7 +1300,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792471006485.4128,
-    "updatedAt": 1792895261171,
+    "updatedAt": 1793001905498,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1314,7 +1316,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792471011262.6543,
-    "updatedAt": 1792895261185,
+    "updatedAt": 1793001905503,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1330,7 +1332,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792471017579.7107,
-    "updatedAt": 1792895261202,
+    "updatedAt": 1793001905511,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1346,7 +1348,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792471152174.0132,
-    "updatedAt": 1792895261210,
+    "updatedAt": 1793001905519,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1362,7 +1364,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792471135120.6086,
-    "updatedAt": 1792895261211,
+    "updatedAt": 1793001905520,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1378,7 +1380,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792471141854.4336,
-    "updatedAt": 1792895261211,
+    "updatedAt": 1793001905521,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1394,7 +1396,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792471146723.1355,
-    "updatedAt": 1792895261212,
+    "updatedAt": 1793001905522,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1410,7 +1412,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792473057904,
-    "updatedAt": 1792895261214,
+    "updatedAt": 1793001905525,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1426,7 +1428,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792473231479,
-    "updatedAt": 1792895261214,
+    "updatedAt": 1793001905526,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1443,7 +1445,7 @@
     "chunkCount": 0,
     "pageCount": 18452,
     "createdAt": 1792473688619.371,
-    "updatedAt": 1792895261023,
+    "updatedAt": 1793001905477,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1460,7 +1462,7 @@
     "chunkCount": 0,
     "slideCount": 6,
     "createdAt": 1792505467230,
-    "updatedAt": 1792895261016,
+    "updatedAt": 1793001905474,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1493,7 +1495,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792505469833,
-    "updatedAt": 1792895261017,
+    "updatedAt": 1793001905474,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1525,7 +1527,7 @@
     "stage": "indexed",
     "chunkCount": 0,
     "createdAt": 1792505484785,
-    "updatedAt": 1792895261173,
+    "updatedAt": 1793001905499,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1558,7 +1560,7 @@
     "chunkCount": 0,
     "pageCount": 3,
     "createdAt": 1792506424315,
-    "updatedAt": 1792895261174,
+    "updatedAt": 1793001905499,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1575,7 +1577,7 @@
     "chunkCount": 0,
     "slideCount": 2,
     "createdAt": 1792506427029,
-    "updatedAt": 1792895261186,
+    "updatedAt": 1793001905503,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1592,7 +1594,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792506432045,
-    "updatedAt": 1792895261045,
+    "updatedAt": 1793001905486,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1609,7 +1611,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792506437084,
-    "updatedAt": 1792895261203,
+    "updatedAt": 1793001905512,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1626,7 +1628,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792506441942,
-    "updatedAt": 1792895261058,
+    "updatedAt": 1793001905491,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1676,7 +1678,7 @@
     "chunkCount": 0,
     "pageCount": 3,
     "createdAt": 1792849050382,
-    "updatedAt": 1792895261175,
+    "updatedAt": 1793001905500,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1693,7 +1695,7 @@
     "chunkCount": 0,
     "slideCount": 2,
     "createdAt": 1792849052177,
-    "updatedAt": 1792895261188,
+    "updatedAt": 1793001905504,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1710,7 +1712,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792849054025,
-    "updatedAt": 1792895261046,
+    "updatedAt": 1793001905487,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1727,7 +1729,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792849055863,
-    "updatedAt": 1792895261206,
+    "updatedAt": 1793001905513,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1744,7 +1746,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792849057678,
-    "updatedAt": 1792895261059,
+    "updatedAt": 1793001905491,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1777,7 +1779,7 @@
     "chunkCount": 0,
     "pageCount": 3,
     "createdAt": 1792849120798,
-    "updatedAt": 1792895261176,
+    "updatedAt": 1793001905500,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1794,7 +1796,7 @@
     "chunkCount": 0,
     "slideCount": 2,
     "createdAt": 1792849122659,
-    "updatedAt": 1792895261190,
+    "updatedAt": 1793001905504,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1811,7 +1813,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792849124501,
-    "updatedAt": 1792895261047,
+    "updatedAt": 1793001905487,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1828,7 +1830,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792849126370,
-    "updatedAt": 1792895261206,
+    "updatedAt": 1793001905514,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1845,7 +1847,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792849128310,
-    "updatedAt": 1792895261060,
+    "updatedAt": 1793001905491,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1878,7 +1880,7 @@
     "chunkCount": 0,
     "pageCount": 3,
     "createdAt": 1792849197777,
-    "updatedAt": 1792895261177,
+    "updatedAt": 1793001905500,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1895,7 +1897,7 @@
     "chunkCount": 0,
     "slideCount": 2,
     "createdAt": 1792849200786,
-    "updatedAt": 1792895261192,
+    "updatedAt": 1793001905504,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1912,7 +1914,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792849202603,
-    "updatedAt": 1792895261048,
+    "updatedAt": 1793001905488,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1929,7 +1931,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792849204361,
-    "updatedAt": 1792895261207,
+    "updatedAt": 1793001905514,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1946,7 +1948,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792849206167,
-    "updatedAt": 1792895261061,
+    "updatedAt": 1793001905492,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1979,7 +1981,7 @@
     "chunkCount": 0,
     "pageCount": 3,
     "createdAt": 1792850093488,
-    "updatedAt": 1792895261178,
+    "updatedAt": 1793001905501,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -1996,7 +1998,7 @@
     "chunkCount": 0,
     "slideCount": 2,
     "createdAt": 1792850095562,
-    "updatedAt": 1792895261193,
+    "updatedAt": 1793001905505,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -2013,7 +2015,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792850097545,
-    "updatedAt": 1792895261049,
+    "updatedAt": 1793001905488,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -2030,7 +2032,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792850099378,
-    "updatedAt": 1792895261208,
+    "updatedAt": 1793001905515,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -2047,7 +2049,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792850101168,
-    "updatedAt": 1792895261062,
+    "updatedAt": 1793001905492,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -2080,7 +2082,7 @@
     "chunkCount": 0,
     "pageCount": 3,
     "createdAt": 1792850212425,
-    "updatedAt": 1792895261178,
+    "updatedAt": 1793001905501,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -2097,7 +2099,7 @@
     "chunkCount": 0,
     "slideCount": 2,
     "createdAt": 1792850215668,
-    "updatedAt": 1792895261197,
+    "updatedAt": 1793001905505,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -2114,7 +2116,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792850219662,
-    "updatedAt": 1792895261050,
+    "updatedAt": 1793001905488,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -2131,7 +2133,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792850223880,
-    "updatedAt": 1792895261208,
+    "updatedAt": 1793001905516,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -2148,7 +2150,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792850227791,
-    "updatedAt": 1792895261063,
+    "updatedAt": 1793001905493,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -2181,7 +2183,7 @@
     "chunkCount": 0,
     "pageCount": 3,
     "createdAt": 1792851433022,
-    "updatedAt": 1792895261180,
+    "updatedAt": 1793001905501,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -2198,7 +2200,7 @@
     "chunkCount": 0,
     "slideCount": 2,
     "createdAt": 1792851434826,
-    "updatedAt": 1792895261198,
+    "updatedAt": 1793001905506,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -2215,7 +2217,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792851436598,
-    "updatedAt": 1792895261051,
+    "updatedAt": 1793001905489,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -2232,7 +2234,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792851438381,
-    "updatedAt": 1792895261209,
+    "updatedAt": 1793001905517,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -2249,7 +2251,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792851440115,
-    "updatedAt": 1792895261064,
+    "updatedAt": 1793001905493,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -2266,7 +2268,7 @@
     "chunkCount": 0,
     "slideCount": 6,
     "createdAt": 1792862126084,
-    "updatedAt": 1792895261018,
+    "updatedAt": 1793001905475,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -2299,7 +2301,7 @@
     "chunkCount": 0,
     "pageCount": 1,
     "createdAt": 1792862128847,
-    "updatedAt": 1792895261019,
+    "updatedAt": 1793001905475,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -2316,7 +2318,7 @@
     "chunkCount": 0,
     "slideCount": 74,
     "createdAt": 1792863606575,
-    "updatedAt": 1792895261002,
+    "updatedAt": 1793001905466,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -2333,7 +2335,7 @@
     "chunkCount": 0,
     "slideCount": 63,
     "createdAt": 1792863824201,
-    "updatedAt": 1792895261003,
+    "updatedAt": 1793001905467,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -2350,7 +2352,7 @@
     "chunkCount": 0,
     "slideCount": 3,
     "createdAt": 1792864066302,
-    "updatedAt": 1792895261000,
+    "updatedAt": 1793001905464,
     "processingVersion": "v2.1",
     "quarantined": false
   },
@@ -2364,10 +2366,76 @@
     "filePath": "C:\\Users\\manch\\OneDrive\\OfficeMobile\\Desktop\\document assisstant\\server\\uploads\\documents\\buW1XmhCvKSfK2KFIR9Lu13zezk1__doc_1792895290600_rk28wxw__Normalization.pptx",
     "status": "ready",
     "stage": "indexed",
-    "chunkCount": 15,
+    "chunkCount": 0,
     "slideCount": 15,
     "createdAt": 1792895305871,
-    "updatedAt": 1792895305871,
+    "updatedAt": 1793001905468,
+    "processingVersion": "v2.1",
+    "quarantined": false
+  },
+  {
+    "id": "doc_1792158146035_hm2d99n",
+    "ownerId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+    "filename": "M2-Unit1.pptx",
+    "fileType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+    "extension": ".pptx",
+    "sizeBytes": 1543373,
+    "filePath": "C:\\Users\\manch\\OneDrive\\OfficeMobile\\Desktop\\document assisstant\\server\\uploads\\documents\\buW1XmhCvKSfK2KFIR9Lu13zezk1__doc_1792158146035_hm2d99n__M2-Unit1.pptx",
+    "status": "ready",
+    "stage": "indexed",
+    "chunkCount": 0,
+    "createdAt": 1792905357250.7827,
+    "updatedAt": 1793001905465,
+    "processingVersion": "v2.1",
+    "quarantined": false
+  },
+  {
+    "id": "doc_1792158202219_qajn1xz",
+    "ownerId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+    "filename": "Exception_Handling.pptx",
+    "fileType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+    "extension": ".pptx",
+    "sizeBytes": 5426,
+    "filePath": "C:\\Users\\manch\\OneDrive\\OfficeMobile\\Desktop\\document assisstant\\server\\uploads\\documents\\buW1XmhCvKSfK2KFIR9Lu13zezk1__doc_1792158202219_qajn1xz__Exception_Handling.pptx",
+    "status": "ready",
+    "stage": "indexed",
+    "chunkCount": 0,
+    "createdAt": 1792905355529.1216,
+    "updatedAt": 1793001905466,
+    "processingVersion": "v2.1",
+    "quarantined": false
+  },
+  {
+    "id": "doc_1792986774529_gsdsd9d",
+    "ownerId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+    "filename": "Normalization.pptx",
+    "fileType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+    "extension": ".pptx",
+    "sizeBytes": 62467,
+    "filePath": "C:\\Users\\manch\\OneDrive\\OfficeMobile\\Desktop\\document assisstant\\server\\uploads\\documents\\buW1XmhCvKSfK2KFIR9Lu13zezk1__doc_1792986774529_gsdsd9d__Normalization.pptx",
+    "status": "ready",
+    "stage": "indexed",
+    "chunkCount": 0,
+    "slideCount": 15,
+    "createdAt": 1792986781040,
+    "updatedAt": 1793001905469,
+    "processingVersion": "v2.1",
+    "quarantined": false
+  },
+  {
+    "id": "doc_1792988469904_4bfvgpw",
+    "ownerId": "b6HGoiZCgjUjhXEg1K9fNT5RaSc2",
+    "filename": "DBMS_Unit_-_IV_C1_Transactions_Scheduling__1_.pptx",
+    "fileType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+    "extension": ".pptx",
+    "sizeBytes": 1487735,
+    "filePath": "C:\\Users\\manch\\OneDrive\\OfficeMobile\\Desktop\\document assisstant\\server\\uploads\\documents\\b6HGoiZCgjUjhXEg1K9fNT5RaSc2__doc_1792988469904_4bfvgpw__DBMS_Unit_-_IV_C1_Transactions_Scheduling__1_.pptx",
+    "status": "ready",
+    "stage": "indexed",
+    "chunkCount": 0,
+    "slideCount": 63,
+    "createdAt": 1792988477209,
+    "updatedAt": 1793001905464,
     "processingVersion": "v2.1",
     "quarantined": false
   }

@@ -15,6 +15,8 @@
     "test:benchmark": "npm --prefix server run test:benchmark",
     "test:scraping": "npm --prefix server run test:scraping",
     "build": "tsc -b && vite build",
+    "build:all": "npm run build && npm run build:server",
+    "start": "npm --prefix server start",
     "preview": "vite preview"
   },
   "dependencies": {

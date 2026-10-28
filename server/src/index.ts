@@ -33,7 +33,7 @@ import { documentService } from './services/document.service.js';
 import { studySummaryService } from './services/studySummaryService.js';
 import { studyCoachService } from './services/studyCoachService.js';
 import { documentOwnershipMigration } from './utils/documentOwnershipMigration.js';
-import { getStorageUploadsDir } from './utils/paths.js';
+import { getStorageUploadsDir, getClientDistDir } from './utils/paths.js';
 import { sendSuccess, sendError } from './utils/response.js';
 import { universityRagService } from './university/universityRagService.js';
 import { universityVectorStore } from './university/universityVectorStore.js';
@@ -1829,6 +1829,18 @@ app.get('/api/university/sources', (req: Request, res: Response): void => {
     res.status(500).json({ error: err.message || 'Failed to retrieve source registry.' });
   }
 });
+
+// Serve frontend production build if available
+const clientDistDir = getClientDistDir();
+if (clientDistDir) {
+  app.use(express.static(clientDistDir));
+  app.get('*', (req: Request, res: Response, next: NextFunction) => {
+    if (req.path.startsWith('/api')) {
+      return next();
+    }
+    res.sendFile(path.join(clientDistDir, 'index.html'));
+  });
+}
 
 // Multer & General Error Handling Middleware
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {

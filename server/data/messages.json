@@ -3777,5 +3777,320 @@
       "isInsufficientEvidence": false,
       "createdAt": 1792895358110
     }
+  ],
+  "chat_1792986697524_8n4n1j": [],
+  "chat_1792986706822_iyck6r": [
+    {
+      "id": "msg_1792986706825_nxkhbc",
+      "chatId": "chat_1792986706822_iyck6r",
+      "userId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+      "role": "user",
+      "content": "Summarize key insights from my selected document.",
+      "mode": "document",
+      "citations": [],
+      "isInsufficientEvidence": false,
+      "createdAt": 1792986706825
+    }
+  ],
+  "chat_1792986706841_dulwvj": [
+    {
+      "id": "msg_1792986706841_fgori8",
+      "chatId": "chat_1792986706841_dulwvj",
+      "userId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+      "role": "assistant",
+      "content": "Based on your selected document evidence, here is a structured summary of key insights:\n\n#### Key Insights from **Normalization.pptx** (Slide 15):\n[Slide 15: Q7) R(A,B,C,D,E,F,G,H,I,J) - AB->C]\nQ7) R(A,B,C,D,E,F,G,H,I,J)\nAB->C\nAD->GH\nBD->EF\nA->I\nH ->J\n\n#### Key Insights from **Normalization.pptx** (Slide 8):\n[Slide 8: Q6) R(A,B,C,D) - A->B]\nQ6) R(A,B,C,D)\nA->B\nB->D\nQ7) R(A,B,C,D)\nA->B\nB->C\nQ8) R(A,B,C,D)\nA->B\nC->D\n\n#### Key Insights from **Normalization.pptx** (Slide 12):\n[Slide 12: Examples:]\nExamples:\nQ1) R(A,B,C,D)\nAB->C\nC->D\nQ2)\nENO -> {ENAME,DOB,ADDRESS,DNO}\nDNO -> {DNAME,DMGRENO}\n\n| ENAME | ENO | DOB | ADDRESS | DNO | DNAME | DMGR_ENO |\n| --- | --- | --- | --- | --- | --- | --- |\n\n#### Key Insights from **Normalization.pptx** (Slide 5):\n[Slide 5: An attribute that is a part of one of the candidate keys is known as prime attribute]\nAn attribute that is a part of one of the candidate keys is known as prime attribute\nAn attribute that are not part of the candidate keys is known as non- prime attribute\nExamples:\nCHECK the relation is in 2nf or not, if not convert into 2nf\nQ1) R(A,B,C,D)\nAB->D\nB->C\nNOTE: part of candidate key -> non-prime attribute is not allowed\n\n#### Key Insights from **Normalization.pptx** (Slide 4):\n[Slide 4: 2NF]\n2NF\nIt should be in 1NF\nShould not contain partial dependencies\nDef: A relation is in 1nf and every non-prime attribute is fully functional dependent on the primary key. ( i.e no partial dependencies allowed )\nPartial Dependency: A dependency in which non-key attributes are depending on part of key attribute.\nUnder the following conditions a table cannot have Partial Dependencies:\nIf primary key consists of a single attribute\nIf table consists only two attributes\nIf all the attributes in the table are part of primary key",
+      "mode": "document",
+      "citations": [
+        {
+          "id": "cite_doc_1792895290600_rk28wxw_chunk_doc_1792895290600_rk28wxw_s15_14",
+          "sourceType": "document",
+          "title": "Normalization.pptx (Slide 15)",
+          "documentId": "doc_1792895290600_rk28wxw",
+          "documentName": "Normalization.pptx",
+          "slideNumber": 15,
+          "heading": "Slide 15: Q7) R(A,B,C,D,E,F,G,H,I,J) - AB->C",
+          "snippet": "[Slide 15: Q7) R(A,B,C,D,E,F,G,H,I,J) - AB->C]\nQ7) R(A,B,C,D,E,F,G,H,I,J)\nAB->C\nAD->GH\nBD->EF\nA->I\nH ->J"
+        },
+        {
+          "id": "cite_doc_1792895290600_rk28wxw_chunk_doc_1792895290600_rk28wxw_s8_7",
+          "sourceType": "document",
+          "title": "Normalization.pptx (Slide 8)",
+          "documentId": "doc_1792895290600_rk28wxw",
+          "documentName": "Normalization.pptx",
+          "slideNumber": 8,
+          "heading": "Slide 8: Q6) R(A,B,C,D) - A->B",
+          "snippet": "[Slide 8: Q6) R(A,B,C,D) - A->B]\nQ6) R(A,B,C,D)\nA->B\nB->D\nQ7) R(A,B,C,D)\nA->B\nB->C\nQ8) R(A,B,C,D)\nA->B\nC->D"
+        },
+        {
+          "id": "cite_doc_1792895290600_rk28wxw_chunk_doc_1792895290600_rk28wxw_s12_11",
+          "sourceType": "document",
+          "title": "Normalization.pptx (Slide 12)",
+          "documentId": "doc_1792895290600_rk28wxw",
+          "documentName": "Normalization.pptx",
+          "slideNumber": 12,
+          "heading": "Slide 12: Examples:",
+          "snippet": "[Slide 12: Examples:]\nExamples:\nQ1) R(A,B,C,D)\nAB->C\nC->D\nQ2)\nENO -> {ENAME,DOB,ADDRESS,DNO}\nDNO -> {DNAME,DMGRENO}\n\n| ENAME | ENO | DOB | ADDRESS | DNO | DNAME | DMGR_ENO |\n| --- | --- | --- | --- | --- | --- | --- |"
+        },
+        {
+          "id": "cite_doc_1792895290600_rk28wxw_chunk_doc_1792895290600_rk28wxw_s5_4",
+          "sourceType": "document",
+          "title": "Normalization.pptx (Slide 5)",
+          "documentId": "doc_1792895290600_rk28wxw",
+          "documentName": "Normalization.pptx",
+          "slideNumber": 5,
+          "heading": "Slide 5: An attribute that is a part of one of the candidate keys is known as prime attribute",
+          "snippet": "[Slide 5: An attribute that is a part of one of the candidate keys is known as prime attribute]\nAn attribute that is a part of one of the candidate keys is known as prime attribute\nAn attribute that are not part of the candidate keys is kno..."
+        },
+        {
+          "id": "cite_doc_1792895290600_rk28wxw_chunk_doc_1792895290600_rk28wxw_s4_3",
+          "sourceType": "document",
+          "title": "Normalization.pptx (Slide 4)",
+          "documentId": "doc_1792895290600_rk28wxw",
+          "documentName": "Normalization.pptx",
+          "slideNumber": 4,
+          "heading": "Slide 4: 2NF",
+          "snippet": "[Slide 4: 2NF]\n2NF\nIt should be in 1NF\nShould not contain partial dependencies\nDef: A relation is in 1nf and every non-prime attribute is fully functional dependent on the primary key. ( i.e no partial dependencies allowed )\nPartial Depende..."
+        },
+        {
+          "id": "cite_doc_1792895290600_rk28wxw_chunk_doc_1792895290600_rk28wxw_s3_2",
+          "sourceType": "document",
+          "title": "Normalization.pptx (Slide 3)",
+          "documentId": "doc_1792895290600_rk28wxw",
+          "documentName": "Normalization.pptx",
+          "slideNumber": 3,
+          "heading": "Slide 3",
+          "snippet": "[Slide 3]\nCreate a separate relation for multivalued attribute along with primary key of a table which is having multivalued attribute\nNormalize the table in to 1NF\n\n| DNO | DNAME | DMGRENO | DLOCATIONS |\n| --- | --- | --- | --- |\n| 1 | CSE..."
+        },
+        {
+          "id": "cite_doc_1792895290600_rk28wxw_chunk_doc_1792895290600_rk28wxw_s11_10",
+          "sourceType": "document",
+          "title": "Normalization.pptx (Slide 11)",
+          "documentId": "doc_1792895290600_rk28wxw",
+          "documentName": "Normalization.pptx",
+          "slideNumber": 11,
+          "heading": "Slide 11: 3NF:",
+          "snippet": "[Slide 11: 3NF:]\n3NF:\nA relation is in 3NF, if there is no transitive dependency for non-prime attributes as well as it is in 2nf.\nA relation is in 3NF, if atleast one of the following conditions holds in every non-trivial functional depend..."
+        },
+        {
+          "id": "cite_doc_1792895290600_rk28wxw_chunk_doc_1792895290600_rk28wxw_s1_0",
+          "sourceType": "document",
+          "title": "Normalization.pptx (Slide 1)",
+          "documentId": "doc_1792895290600_rk28wxw",
+          "documentName": "Normalization.pptx",
+          "slideNumber": 1,
+          "heading": "Slide 1: Normalization",
+          "snippet": "[Slide 1: Normalization]\nNormalization\nDef: It is the process of analyzing the given relation schema based on their functional dependencies and primary keys to achieve the desirable properties of\ni ) minimize the redundancy i.e insert, upda..."
+        }
+      ],
+      "isInsufficientEvidence": false,
+      "createdAt": 1792986706841
+    }
+  ],
+  "chat_1792986745633_6sqdwp": [
+    {
+      "id": "msg_1792986745637_izw4if",
+      "chatId": "chat_1792986745633_6sqdwp",
+      "userId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+      "role": "user",
+      "content": "what is exception",
+      "mode": "document",
+      "citations": [],
+      "isInsufficientEvidence": false,
+      "createdAt": 1792986745637
+    }
+  ],
+  "chat_1792986745647_wulmqe": [
+    {
+      "id": "msg_1792986745649_166r9o",
+      "chatId": "chat_1792986745647_wulmqe",
+      "userId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+      "role": "assistant",
+      "content": "There is no answer to your question in your uploaded document.",
+      "mode": "document",
+      "citations": [],
+      "isInsufficientEvidence": false,
+      "createdAt": 1792986745649
+    }
+  ],
+  "chat_1792986854327_gh9l7v": [],
+  "chat_1792986866517_wf1zwl": [
+    {
+      "id": "msg_1792986866520_fch05x",
+      "chatId": "chat_1792986866517_wf1zwl",
+      "userId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+      "role": "user",
+      "content": "what is dbms",
+      "mode": "research",
+      "citations": [],
+      "isInsufficientEvidence": false,
+      "createdAt": 1792986866520
+    }
+  ],
+  "chat_1792986870508_n9fdux": [
+    {
+      "id": "msg_1792986870509_b62ynj",
+      "chatId": "chat_1792986870508_n9fdux",
+      "userId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+      "role": "assistant",
+      "content": "### Research Synthesis: Database\n\n**Verified Extract (en.wikipedia.org):**\n\nIn computing, a database is an organized collection of data or a type of data store based on the use of a database management system (DBMS), the software that interacts with end users, applications, and the database itself to capture and analyze the data. The DBMS additionally encompasses the core facilities provided to administer the database. The sum total of the database, the DBMS and the associated applications can be referred to as a database system. Often the term \"database\" is also used loosely to refer to any of the DBMS, the database system or an application associated with the database.\n\n### Cross-Referenced Evidence\n\n- **[DBm](https://en.wikipedia.org/wiki/DBm)** (en.wikipedia.org): dBm or dBmW (decibel-milliwatts) is a unit of power level expressed using a logarithmic decibel (dB) scale respective to one milliwatt (mW). It is commonly used by radio, microwave and fiber-optical c...",
+      "mode": "research",
+      "citations": [
+        {
+          "id": "cite_wikipedia_0_1792986870499",
+          "sourceType": "wikipedia",
+          "title": "Database",
+          "url": "https://en.wikipedia.org/wiki/Database",
+          "domain": "en.wikipedia.org",
+          "snippet": "In computing, a database is an organized collection of data or a type of data store based on the use of a database management system (DBMS), the software that interacts with end users, applications, and the database itself to capture and analyze the data. The DBMS additionally encompasses the core f",
+          "publicationDate": "2026-10-11",
+          "isPrimarySource": false,
+          "confidenceScore": 0.944
+        },
+        {
+          "id": "cite_wikipedia_1_1792986870499",
+          "sourceType": "wikipedia",
+          "title": "DBm",
+          "url": "https://en.wikipedia.org/wiki/DBm",
+          "domain": "en.wikipedia.org",
+          "snippet": "dBm or dBmW (decibel-milliwatts) is a unit of power level expressed using a logarithmic decibel (dB) scale respective to one milliwatt (mW). It is commonly used by radio, microwave and fiber-optical communication technicians & engineers to measure the power of system transmissions on a log scale, wh",
+          "publicationDate": "2026-06-14",
+          "isPrimarySource": false,
+          "confidenceScore": 0.474
+        }
+      ],
+      "isInsufficientEvidence": false,
+      "createdAt": 1792986870509
+    }
+  ],
+  "chat_1792999555148_diffmj": [
+    {
+      "id": "msg_1792999555149_4auent",
+      "chatId": "chat_1792999555148_diffmj",
+      "userId": "anonymous",
+      "role": "user",
+      "content": "What is this?",
+      "mode": "document",
+      "citations": [],
+      "createdAt": 1792999555149
+    }
+  ],
+  "chat_1793000353451_0xy9jf": [
+    {
+      "id": "msg_1793000353451_de0rri",
+      "chatId": "chat_1793000353451_0xy9jf",
+      "userId": "anonymous",
+      "role": "user",
+      "content": "What is this?",
+      "mode": "document",
+      "citations": [],
+      "createdAt": 1793000353451
+    }
+  ],
+  "chat_1793000358008_1qjsg6": [
+    {
+      "id": "msg_1793000358009_o3gkqo",
+      "chatId": "chat_1793000358008_1qjsg6",
+      "userId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+      "role": "user",
+      "content": "What is Multilevel Inheritance?",
+      "mode": "document",
+      "citations": [],
+      "createdAt": 1793000358009
+    }
+  ],
+  "chat_1793000358102_n1zxff": [
+    {
+      "id": "msg_1793000358103_s3mur6",
+      "chatId": "chat_1793000358102_n1zxff",
+      "userId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+      "role": "assistant",
+      "content": "Based on your selected document evidence:\n\n### From **M2-Unit1.pptx** (Slide 8):\n[Slide 8: Multilevel Inheritance]\nMultilevel Inheritance\nIn multilevel inheritance, there is one base class and one derived class at the same time at one level.\nAt the next level, the derived class becomes base class for the next derived class and so on. This is shown as:\n\n### From **M2-Unit1.pptx** (Slide 5):\n[Slide 5: Types of Inheritance]\nTypes of Inheritance\nInheritance is generally of five types : single level, multilevel, multiple, hierarchical and hybrid.\n\n### From **M2-Unit1.pptx** (Slide 16):\n[Slide 16: Hybrid  Inheritance]\nHybrid  Inheritance\nHybrid Inheritance is a combination of both Single Inheritance and Multiple Inheritance.\nSince in Java Multiple Inheritance is not supported directly we can achieve Hybrid inheritance also through Interfaces only.",
+      "mode": "document",
+      "citations": [
+        {
+          "id": "cite_doc_1792158146035_hm2d99n_chunk_doc_1792158146035_hm2d99n_s8_6",
+          "sourceType": "document",
+          "title": "M2-Unit1.pptx (Slide 8)",
+          "documentId": "doc_1792158146035_hm2d99n",
+          "documentName": "M2-Unit1.pptx",
+          "slideNumber": 8,
+          "heading": "Slide 8: Multilevel Inheritance",
+          "snippet": "[Slide 8: Multilevel Inheritance]\nMultilevel Inheritance\nIn multilevel inheritance, there is one base class and one derived class at the same time at one level.\nAt the next level, the derived class becomes base class for the next derived cl..."
+        },
+        {
+          "id": "cite_doc_1792158146035_hm2d99n_chunk_doc_1792158146035_hm2d99n_s5_4",
+          "sourceType": "document",
+          "title": "M2-Unit1.pptx (Slide 5)",
+          "documentId": "doc_1792158146035_hm2d99n",
+          "documentName": "M2-Unit1.pptx",
+          "slideNumber": 5,
+          "heading": "Slide 5: Types of Inheritance",
+          "snippet": "[Slide 5: Types of Inheritance]\nTypes of Inheritance\nInheritance is generally of five types : single level, multilevel, multiple, hierarchical and hybrid."
+        },
+        {
+          "id": "cite_doc_1792158146035_hm2d99n_chunk_doc_1792158146035_hm2d99n_s16_11",
+          "sourceType": "document",
+          "title": "M2-Unit1.pptx (Slide 16)",
+          "documentId": "doc_1792158146035_hm2d99n",
+          "documentName": "M2-Unit1.pptx",
+          "slideNumber": 16,
+          "heading": "Slide 16: Hybrid  Inheritance",
+          "snippet": "[Slide 16: Hybrid  Inheritance]\nHybrid  Inheritance\nHybrid Inheritance is a combination of both Single Inheritance and Multiple Inheritance.\nSince in Java Multiple Inheritance is not supported directly we can achieve Hybrid inheritance also..."
+        },
+        {
+          "id": "cite_doc_1792158146035_hm2d99n_chunk_doc_1792158146035_hm2d99n_s6_5",
+          "sourceType": "document",
+          "title": "M2-Unit1.pptx (Slide 6)",
+          "documentId": "doc_1792158146035_hm2d99n",
+          "documentName": "M2-Unit1.pptx",
+          "slideNumber": 6,
+          "heading": "Slide 6: Single-level Inheritance",
+          "snippet": "[Slide 6: Single-level Inheritance]\nSingle-level Inheritance\nIn single level inheritance, there is just one base and one derived class. It is represented as follows :"
+        },
+        {
+          "id": "cite_doc_1792158146035_hm2d99n_chunk_doc_1792158146035_hm2d99n_s12_8",
+          "sourceType": "document",
+          "title": "M2-Unit1.pptx (Slide 12)",
+          "documentId": "doc_1792158146035_hm2d99n",
+          "documentName": "M2-Unit1.pptx",
+          "slideNumber": 12,
+          "heading": "Slide 12: Multiple Inheritance",
+          "snippet": "[Slide 12: Multiple Inheritance]\nMultiple Inheritance\nIn a multiple inheritance, a child can have more than one parent, i.e., a child can inherit properties from more than one class.\nJava does not support Multiple inheritance ,to implement ..."
+        },
+        {
+          "id": "cite_doc_1792158146035_hm2d99n_chunk_doc_1792158146035_hm2d99n_s3_2",
+          "sourceType": "document",
+          "title": "M2-Unit1.pptx (Slide 3)",
+          "documentId": "doc_1792158146035_hm2d99n",
+          "documentName": "M2-Unit1.pptx",
+          "slideNumber": 3,
+          "heading": "Slide 3: Inheritance-Introduction",
+          "snippet": "[Slide 3: Inheritance-Introduction]\nInheritance-Introduction\nInheritance is an important feature of object oriented  programming.\nInheritance can be defined as the process where one class acquires the properties methods and fields of anothe..."
+        },
+        {
+          "id": "cite_doc_1792158146035_hm2d99n_chunk_doc_1792158146035_hm2d99n_s50_43",
+          "sourceType": "document",
+          "title": "M2-Unit1.pptx (Slide 50)",
+          "documentId": "doc_1792158146035_hm2d99n",
+          "documentName": "M2-Unit1.pptx",
+          "slideNumber": 50,
+          "heading": "Slide 50: Multiple inheritance in Java by interface",
+          "snippet": "[Slide 50: Multiple inheritance in Java by interface]\nMultiple inheritance in Java by interface\nIf a class implements multiple interfaces, or an interface extends multiple interfaces, it is known as multiple inheritance."
+        },
+        {
+          "id": "cite_doc_1792158146035_hm2d99n_chunk_doc_1792158146035_hm2d99n_s14_10",
+          "sourceType": "document",
+          "title": "M2-Unit1.pptx (Slide 14)",
+          "documentId": "doc_1792158146035_hm2d99n",
+          "documentName": "M2-Unit1.pptx",
+          "slideNumber": 14,
+          "heading": "Slide 14: Hierarchical Inheritance",
+          "snippet": "[Slide 14: Hierarchical Inheritance]\nHierarchical Inheritance\nIn this type of inheritance, multiple classes share the same base class.\nThat is, numbers of classes inherit the properties of one common base class.\nThe derived classes may also..."
+        }
+      ],
+      "isInsufficientEvidence": false,
+      "modelUsed": "offline-extractor",
+      "createdAt": 1793000358103
+    }
   ]
 }

@@ -428,7 +428,9 @@ export class RagService {
         };
       } catch (err: any) {
         console.error('[RAG STAGE 6: GEMINI ERROR]', err.message);
-        throw err;
+        console.log(`[RAG STAGE 6: GENERATION] Falling back to grounded extractive answer generator due to provider issue`);
+        const offlineResult = this.generateOfflineGroundedAnswer(queryToSearch, relevantChunks, citations, retrievalLogs, analysis);
+        return offlineResult;
       }
     }
 

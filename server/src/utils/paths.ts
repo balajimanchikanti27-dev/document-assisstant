@@ -67,3 +67,25 @@ export function getStorageUploadsDir(): string {
     return fallback;
   }
 }
+
+/**
+ * Resolves the client dist directory if built.
+ */
+export function getClientDistDir(): string | null {
+  const candidateDirs: string[] = [];
+  try {
+    const currentFile = fileURLToPath(import.meta.url);
+    const serverRoot = path.resolve(path.dirname(currentFile), '..', '..');
+    candidateDirs.push(path.resolve(serverRoot, '..', 'dist'));
+    candidateDirs.push(path.resolve(serverRoot, 'dist'));
+  } catch {}
+  candidateDirs.push(path.resolve(process.cwd(), 'dist'));
+  candidateDirs.push(path.resolve(process.cwd(), '..', 'dist'));
+
+  for (const dir of candidateDirs) {
+    if (fs.existsSync(path.join(dir, 'index.html'))) {
+      return dir;
+    }
+  }
+  return null;
+}

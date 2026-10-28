@@ -3,8 +3,7 @@ services:
     name: ai-assistant-backend
     runtime: node
     plan: free
-    rootDir: server
-    buildCommand: npm install --include=dev && npm run build
+    buildCommand: npm install && npm --prefix server install && npm run build:all
     startCommand: npm start
     envVars:
       - key: NODE_ENV
@@ -14,7 +13,7 @@ services:
       - key: PORT
         value: 5000
       - key: CLIENT_URL
-        sync: false
+        value: "*"
       - key: GEMINI_API_KEY
         sync: false
       - key: GEMINI_MODEL

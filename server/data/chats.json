@@ -1911,5 +1911,161 @@
     "createdAt": 1792895358102,
     "updatedAt": 1792895358110,
     "lastMessageSnippet": "### Research Synthesis: English school of international relations theory\n\n**Veri"
+  },
+  {
+    "id": "chat_1792986697524_8n4n1j",
+    "userId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+    "title": "Summarize key insights from my selec...",
+    "mode": "document",
+    "selectedDocumentIds": [
+      "doc_1792895290600_rk28wxw"
+    ],
+    "messageCount": 0,
+    "createdAt": 1792986697524,
+    "updatedAt": 1792986697524
+  },
+  {
+    "id": "chat_1792986706822_iyck6r",
+    "userId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+    "title": "Summarize key insights from my selected docum...",
+    "mode": "document",
+    "selectedDocumentIds": [],
+    "messageCount": 1,
+    "createdAt": 1792986706822,
+    "updatedAt": 1792986706825,
+    "lastMessageSnippet": "Summarize key insights from my selected document."
+  },
+  {
+    "id": "chat_1792986706841_dulwvj",
+    "userId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+    "title": "Based on your selected document evidence, her...",
+    "mode": "document",
+    "selectedDocumentIds": [],
+    "messageCount": 1,
+    "createdAt": 1792986706841,
+    "updatedAt": 1792986706841,
+    "lastMessageSnippet": "Based on your selected document evidence, here is a structured summary of key in"
+  },
+  {
+    "id": "chat_1792986745633_6sqdwp",
+    "userId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+    "title": "what is exception",
+    "mode": "document",
+    "selectedDocumentIds": [],
+    "messageCount": 1,
+    "createdAt": 1792986745633,
+    "updatedAt": 1792986745637,
+    "lastMessageSnippet": "what is exception"
+  },
+  {
+    "id": "chat_1792986745647_wulmqe",
+    "userId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+    "title": "There is no answer to your question in your u...",
+    "mode": "document",
+    "selectedDocumentIds": [],
+    "messageCount": 1,
+    "createdAt": 1792986745647,
+    "updatedAt": 1792986745649,
+    "lastMessageSnippet": "There is no answer to your question in your uploaded document."
+  },
+  {
+    "id": "chat_1792986854327_gh9l7v",
+    "userId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+    "title": "what is dbms",
+    "mode": "research",
+    "selectedDocumentIds": [],
+    "messageCount": 0,
+    "createdAt": 1792986854327,
+    "updatedAt": 1792986854327
+  },
+  {
+    "id": "chat_1792986866517_wf1zwl",
+    "userId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+    "title": "what is dbms",
+    "mode": "research",
+    "selectedDocumentIds": [],
+    "messageCount": 1,
+    "createdAt": 1792986866517,
+    "updatedAt": 1792986866520,
+    "lastMessageSnippet": "what is dbms"
+  },
+  {
+    "id": "chat_1792986870508_n9fdux",
+    "userId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+    "title": "### Research Synthesis: Database\n\n**Verified ...",
+    "mode": "research",
+    "selectedDocumentIds": [],
+    "messageCount": 1,
+    "createdAt": 1792986870508,
+    "updatedAt": 1792986870509,
+    "lastMessageSnippet": "### Research Synthesis: Database\n\n**Verified Extract (en.wikipedia.org):**\n\nIn c"
+  },
+  {
+    "id": "chat_1792988492767_5ask1x",
+    "userId": "b6HGoiZCgjUjhXEg1K9fNT5RaSc2",
+    "title": "Summarize key insights from my selec...",
+    "mode": "document",
+    "selectedDocumentIds": [
+      "doc_1792988469904_4bfvgpw"
+    ],
+    "messageCount": 0,
+    "createdAt": 1792988492767,
+    "updatedAt": 1792988492767
+  },
+  {
+    "id": "chat_1792988519212_0wm5t6",
+    "userId": "b6HGoiZCgjUjhXEg1K9fNT5RaSc2",
+    "title": "Summarize key insights from my selec...",
+    "mode": "document",
+    "selectedDocumentIds": [
+      "doc_1792988469904_4bfvgpw"
+    ],
+    "messageCount": 0,
+    "createdAt": 1792988519212,
+    "updatedAt": 1792988519212
+  },
+  {
+    "id": "chat_1792999555148_diffmj",
+    "userId": "anonymous",
+    "title": "What is this?",
+    "mode": "document",
+    "selectedDocumentIds": [],
+    "messageCount": 1,
+    "createdAt": 1792999555148,
+    "updatedAt": 1792999555149,
+    "lastMessageSnippet": "What is this?"
+  },
+  {
+    "id": "chat_1793000353451_0xy9jf",
+    "userId": "anonymous",
+    "title": "What is this?",
+    "mode": "document",
+    "selectedDocumentIds": [],
+    "messageCount": 1,
+    "createdAt": 1793000353451,
+    "updatedAt": 1793000353451,
+    "lastMessageSnippet": "What is this?"
+  },
+  {
+    "id": "chat_1793000358008_1qjsg6",
+    "userId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+    "title": "What is Multilevel Inheritance?",
+    "mode": "document",
+    "selectedDocumentIds": [],
+    "messageCount": 1,
+    "createdAt": 1793000358008,
+    "updatedAt": 1793000358009,
+    "lastMessageSnippet": "What is Multilevel Inheritance?"
+  },
+  {
+    "id": "chat_1793000358102_n1zxff",
+    "userId": "buW1XmhCvKSfK2KFIR9Lu13zezk1",
+    "title": "Based on your selected document evidence:\n\n##...",
+    "mode": "document",
+    "selectedDocumentIds": [],
+    "messageCount": 1,
+    "createdAt": 1793000358102,
+    "updatedAt": 1793000358103,
+    "lastMessageSnippet": "Based on your selected document evidence:\n\n### From **M2-Unit1.pptx** (Slide 8):"
   }
 ]
