@@ -5,7 +5,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://ai-assistant-backend-fbc3.onrender.com/api/$1"
+      "destination": "https://ai-assistant-backend-qqlh.onrender.com/api/$1"
     },
     {
       "source": "/(.*)",
