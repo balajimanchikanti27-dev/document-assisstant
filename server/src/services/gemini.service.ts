@@ -115,10 +115,12 @@ export interface GeminiConfigStatus {
   provider: string;
 }
 
+export const DEFAULT_GEMINI_MODEL = 'gemini-2.0-flash';
+
 export class GeminiService {
   private genAI: GoogleGenerativeAI | null = null;
   private apiKey: string = '';
-  private modelName: string = 'gemini-1.5-flash';
+  private modelName: string = DEFAULT_GEMINI_MODEL;
   private isConfiguredState: boolean = false;
 
   constructor() {
@@ -130,7 +132,7 @@ export class GeminiService {
    */
   public reloadConfiguration(): void {
     let rawKey = process.env.GEMINI_API_KEY?.trim() || '';
-    this.modelName = process.env.GEMINI_MODEL?.trim() || 'gemini-1.5-flash';
+    this.modelName = process.env.GEMINI_MODEL?.trim() || DEFAULT_GEMINI_MODEL;
 
     // Strip accidental variable name prefix if full line was pasted
     if (rawKey.startsWith('GEMINI_API_KEY=')) {
@@ -366,8 +368,9 @@ export class GeminiService {
     try {
       const candidateModels = [
         this.modelName,
-        'gemini-1.5-flash',
         'gemini-2.0-flash',
+        'gemini-2.5-flash',
+        'gemini-1.5-flash',
         'gemini-1.5-pro',
       ].filter((m, idx, arr) => Boolean(m) && arr.indexOf(m) === idx);
 
@@ -520,46 +523,75 @@ export class GeminiService {
   ): Promise<string> {
     if (!this.isConfigured() || !this.genAI) {
       throw new GeminiConfigurationError(
-        'GEMINI_API_KEY is not configured on the server. Please set GEMINI_API_KEY in server/.env.'
+        'GEMINI_API_KEY is not configured on the server. Please set GEMINI_API_KEY in Render environment variables or server/.env.'
       );
     }
 
     try {
-      const model = this.genAI.getGenerativeModel({
-        model: this.modelName,
-        systemInstruction,
-        generationConfig: {
-          temperature: 0.2,
-          maxOutputTokens: 3000,
-          topP: 0.95,
-        },
-        safetySettings: [
-          {
-            category: HarmCategory.HARM_CATEGORY_HARASSMENT,
-            threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-          },
-          {
-            category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
-            threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-          },
-          {
-            category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
-            threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-          },
-          {
-            category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
-            threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-          },
-        ],
-      });
+      const candidateModels = [
+        this.modelName,
+        'gemini-2.0-flash',
+        'gemini-2.5-flash',
+        'gemini-1.5-flash',
+        'gemini-1.5-pro',
+      ].filter((m, idx, arr) => Boolean(m) && arr.indexOf(m) === idx);
 
-      const result = await this.executeWithTimeout(
-        () => model.generateContent(prompt),
-        timeoutMs,
-        signal
-      );
+      let result: any = null;
+      let lastErr: any = null;
 
-      const rawText = result.response.text()?.trim() || '';
+      for (const candModel of candidateModels) {
+        try {
+          const model = this.genAI.getGenerativeModel({
+            model: candModel,
+            systemInstruction,
+            generationConfig: {
+              temperature: 0.2,
+              maxOutputTokens: 3000,
+              topP: 0.95,
+            },
+            safetySettings: [
+              {
+                category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+                threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+              },
+              {
+                category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+                threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+              },
+              {
+                category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+                threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+              },
+              {
+                category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+                threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+              },
+            ],
+          });
+
+          result = await this.executeWithTimeout(
+            () => model.generateContent(prompt),
+            timeoutMs,
+            signal
+          );
+          break;
+        } catch (err: any) {
+          lastErr = err;
+          const msg = err?.message || '';
+          const status = err?.status || err?.statusCode;
+          if (status === 404 || msg.includes('models/') || msg.includes('not found')) {
+            console.warn(`[GEMINI API] Summary model "${candModel}" not available, trying next fallback model...`);
+            continue;
+          }
+          throw err;
+        }
+      }
+
+      if (!result && lastErr) {
+        throw lastErr;
+      }
+
+      const rawText = result?.response?.text()?.trim() || '';
       if (!rawText) {
         throw new GeminiEmptyResponseError('Gemini returned an empty response candidate.');
       }
@@ -628,11 +660,24 @@ export class GeminiService {
   }
 
   /**
-   * Maps SDK/HTTP errors into clear, actionable domain exceptions
+   * Redacts sensitive keys, query params, and credentials from any error message or string
+   */
+  private sanitizeError(err: any): { message: string; status?: number } {
+    const status = err?.status || err?.statusCode;
+    let message = (err?.message || (typeof err === 'string' ? err : 'Unknown error')).toString();
+    message = message.replace(/([?&]key=)[^&\s]+/gi, '$1[REDACTED]');
+    message = message.replace(/AIzaSy[A-Za-z0-9_-]{30,}/g, '[REDACTED_API_KEY]');
+    if (this.apiKey && this.apiKey.length > 5) {
+      message = message.split(this.apiKey).join('[REDACTED_API_KEY]');
+    }
+    return { message, status };
+  }
+
+  /**
+   * Maps SDK/HTTP errors into clear, actionable domain exceptions without leaking secrets
    */
   private handleGeminiError(err: any): never {
-    const message = err.message || '';
-    const status = err.status || err.statusCode;
+    const { message, status } = this.sanitizeError(err);
 
     console.error(`[GEMINI API ERROR] Status: ${status || 'N/A'} | Error: ${message}`);
 
@@ -651,16 +696,18 @@ export class GeminiService {
 
     if (status === 400 || message.includes('API_KEY_INVALID') || message.includes('API key not valid')) {
       throw new GeminiAuthenticationError(
-        'Gemini API authentication failed (HTTP 400: API key not valid). ' +
-        'Please check that your GEMINI_API_KEY was created from https://aistudio.google.com/app/apikey, ' +
-        'contains no quotes, and that any IP restrictions in Google Cloud are removed.'
+        'Gemini API authentication failed (HTTP 400: API_KEY_INVALID). ' +
+        'Please verify that GEMINI_API_KEY in Render environment variables or server/.env is a valid key from ' +
+        'https://aistudio.google.com/app/apikey (starts with "AIzaSy..."). Ensure no quotes or spaces were pasted.'
       );
     }
 
     if (status === 403 || message.includes('PERMISSION_DENIED') || message.includes('blocked')) {
       throw new GeminiAuthenticationError(
         'Gemini API request denied (HTTP 403: PERMISSION_DENIED). ' +
-        'If you set IP restrictions (e.g. 74.220.48.0/24) in Google Cloud Console, remove them by setting Application restrictions to "None".'
+        'Google blocked this request. If you added IP restrictions (e.g. 74.220.48.0/24) in Google Cloud Console, ' +
+        'change Application restrictions to "None" because cloud hosts use rotating dynamic IPs. ' +
+        'Also ensure the Generative Language API is enabled.'
       );
     }
 
@@ -668,7 +715,7 @@ export class GeminiService {
       const isFormatInvalid = this.apiKey && !this.apiKey.startsWith('AIzaSy');
       const hint = isFormatInvalid
         ? ' Note: Your GEMINI_API_KEY does not appear to be a valid Google AI Studio key (keys start with "AIzaSy..."). Please obtain a key from https://aistudio.google.com/app/apikey and update it in your Render dashboard environment variables and server/.env.'
-        : ' Check GEMINI_MODEL or update GEMINI_API_KEY in your Render dashboard environment variables and server/.env.';
+        : ` Attempted fallback models: gemini-2.0-flash, gemini-2.5-flash, gemini-1.5-flash. Check GEMINI_MODEL in Render or server/.env.`;
       throw new GeminiModelError(
         `Gemini model "${this.modelName}" was not found or is unsupported for your API key.${hint}`
       );
@@ -676,7 +723,7 @@ export class GeminiService {
 
     if (status === 429 || message.includes('RESOURCE_EXHAUSTED') || message.includes('quota')) {
       throw new GeminiRateLimitError(
-        'Gemini API quota or rate limit exceeded (HTTP 429). Please wait before making further queries.'
+        'Gemini API quota or rate limit exceeded (HTTP 429: RESOURCE_EXHAUSTED). Free tier rate limits reached. Please wait before making further queries.'
       );
     }
 

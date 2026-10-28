@@ -64,12 +64,12 @@ async function runGeminiTests() {
   // Test 1: Configuration Validation & Safe Key Masking
   console.log('Test 1: Configuration Validation & Secret Masking');
   process.env.GEMINI_API_KEY = 'AIzaSyFakeKeyForTestingPurposes12345';
-  process.env.GEMINI_MODEL = 'gemini-1.5-flash';
+  process.env.GEMINI_MODEL = 'gemini-2.0-flash';
   gemini.reloadConfiguration();
 
   const config = gemini.validateConfig();
   assert(config.configured === true, 'Configuration detected as configured');
-  assert(config.model === 'gemini-1.5-flash', 'Configured model name preserved');
+  assert(config.model === 'gemini-2.0-flash', 'Configured model name preserved');
   assert(config.maskedKey.startsWith('AIzaSy') && config.maskedKey.endsWith('2345'), 'API key safely masked');
   assert(!config.maskedKey.includes('FakeKeyForTestingPurposes'), 'Raw secret is never exposed in diagnostics');
 

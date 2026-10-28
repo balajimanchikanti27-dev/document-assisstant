@@ -22,11 +22,14 @@ export function sendError(
   requestId?: string
 ): void {
   const reqId = requestId || `err_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
+  const safeMessage = (message || '')
+    .replace(/([?&]key=)[^&\s]+/gi, '$1[REDACTED]')
+    .replace(/AIzaSy[A-Za-z0-9_-]{30,}/g, '[REDACTED_API_KEY]');
   res.status(statusCode).json({
     success: false,
     error: {
       code,
-      message,
+      message: safeMessage,
     },
     requestId: reqId,
   });

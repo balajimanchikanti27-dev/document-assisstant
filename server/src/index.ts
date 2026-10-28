@@ -581,7 +581,7 @@ app.post(
       let answer = '';
       let citations: any[] = [];
       let isInsufficientEvidence = false;
-      let modelUsed = process.env.GEMINI_MODEL || 'gemini-1.5-flash';
+      let modelUsed = process.env.GEMINI_MODEL || 'gemini-2.0-flash';
 
       if (mode === 'document') {
         const docIds = selectedDocumentIds || [];
