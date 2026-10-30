@@ -71,17 +71,21 @@ const PORT = process.env.PORT || 5000;
 const HOST = process.env.HOST || '0.0.0.0';
 const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:3000';
 
-// Ensure upload directories exist
+// Ensure upload directories exist safely
 const baseUploadsDir = getStorageUploadsDir();
 const tempUploadDir = path.join(baseUploadsDir, 'temp');
-if (!fs.existsSync(tempUploadDir)) {
-  fs.mkdirSync(tempUploadDir, { recursive: true });
-}
+try {
+  if (!fs.existsSync(tempUploadDir)) {
+    fs.mkdirSync(tempUploadDir, { recursive: true });
+  }
+} catch (e) {}
 
 const permanentDocumentsDir = path.join(baseUploadsDir, 'documents');
-if (!fs.existsSync(permanentDocumentsDir)) {
-  fs.mkdirSync(permanentDocumentsDir, { recursive: true });
-}
+try {
+  if (!fs.existsSync(permanentDocumentsDir)) {
+    fs.mkdirSync(permanentDocumentsDir, { recursive: true });
+  }
+} catch (e) {}
 
 // Multer disk storage streams 100MB files directly to disk without memory buffering
 const diskStorage = multer.diskStorage({
@@ -1863,45 +1867,52 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
-// Start Server
-const server = app.listen(Number(PORT), HOST, () => {
-  const geminiConfig = geminiService.validateConfig();
+// Start HTTP Server only in standalone / local development (not in Vercel serverless environment)
+let server: any = null;
 
-  console.log(`=======================================================`);
-  console.log(`🚀 AI Assistant RAG & Research Backend active on http://${HOST === '0.0.0.0' ? '127.0.0.1' : HOST}:${PORT}`);
-  console.log(`   Health check: http://127.0.0.1:${PORT}/api/health`);
-  console.log(`   Gemini Status: ${geminiConfig.configured ? 'Configured (' + geminiConfig.model + ', key: ' + geminiConfig.maskedKey + ')' : 'Not Configured (offline fallback active)'}`);
-  console.log(`   Upload Limit: 100 MB per file (disk streaming)`);
-  console.log(`   Rate Limiting: Active (Phase 9 protection)`);
-  console.log(`=======================================================`);
+if (!process.env.VERCEL && process.env.NODE_ENV !== 'test_lambda') {
+  server = app.listen(Number(PORT), HOST, () => {
+    const geminiConfig = geminiService.validateConfig();
 
-  // Run initial idempotent document ownership reconciliation
-  documentOwnershipMigration.runMigration({ dryRun: false })
-    .then((report) => {
-      if (report.successfullyRepairedCount > 0) {
-        console.log(`[DOC MIGRATION] Repaired ${report.successfullyRepairedCount} legacy document records, quarantined ${report.quarantinedCount}, unchanged ${report.unchangedCount}.`);
-      }
-    })
-    .catch((err) => {
-      console.warn('[DOC MIGRATION] Initial migration scan notice:', err.message);
-    });
-});
+    console.log(`=======================================================`);
+    console.log(`🚀 AI Assistant RAG & Research Backend active on http://${HOST === '0.0.0.0' ? '127.0.0.1' : HOST}:${PORT}`);
+    console.log(`   Health check: http://127.0.0.1:${PORT}/api/health`);
+    console.log(`   Gemini Status: ${geminiConfig.configured ? 'Configured (' + geminiConfig.model + ', key: ' + geminiConfig.maskedKey + ')' : 'Not Configured (offline fallback active)'}`);
+    console.log(`   Upload Limit: 100 MB per file (disk streaming)`);
+    console.log(`   Rate Limiting: Active (Phase 9 protection)`);
+    console.log(`=======================================================`);
 
-// Graceful shutdown handling for container and cloud platforms
-const handleGracefulShutdown = (signal: string) => {
-  console.log(`\n[SHUTDOWN] Received ${signal}. Closing HTTP server gracefully...`);
-  server.close(() => {
-    console.log('[SHUTDOWN] HTTP server closed. Process terminating safely.');
-    process.exit(0);
+    // Run initial idempotent document ownership reconciliation
+    documentOwnershipMigration.runMigration({ dryRun: false })
+      .then((report) => {
+        if (report.successfullyRepairedCount > 0) {
+          console.log(`[DOC MIGRATION] Repaired ${report.successfullyRepairedCount} legacy document records, quarantined ${report.quarantinedCount}, unchanged ${report.unchangedCount}.`);
+        }
+      })
+      .catch((err) => {
+        console.warn('[DOC MIGRATION] Initial migration scan notice:', err.message);
+      });
   });
-  // Force exit after 10 seconds if connections hang
-  setTimeout(() => {
-    console.warn('[SHUTDOWN] Force terminating process after timeout.');
-    process.exit(0);
-  }, 10000).unref();
-};
 
-process.on('SIGTERM', () => handleGracefulShutdown('SIGTERM'));
-process.on('SIGINT', () => handleGracefulShutdown('SIGINT'));
+  // Graceful shutdown handling for container and cloud platforms
+  const handleGracefulShutdown = (signal: string) => {
+    console.log(`\n[SHUTDOWN] Received ${signal}. Closing HTTP server gracefully...`);
+    if (server) {
+      server.close(() => {
+        console.log('[SHUTDOWN] HTTP server closed. Process terminating safely.');
+        process.exit(0);
+      });
+      // Force exit after 10 seconds if connections hang
+      setTimeout(() => {
+        console.warn('[SHUTDOWN] Force terminating process after timeout.');
+        process.exit(0);
+      }, 10000).unref();
+    }
+  };
+
+  process.on('SIGTERM', () => handleGracefulShutdown('SIGTERM'));
+  process.on('SIGINT', () => handleGracefulShutdown('SIGINT'));
+}
 
 export { app, server };
+export default app;

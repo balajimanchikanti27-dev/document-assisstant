@@ -115,7 +115,7 @@ export interface GeminiConfigStatus {
   provider: string;
 }
 
-export const DEFAULT_GEMINI_MODEL = 'gemini-2.0-flash';
+export const DEFAULT_GEMINI_MODEL = 'gemini-2.5-flash';
 
 export class GeminiService {
   private genAI: GoogleGenerativeAI | null = null;
@@ -131,7 +131,7 @@ export class GeminiService {
    * Reload configuration from process.env (supports dynamic test/runtime overrides)
    */
   public reloadConfiguration(): void {
-    let rawKey = process.env.GEMINI_API_KEY?.trim() || '';
+    let rawKey = process.env.GEMINI_API_KEY?.trim() || process.env.GOOGLE_API_KEY?.trim() || '';
     this.modelName = process.env.GEMINI_MODEL?.trim() || DEFAULT_GEMINI_MODEL;
 
     // Strip accidental variable name prefix if full line was pasted
@@ -231,7 +231,7 @@ export class GeminiService {
     // 2. Check API Key configuration
     if (!this.isConfigured() || !this.genAI) {
       throw new GeminiConfigurationError(
-        'GEMINI_API_KEY is not configured on the server. Please set GEMINI_API_KEY in server/.env.'
+        'GEMINI_API_KEY is not configured on the server. Please set GEMINI_API_KEY in Vercel Project Environment Variables or server/.env.'
       );
     }
 
@@ -368,10 +368,9 @@ export class GeminiService {
     try {
       const candidateModels = [
         this.modelName,
-        'gemini-2.0-flash',
         'gemini-2.5-flash',
-        'gemini-1.5-flash',
-        'gemini-1.5-pro',
+        'gemini-2.0-flash',
+        'gemini-2.5-pro',
       ].filter((m, idx, arr) => Boolean(m) && arr.indexOf(m) === idx);
 
       // Prepare payload: multimodal parts if image is present
@@ -523,17 +522,16 @@ export class GeminiService {
   ): Promise<string> {
     if (!this.isConfigured() || !this.genAI) {
       throw new GeminiConfigurationError(
-        'GEMINI_API_KEY is not configured on the server. Please set GEMINI_API_KEY in Render environment variables or server/.env.'
+        'GEMINI_API_KEY is not configured on the server. Please set GEMINI_API_KEY in Vercel Project Environment Variables or server/.env.'
       );
     }
 
     try {
       const candidateModels = [
         this.modelName,
-        'gemini-2.0-flash',
         'gemini-2.5-flash',
-        'gemini-1.5-flash',
-        'gemini-1.5-pro',
+        'gemini-2.0-flash',
+        'gemini-2.5-pro',
       ].filter((m, idx, arr) => Boolean(m) && arr.indexOf(m) === idx);
 
       let result: any = null;
@@ -694,18 +692,24 @@ export class GeminiService {
       throw err;
     }
 
-    if (status === 400 || message.includes('API_KEY_INVALID') || message.includes('API key not valid')) {
+    if (
+      status === 400 ||
+      status === 401 ||
+      message.includes('API_KEY_INVALID') ||
+      message.includes('API key not valid') ||
+      message.includes('ACCESS_TOKEN_TYPE_UNSUPPORTED')
+    ) {
       throw new GeminiAuthenticationError(
-        'Gemini API authentication failed (HTTP 400: API_KEY_INVALID). ' +
-        'Please verify that GEMINI_API_KEY in Render environment variables or server/.env is a valid key from ' +
-        'https://aistudio.google.com/app/apikey (starts with "AIzaSy..."). Ensure no quotes or spaces were pasted.'
+        'Gemini API authentication failed (HTTP ' + (status || '400') + ': API_KEY_INVALID). ' +
+        'Please verify that GEMINI_API_KEY in your Vercel Project Environment Variables or server/.env is a valid key from ' +
+        'https://aistudio.google.com/apikey (keys start with "AIzaSy..."). Ensure no quotes or spaces were pasted.'
       );
     }
 
     if (status === 403 || message.includes('PERMISSION_DENIED') || message.includes('blocked')) {
       throw new GeminiAuthenticationError(
         'Gemini API request denied (HTTP 403: PERMISSION_DENIED). ' +
-        'Google blocked this request. If you added IP restrictions (e.g. 74.220.48.0/24) in Google Cloud Console, ' +
+        'Google blocked this request. If you added IP restrictions in Google Cloud Console, ' +
         'change Application restrictions to "None" because cloud hosts use rotating dynamic IPs. ' +
         'Also ensure the Generative Language API is enabled.'
       );
@@ -714,8 +718,8 @@ export class GeminiService {
     if (status === 404 || message.includes('models/') || message.includes('not found')) {
       const isFormatInvalid = this.apiKey && !this.apiKey.startsWith('AIzaSy');
       const hint = isFormatInvalid
-        ? ' Note: Your GEMINI_API_KEY does not appear to be a valid Google AI Studio key (keys start with "AIzaSy..."). Please obtain a key from https://aistudio.google.com/app/apikey and update it in your Render dashboard environment variables and server/.env.'
-        : ` Attempted fallback models: gemini-2.0-flash, gemini-2.5-flash, gemini-1.5-flash. Check GEMINI_MODEL in Render or server/.env.`;
+        ? ' Note: Your GEMINI_API_KEY does not appear to be a valid Google AI Studio key (keys start with "AIzaSy..."). Please obtain a valid key from https://aistudio.google.com/apikey and set GEMINI_API_KEY in your Vercel Project Settings -> Environment Variables.'
+        : ` Attempted fallback models: gemini-2.5-flash, gemini-2.0-flash, gemini-2.5-pro. Check GEMINI_MODEL in Vercel environment variables or server/.env.`;
       throw new GeminiModelError(
         `Gemini model "${this.modelName}" was not found or is unsupported for your API key.${hint}`
       );

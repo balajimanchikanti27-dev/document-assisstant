@@ -258,7 +258,7 @@ async function runTestSuite() {
   const mockDiagramAnswer =
     'The attached diagram illustrates a three-tier microservices architecture consisting of an API Gateway, Auth Service, and Database cluster.';
   const mockTracker1 = createMockGenAIWithParts(mockDiagramAnswer);
-  gemini.setClientForTesting(mockTracker1.client as any, 'gemini-1.5-flash');
+  gemini.setClientForTesting(mockTracker1.client as any, 'gemini-2.5-flash');
 
   const diagramResult = await gemini.generateAnswer({
     question: 'Explain the architecture flow in this diagram.',
@@ -282,7 +282,7 @@ async function runTestSuite() {
   const mockChartAnswer =
     'The screenshot displays a bar chart showing quarterly revenue growth from Q1 to Q4, with peak performance in Q4.';
   const mockTracker2 = createMockGenAIWithParts(mockChartAnswer);
-  gemini.setClientForTesting(mockTracker2.client as any, 'gemini-1.5-flash');
+  gemini.setClientForTesting(mockTracker2.client as any, 'gemini-2.5-flash');
 
   const chartResult = await gemini.generateAnswer({
     question: 'What trends are shown in this chart?',
@@ -302,7 +302,7 @@ async function runTestSuite() {
   const mockAutoAnswer =
     'This image contains an architectural diagram with connected nodes representing client, server, and storage layers.';
   const mockTracker3 = createMockGenAIWithParts(mockAutoAnswer);
-  gemini.setClientForTesting(mockTracker3.client as any, 'gemini-1.5-flash');
+  gemini.setClientForTesting(mockTracker3.client as any, 'gemini-2.5-flash');
 
   const imageOnlyResult = await gemini.generateAnswer({
     question: '', // Empty question

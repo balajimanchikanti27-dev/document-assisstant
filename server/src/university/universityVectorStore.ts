@@ -9,6 +9,7 @@ import {
 } from './vignanKnowledgeData.js';
 import { VIGNAN_FACULTY_DIRECTORY } from './vignanFacultyData.js';
 import { VIGNAN_CAMPUS_IMAGES } from './vignanCampusImages.js';
+import { getStorageDataDir, getBundledDataDir } from '../utils/paths.js';
 
 export interface UniversityKnowledgeChunk {
   id: string;
@@ -52,19 +53,19 @@ export class UniversityVectorStore {
   private refreshStatus: UniversityRefreshStatus;
 
   constructor() {
-    try {
-      const currentFile = fileURLToPath(import.meta.url);
-      const serverRoot = path.resolve(path.dirname(currentFile), '..', '..');
-      const dataDir = path.join(serverRoot, 'data');
-      if (!fs.existsSync(dataDir)) {
-        fs.mkdirSync(dataDir, { recursive: true });
+    const dataDir = getStorageDataDir();
+    const bundledDir = getBundledDataDir();
+    this.storageFilePath = path.join(dataDir, 'vignan_university_vector_index.json');
+    this.statusFilePath = path.join(dataDir, 'vignan_refresh_status.json');
+
+    // Pre-populate from bundled static assets if running in temporary serverless directory
+    if (!fs.existsSync(this.storageFilePath)) {
+      const bundledStorage = path.join(bundledDir, 'vignan_university_vector_index.json');
+      if (fs.existsSync(bundledStorage)) {
+        try {
+          fs.copyFileSync(bundledStorage, this.storageFilePath);
+        } catch (e) {}
       }
-      this.storageFilePath = path.join(dataDir, 'vignan_university_vector_index.json');
-      this.statusFilePath = path.join(dataDir, 'vignan_refresh_status.json');
-    } catch {
-      const dataDir = path.resolve(process.cwd(), 'data');
-      this.storageFilePath = path.join(dataDir, 'vignan_university_vector_index.json');
-      this.statusFilePath = path.join(dataDir, 'vignan_refresh_status.json');
     }
 
     this.refreshStatus = {

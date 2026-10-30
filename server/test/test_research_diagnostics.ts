@@ -127,7 +127,7 @@ async function runAllDiagnostics() {
       message: 'API_KEY_INVALID: API key not valid. Please pass a valid API key.',
     },
   });
-  geminiService.setClientForTesting(mockAuthFailAI, 'gemini-1.5-flash');
+  geminiService.setClientForTesting(mockAuthFailAI, 'gemini-2.5-flash');
   researchResponseCache.clear();
 
   try {
@@ -149,7 +149,7 @@ async function runAllDiagnostics() {
   const mockTimeoutAI = createMockGenAI('', {
     throwError: new GeminiTimeoutError('Gemini API request timed out after 30000ms.'),
   });
-  geminiService.setClientForTesting(mockTimeoutAI, 'gemini-1.5-flash');
+  geminiService.setClientForTesting(mockTimeoutAI, 'gemini-2.5-flash');
   researchResponseCache.clear();
 
   try {
@@ -171,7 +171,7 @@ async function runAllDiagnostics() {
   const mockCrashAI = createMockGenAI('', {
     throwError: new Error('Internal Generative AI service error 500: Model overloaded'),
   });
-  geminiService.setClientForTesting(mockCrashAI, 'gemini-1.5-flash');
+  geminiService.setClientForTesting(mockCrashAI, 'gemini-2.5-flash');
   researchResponseCache.clear();
 
   try {

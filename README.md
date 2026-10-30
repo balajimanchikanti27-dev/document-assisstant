@@ -112,8 +112,8 @@ CLIENT_URL=http://localhost:3000
 # Google Gemini API Key (Embeddings & Grounded Generation)
 GEMINI_API_KEY=AIzaSy...
 
-# Gemini Model Selection (default: gemini-1.5-flash)
-GEMINI_MODEL=gemini-1.5-flash
+# Gemini Model Selection (default: gemini-2.5-flash)
+GEMINI_MODEL=gemini-2.5-flash
 
 # Tavily Web Search API Key
 TAVILY_API_KEY=tvly-...
