@@ -232,64 +232,65 @@ export const queryWebResearch = async (
     throw new Error('A question or an image attachment is required.');
   }
 
-  // If external custom API backend is configured, send request there
-  if (API_BASE_URL) {
+  // Always attempt backend research API first
+  try {
+    if (onStatusUpdate) {
+      onStatusUpdate('understanding', 'Analyzing question and intent...');
+    }
+
+    let token: string | undefined;
     try {
-      if (onStatusUpdate) {
-        onStatusUpdate('understanding', 'Analyzing question and intent...');
-      }
+      token = await auth?.currentUser?.getIdToken();
+    } catch (e) {
+      // Fallback for offline / dev
+    }
 
-      let token: string | undefined;
-      try {
-        token = await auth?.currentUser?.getIdToken();
-      } catch (e) {
-        // Fallback for offline / dev
-      }
+    const effectiveUserId = payload.userId || auth?.currentUser?.uid || 'anonymous';
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+    };
+    if (token) {
+      headers['Authorization'] = `Bearer ${token}`;
+    }
+    headers['x-user-id'] = effectiveUserId;
 
-      const effectiveUserId = payload.userId || auth?.currentUser?.uid || 'anonymous';
-      const headers: Record<string, string> = {
-        'Content-Type': 'application/json',
-      };
-      if (token) {
-        headers['Authorization'] = `Bearer ${token}`;
-      }
-      headers['x-user-id'] = effectiveUserId;
+    let response: Response;
+    const primaryUrl = API_BASE_URL ? `${API_BASE_URL}/api/research/query` : '/api/research/query';
 
-      let response: Response;
-      try {
-        response = await fetch(`${API_BASE_URL}/api/research/query`, {
-          method: 'POST',
-          headers,
-          body: JSON.stringify({
-            ...payload,
-            userId: effectiveUserId,
-          }),
-          signal,
-        });
-      } catch (fetchErr: any) {
-        if (fetchErr.name === 'AbortError') throw fetchErr;
-        // Try relative URL through Vite proxy if direct fetch failed
-        if (API_BASE_URL && API_BASE_URL !== '') {
-          try {
-            response = await fetch('/api/research/query', {
-              method: 'POST',
-              headers,
-              body: JSON.stringify({
-                ...payload,
-                userId: effectiveUserId,
-              }),
-              signal,
-            });
-          } catch (relErr: any) {
-            if (relErr.name === 'AbortError') throw relErr;
-            console.warn('Backend unavailable, falling back to direct Wikipedia search:', relErr);
-            return await searchLiveWikipedia(payload, onStatusUpdate, signal);
-          }
-        } else {
-          console.warn('Backend unavailable, falling back to direct Wikipedia search:', fetchErr);
+    try {
+      response = await fetch(primaryUrl, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({
+          ...payload,
+          userId: effectiveUserId,
+        }),
+        signal,
+      });
+    } catch (fetchErr: any) {
+      if (fetchErr.name === 'AbortError') throw fetchErr;
+      // Try relative URL through Vite proxy if direct fetch failed
+      if (primaryUrl !== '/api/research/query') {
+        try {
+          response = await fetch('/api/research/query', {
+            method: 'POST',
+            headers,
+            body: JSON.stringify({
+              ...payload,
+              userId: effectiveUserId,
+            }),
+            signal,
+          });
+        } catch (relErr: any) {
+          if (relErr.name === 'AbortError') throw relErr;
+          console.warn('Backend unavailable, falling back to direct Wikipedia search:', relErr);
           return await searchLiveWikipedia(payload, onStatusUpdate, signal);
         }
+      } else {
+        console.warn('Backend unavailable, falling back to direct Wikipedia search:', fetchErr);
+        return await searchLiveWikipedia(payload, onStatusUpdate, signal);
       }
+    }
 
       if (!response.ok) {
         if (onStatusUpdate) onStatusUpdate('error', 'Search service returned an error.');
@@ -326,19 +327,9 @@ export const queryWebResearch = async (
       if (error.name === 'AbortError') {
         throw new Error('Generation stopped by user.');
       }
-      if (onStatusUpdate) onStatusUpdate('error', error.message);
+      if (typeof onStatusUpdate === 'function') {
+        onStatusUpdate('error', error.message);
+      }
       throw error;
     }
-  }
-
-  // Live Wikipedia Client Search
-  try {
-    return await searchLiveWikipedia(payload, onStatusUpdate, signal);
-  } catch (error: any) {
-    if (error.message && error.message.includes('stopped by user')) {
-      throw error;
-    }
-    if (onStatusUpdate) onStatusUpdate('error', error.message || 'Wikipedia search failed.');
-    throw error;
-  }
 };
