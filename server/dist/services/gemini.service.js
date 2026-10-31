@@ -529,7 +529,7 @@ export class GeminiService {
             message.includes('API key not valid') ||
             message.includes('ACCESS_TOKEN_TYPE_UNSUPPORTED')) {
             throw new GeminiAuthenticationError('Gemini API authentication failed (HTTP ' + (status || '400') + ': API_KEY_INVALID). ' +
-                'Please verify that GEMINI_API_KEY in your Vercel Project Environment Variables or server/.env is a valid key from ' +
+                'Please verify that GEMINI_API_KEY in your Render Dashboard (Environment Variables) or server/.env is a valid key from ' +
                 'https://aistudio.google.com/apikey (keys start with "AIzaSy..."). Ensure no quotes or spaces were pasted.');
         }
         if (status === 403 || message.includes('PERMISSION_DENIED') || message.includes('blocked')) {
@@ -541,8 +541,8 @@ export class GeminiService {
         if (status === 404 || message.includes('models/') || message.includes('not found')) {
             const isFormatInvalid = this.apiKey && !this.apiKey.startsWith('AIzaSy');
             const hint = isFormatInvalid
-                ? ' Note: Your GEMINI_API_KEY does not appear to be a valid Google AI Studio key (keys start with "AIzaSy..."). Please obtain a valid key from https://aistudio.google.com/apikey and set GEMINI_API_KEY in your Vercel Project Settings -> Environment Variables.'
-                : ` Attempted fallback models: gemini-2.5-flash, gemini-2.0-flash, gemini-2.5-pro. Check GEMINI_MODEL in Vercel environment variables or server/.env.`;
+                ? ' Note: Your GEMINI_API_KEY does not appear to be a valid Google AI Studio key (keys start with "AIzaSy..."). Please obtain a valid key from https://aistudio.google.com/apikey and set GEMINI_API_KEY in your Render Dashboard -> Environment Variables.'
+                : ` Attempted fallback models: gemini-2.5-flash, gemini-2.0-flash, gemini-2.5-pro. Check GEMINI_MODEL in Render environment variables or server/.env.`;
             throw new GeminiModelError(`Gemini model "${this.modelName}" was not found or is unsupported for your API key.${hint}`);
         }
         if (status === 429 || message.includes('RESOURCE_EXHAUSTED') || message.includes('quota')) {
