@@ -86,10 +86,10 @@ export const queryDocumentAssistant = async (
           });
         } catch (relErr: any) {
           if (relErr.name === 'AbortError') throw relErr;
-          throw new Error('Cannot connect to backend server. Please verify backend is running on port 5000 (local) or Vercel deployment is active.');
+          throw new Error('Cannot connect to backend server. Please verify Render backend (https://ai-assistant-backend-qqlh.onrender.com) is active or local backend is running on port 5000.');
         }
       } else {
-        throw new Error('Cannot connect to backend server. Please verify backend is running on port 5000 (local) or Vercel deployment is active.');
+        throw new Error('Cannot connect to backend server. Please verify Render backend (https://ai-assistant-backend-qqlh.onrender.com) is active or local backend is running on port 5000.');
       }
     }
 

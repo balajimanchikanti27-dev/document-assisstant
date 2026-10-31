@@ -1,26 +1,27 @@
 /**
  * Centralized API base URL resolver.
- * - In Vercel unified production deployment, uses window.location.origin so all API requests
- *   use the same domain (`https://your-app.vercel.app/api/...`), completely avoiding CORS.
- * - In local development with Vite (`npm run dev`), window.location.origin (`http://localhost:3000`)
- *   automatically proxies relative /api requests to port 5000 via vite.config.ts.
- * - If VITE_API_BASE_URL is explicitly configured with a non-Render host, it is respected.
+ * - Respects VITE_API_BASE_URL if explicitly set (including Render backend: https://ai-assistant-backend-qqlh.onrender.com)
+ * - In local development with Vite (`npm run dev`), returns empty string so Vite proxy forwards /api to localhost:5000.
+ * - In production deployment on Vercel or cloud hosts, defaults to the deployed Render backend URL.
  */
 export const getApiBaseUrl = (): string => {
   const envUrl = import.meta.env.VITE_API_BASE_URL;
   if (typeof envUrl === 'string' && envUrl.trim().length > 0) {
-    // Override any legacy Render backend URLs
-    if (!envUrl.includes('onrender.com')) {
-      return envUrl.trim().replace(/\/+$/, '');
+    return envUrl.trim().replace(/\/+$/, '');
+  }
+
+  // If in browser environment
+  if (typeof window !== 'undefined' && window.location?.hostname) {
+    const hostname = window.location.hostname;
+    // Local development: use empty string so Vite proxy forwards /api to localhost:5000
+    if (hostname === 'localhost' || hostname === '127.0.0.1') {
+      return '';
     }
+    // Deployed on Vercel or other cloud host: default to the deployed Render backend
+    return 'https://ai-assistant-backend-qqlh.onrender.com';
   }
 
-  // Use current browser origin so requests target the active deployment host
-  if (typeof window !== 'undefined' && window.location?.origin) {
-    return window.location.origin;
-  }
-
-  return '';
+  return 'https://ai-assistant-backend-qqlh.onrender.com';
 };
 
 export const API_BASE_URL = getApiBaseUrl();

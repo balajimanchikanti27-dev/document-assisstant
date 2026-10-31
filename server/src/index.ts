@@ -107,11 +107,50 @@ const upload = multer({
 });
 
 // Middlewares
+const allowedLocalOrigins = [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'http://127.0.0.1:3000',
+  'http://127.0.0.1:5173',
+];
+
+const corsOriginHandler = (
+  origin: string | undefined,
+  callback: (err: Error | null, origin?: boolean | string) => void
+) => {
+  // Allow requests with no origin (Render health probes, mobile apps, curl, server-to-server)
+  if (!origin) return callback(null, true);
+
+  const lowerOrigin = origin.toLowerCase();
+
+  // Allow localhost dev servers
+  if (allowedLocalOrigins.includes(lowerOrigin)) {
+    return callback(null, true);
+  }
+
+  // Allow explicit client URL configured in env (e.g. custom domain or Vercel URL)
+  if (CLIENT_URL && lowerOrigin === CLIENT_URL.toLowerCase().replace(/\/+$/, '')) {
+    return callback(null, true);
+  }
+
+  // Allow all Vercel deployment domains (production and preview branches)
+  if (
+    /^https:\/\/[a-zA-Z0-9_-]+\.vercel\.app$/.test(lowerOrigin) ||
+    lowerOrigin.includes('.vercel.app')
+  ) {
+    return callback(null, true);
+  }
+
+  // Fallback for custom domains or development
+  return callback(null, true);
+};
+
 app.use(
   cors({
-    origin: '*',
+    origin: corsOriginHandler,
+    credentials: true,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-    allowedHeaders: '*',
+    allowedHeaders: ['Content-Type', 'Authorization', 'x-user-id', 'X-Requested-With', 'Accept', 'Range'],
     exposedHeaders: ['Content-Range', 'X-Content-Range'],
   })
 );
@@ -122,8 +161,8 @@ app.use(express.urlencoded({ extended: true, limit: '100mb' }));
 // Apply General Rate Limiter (Phase 9 DoS protection)
 app.use(generalRateLimiter.middleware());
 
-// Health check with safe diagnostic summary (Secrets masked, provider health distinguished from backend health)
-app.get('/api/health', (_req: Request, res: Response) => {
+// Health check with safe diagnostic summary (both /health for Render and /api/health for clients)
+app.get(['/health', '/api/health'], (_req: Request, res: Response) => {
   geminiService.reloadConfiguration();
   const geminiConfig = geminiService.validateConfig();
   const feedbackMetrics = feedbackStore.getFeedbackSummary();
