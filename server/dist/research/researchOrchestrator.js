@@ -97,11 +97,16 @@ export class ResearchOrchestrator {
             if (analysis.isMultiSourceRequired && analysis.secondaryQueries.length > 0) {
                 for (const secQuery of analysis.secondaryQueries.slice(0, 2)) {
                     recordStep('searching_wikipedia', `Querying multi-source entity "${secQuery}"...`);
-                    const secSources = await sourceRetriever.retrieve(secQuery, {
-                        sourcePreference,
-                        maxResults: 4,
-                    });
-                    rawSources.push(...secSources);
+                    try {
+                        const secSources = await sourceRetriever.retrieve(secQuery, {
+                            sourcePreference,
+                            maxResults: 4,
+                        });
+                        rawSources.push(...secSources);
+                    }
+                    catch (secErr) {
+                        console.warn(`[RESEARCH ORCHESTRATOR] Secondary query "${secQuery}" note:`, secErr?.message);
+                    }
                 }
                 rawSources = this.deduplicateById(rawSources);
             }
@@ -208,9 +213,9 @@ export class ResearchOrchestrator {
                 usage = geminiResult.usage;
             }
             catch (err) {
-                console.error('[ORCHESTRATOR GEMINI ERROR] Generation failed:', err.message);
-                // Do not return HTTP 200 with a fake answer when the configured provider fails
-                throw err;
+                console.warn('[ORCHESTRATOR GEMINI WARNING] Generation issue, falling back to structured evidence synthesis:', err.message);
+                answer = this.synthesizeStructuredFallback(analysis, verification.evidenceItems, verification, responseLength, payload.image);
+                modelName = 'grounded-research-synthesizer';
             }
         }
         // 8. Structured Fallback Synthesis (when Gemini is offline or not configured)

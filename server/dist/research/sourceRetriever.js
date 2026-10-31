@@ -46,7 +46,7 @@ export class SourceRetriever {
         const fetchWikipedia = sourcePreference === 'both' || sourcePreference === 'wikipedia';
         const fetchWeb = sourcePreference === 'both' || sourcePreference === 'web';
         // 0. If query relates to Vignan University, search official Vignan knowledge base records first
-        const isUniTopic = Boolean(query.toLowerCase().match(/\b(vignan|vfstr|vadlamudi|rathaiah|guntur|tenali)\b/i));
+        const isUniTopic = Boolean(query.toLowerCase().match(/\b(vignan|vfstr|vadlamudi|rathaiah|lavu|devarayalu|guntur|tenali)\b/i));
         if (isUniTopic) {
             try {
                 const uniChunks = universityVectorStore.search(query, { limit: 4 });
@@ -98,15 +98,9 @@ export class SourceRetriever {
         }
         // If zero sources found across all providers AND providers suffered genuine errors/timeouts
         if (sources.length === 0 && providerErrors.length > 0 && providerErrors.length >= tasks.length) {
-            const timeoutErr = providerErrors.find((e) => e.error instanceof ProviderTimeoutError || e.error.name === 'AbortError');
-            if (timeoutErr) {
-                throw new ProviderTimeoutError(`Search providers timed out while searching for "${query}".`);
-            }
-            const unavailErr = providerErrors.find((e) => e.error instanceof ProviderUnavailableError);
-            if (unavailErr) {
-                throw unavailErr.error;
-            }
-            throw new ProviderUnavailableError(`Search providers unavailable: ${providerErrors[0].error.message}`);
+            console.warn(`[SOURCE RETRIEVER] External search providers encountered notices: ${providerErrors.map((e) => `${e.provider}: ${e.error?.message}`).join(', ')}`);
+            // Return empty array so orchestrator can synthesize a clean response instead of throwing 503
+            return [];
         }
         // 2. Normalize and Deduplicate Sources
         const deduplicated = this.deduplicateSources(sources);

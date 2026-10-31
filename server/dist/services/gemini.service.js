@@ -39,7 +39,7 @@ export class GeminiEmptyResponseError extends Error {
         this.name = 'GeminiEmptyResponseError';
     }
 }
-export const DEFAULT_GEMINI_MODEL = 'gemini-2.5-flash';
+export const DEFAULT_GEMINI_MODEL = 'gemini-3.8-flash';
 export class GeminiService {
     genAI = null;
     apiKey = '';
@@ -52,11 +52,17 @@ export class GeminiService {
      * Reload configuration from process.env (supports dynamic test/runtime overrides)
      */
     reloadConfiguration() {
-        let rawKey = process.env.GEMINI_API_KEY?.trim() || process.env.GOOGLE_API_KEY?.trim() || '';
+        let rawKey = (process.env.GEMINI_API_KEY || '').trim();
+        if (!rawKey || rawKey === 'your_gemini_api_key_here') {
+            rawKey = (process.env.GOOGLE_API_KEY || '').trim();
+        }
         this.modelName = process.env.GEMINI_MODEL?.trim() || DEFAULT_GEMINI_MODEL;
         // Strip accidental variable name prefix if full line was pasted
         if (rawKey.startsWith('GEMINI_API_KEY=')) {
             rawKey = rawKey.substring('GEMINI_API_KEY='.length).trim();
+        }
+        if (rawKey.startsWith('GOOGLE_API_KEY=')) {
+            rawKey = rawKey.substring('GOOGLE_API_KEY='.length).trim();
         }
         // Strip surrounding quotes
         if ((rawKey.startsWith('"') && rawKey.endsWith('"')) ||
@@ -249,8 +255,9 @@ export class GeminiService {
         try {
             const candidateModels = [
                 this.modelName,
+                'gemini-3.8-flash',
                 'gemini-2.5-flash',
-                'gemini-2.0-flash',
+                'gemini-3.5-flash-lite',
                 'gemini-2.5-pro',
             ].filter((m, idx, arr) => Boolean(m) && arr.indexOf(m) === idx);
             // Prepare payload: multimodal parts if image is present
@@ -268,6 +275,12 @@ export class GeminiService {
             let lastErr = null;
             for (const candModel of candidateModels) {
                 try {
+                    const requestOptions = {};
+                    if (this.apiKey.startsWith('AQ.') || this.apiKey.startsWith('ya29.')) {
+                        requestOptions.customHeaders = {
+                            Authorization: `Bearer ${this.apiKey}`,
+                        };
+                    }
                     const model = this.genAI.getGenerativeModel({
                         model: candModel,
                         systemInstruction,
@@ -381,14 +394,21 @@ export class GeminiService {
         try {
             const candidateModels = [
                 this.modelName,
+                'gemini-3.8-flash',
                 'gemini-2.5-flash',
-                'gemini-2.0-flash',
+                'gemini-3.5-flash-lite',
                 'gemini-2.5-pro',
             ].filter((m, idx, arr) => Boolean(m) && arr.indexOf(m) === idx);
             let result = null;
             let lastErr = null;
             for (const candModel of candidateModels) {
                 try {
+                    const requestOptions = {};
+                    if (this.apiKey.startsWith('AQ.') || this.apiKey.startsWith('ya29.')) {
+                        requestOptions.customHeaders = {
+                            Authorization: `Bearer ${this.apiKey}`,
+                        };
+                    }
                     const model = this.genAI.getGenerativeModel({
                         model: candModel,
                         systemInstruction,
@@ -529,20 +549,17 @@ export class GeminiService {
             message.includes('API key not valid') ||
             message.includes('ACCESS_TOKEN_TYPE_UNSUPPORTED')) {
             throw new GeminiAuthenticationError('Gemini API authentication failed (HTTP ' + (status || '400') + ': API_KEY_INVALID). ' +
-                'Please verify that GEMINI_API_KEY in your Render Dashboard (Environment Variables) or server/.env is a valid key from ' +
-                'https://aistudio.google.com/apikey (keys start with "AIzaSy..."). Ensure no quotes or spaces were pasted.');
+                'Please verify that GEMINI_API_KEY in your Render Dashboard (Environment Variables) or server/.env is an active key from ' +
+                'https://aistudio.google.com/apikey. Ensure no quotes or spaces were pasted.');
         }
         if (status === 403 || message.includes('PERMISSION_DENIED') || message.includes('blocked')) {
             throw new GeminiAuthenticationError('Gemini API request denied (HTTP 403: PERMISSION_DENIED). ' +
-                'Google blocked this request. If you added IP restrictions in Google Cloud Console, ' +
-                'change Application restrictions to "None" because cloud hosts use rotating dynamic IPs. ' +
-                'Also ensure the Generative Language API is enabled.');
+                'Google blocked this request. If your key has API restrictions, ensure Generative Language API is enabled. ' +
+                'If you added IP restrictions, set them to "None" because cloud hosts use rotating dynamic IPs. ' +
+                'You can generate an unrestricted key at https://aistudio.google.com/apikey.');
         }
         if (status === 404 || message.includes('models/') || message.includes('not found')) {
-            const isFormatInvalid = this.apiKey && !this.apiKey.startsWith('AIzaSy');
-            const hint = isFormatInvalid
-                ? ' Note: Your GEMINI_API_KEY does not appear to be a valid Google AI Studio key (keys start with "AIzaSy..."). Please obtain a valid key from https://aistudio.google.com/apikey and set GEMINI_API_KEY in your Render Dashboard -> Environment Variables.'
-                : ` Attempted fallback models: gemini-2.5-flash, gemini-2.0-flash, gemini-2.5-pro. Check GEMINI_MODEL in Render environment variables or server/.env.`;
+            const hint = ` Attempted fallback models: gemini-3.8-flash, gemini-2.5-flash, gemini-3.5-flash-lite, gemini-2.5-pro. Check GEMINI_MODEL in Render environment variables or create a new key at https://aistudio.google.com/apikey.`;
             throw new GeminiModelError(`Gemini model "${this.modelName}" was not found or is unsupported for your API key.${hint}`);
         }
         if (status === 429 || message.includes('RESOURCE_EXHAUSTED') || message.includes('quota')) {
