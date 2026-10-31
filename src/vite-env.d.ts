@@ -14,3 +14,13 @@ interface ImportMetaEnv {
 interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
+
+declare module 'word-extractor' {
+  export default class WordExtractor {
+    extract(buffer: any): Promise<{
+      getBody(): string;
+      getHeaders(): string;
+      getFooters(): string;
+    }>;
+  }
+}
