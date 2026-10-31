@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
+    "prestart": "tsc",
     "start": "node dist/index.js",
     "test": "tsx test/fullstack_integration.test.ts && tsx test/advanced_agent_intelligence.test.ts && tsx test/universal_rag.test.ts && tsx test/upload_and_rag_100mb.test.ts && tsx test/gemini_service.test.ts && tsx test/rag.test.ts && tsx test/ppt_rag_evaluation.test.ts",
     "test:integration": "tsx test/fullstack_integration.test.ts",
@@ -35,10 +36,10 @@
     "mammoth": "^1.9.0",
     "multer": "^1.4.5-lts.1",
     "pdf-parse": "^1.1.4",
+    "tsx": "^4.19.3",
     "typescript": "~5.7.3",
     "word-extractor": "^1.0.4"
   },
   "devDependencies": {
-    "tsx": "^4.19.3"
   }
 }

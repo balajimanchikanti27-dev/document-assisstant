@@ -5,10 +5,10 @@ server/node_modules/
 .pnp.js
 
 # Production build artifacts
-dist/
-build/
-server/dist/
-server/build/
+/dist/
+/build/
+# server/dist is tracked so Render has compiled JS ready on deployment
+/server/build/
 .vercel/
 
 # Environment files and credentials (CRITICAL: Never commit secrets)

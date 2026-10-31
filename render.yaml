@@ -22,3 +22,4 @@ services:
         value: gemini-2.5-flash
       - key: TAVILY_API_KEY
         sync: false
+
