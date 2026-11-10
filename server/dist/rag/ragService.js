@@ -6,9 +6,10 @@ import { documentJobManager } from '../jobs/documentJobManager.js';
 import { documentService } from '../services/document.service.js';
 import { documentMetadataStore } from '../services/documentMetadataStore.js';
 import { questionAnalyzer } from '../research/questionAnalyzer.js';
+import { expandAcademicQueryTerms, stemWord } from '../utils/textNormalizer.js';
 export { DOCUMENT_FALLBACK_MESSAGE };
-const RELEVANCE_SCORE_THRESHOLD = 0.15;
-const MAX_SELF_CORRECTION_RETRIES = 1;
+const RELEVANCE_SCORE_THRESHOLD = 0.14;
+const MAX_SELF_CORRECTION_RETRIES = 2;
 export class RagService {
     async query(payload) {
         const { question, documentIds, userId = 'anonymous', conversationId, previousMessages = [], } = payload;
@@ -195,26 +196,62 @@ export class RagService {
         }
         let retrievedChunks = Array.from(chunkMap.values());
         retrievedChunks = this.rerankChunks(retrievedChunks, analysis);
-        // 5. Phase 5: Self-Correction - Bounded Retrieval Retry if Evidence is Weak
+        // 5. Multi-Stage Intelligent Fallback Retrieval Before Concluding Insufficient Evidence
         let retries = 0;
-        const topScore = retrievedChunks[0]?.score || 0;
-        const hasSufficientEvidence = this.checkEvidenceSufficiency(retrievedChunks, analysis);
-        if (!hasSufficientEvidence &&
-            topScore >= 0.10 &&
-            topScore < RELEVANCE_SCORE_THRESHOLD &&
-            retries < MAX_SELF_CORRECTION_RETRIES &&
-            analysis.focusedSearchQuery !== queryToSearch) {
+        let hasSufficientEvidence = this.checkEvidenceSufficiency(retrievedChunks, analysis);
+        let topScore = retrievedChunks[0]?.score || 0;
+        // Stage 5A: Focused + Academic Acronym/Synonym Expanded Re-Retrieval
+        if ((!hasSufficientEvidence || topScore < 0.22) && retries < MAX_SELF_CORRECTION_RETRIES) {
             retries++;
-            const refinedQuery = analysis.focusedSearchQuery;
-            const refEmb = await embeddingService.getEmbedding(refinedQuery);
-            const refResults = vectorStore.search(userId, validDocIds, refEmb, refinedQuery, 6);
-            for (const sc of refResults) {
+            const expandedRetryQuery = this.buildExpandedRetryQuery(queryToSearch, analysis);
+            if (expandedRetryQuery && expandedRetryQuery.toLowerCase() !== queryToSearch.toLowerCase()) {
+                const refEmb = await embeddingService.getEmbedding(expandedRetryQuery);
+                const refResults = vectorStore.search(userId, validDocIds, refEmb, expandedRetryQuery, 8);
+                for (const sc of refResults) {
+                    const existing = chunkMap.get(sc.chunk.id);
+                    if (!existing || sc.score > existing.score) {
+                        chunkMap.set(sc.chunk.id, sc);
+                    }
+                }
+                retrievedChunks = this.rerankChunks(Array.from(chunkMap.values()), analysis);
+                hasSufficientEvidence = this.checkEvidenceSufficiency(retrievedChunks, analysis);
+                topScore = retrievedChunks[0]?.score || 0;
+            }
+        }
+        // Stage 5B: Direct Full-Document Extracted Text & Heading Scan Across Selected Documents
+        if (!hasSufficientEvidence || topScore < RELEVANCE_SCORE_THRESHOLD) {
+            retries++;
+            const directScanResults = this.scanSelectedDocumentsDirectly(userId, validDocIds, queryToSearch, analysis);
+            for (const sc of directScanResults) {
                 const existing = chunkMap.get(sc.chunk.id);
                 if (!existing || sc.score > existing.score) {
                     chunkMap.set(sc.chunk.id, sc);
                 }
             }
             retrievedChunks = this.rerankChunks(Array.from(chunkMap.values()), analysis);
+            hasSufficientEvidence = this.checkEvidenceSufficiency(retrievedChunks, analysis);
+            topScore = retrievedChunks[0]?.score || 0;
+        }
+        // Stage 5C: Adjacent Chunk Context Expansion (reunites split headings, definitions, tables, or multi-slide steps)
+        if (retrievedChunks.length > 0 && retrievedChunks[0].score >= RELEVANCE_SCORE_THRESHOLD) {
+            const topCandidates = retrievedChunks.slice(0, 3);
+            for (const candidate of topCandidates) {
+                if (typeof candidate.chunk.chunkIndex === 'number') {
+                    const neighbors = vectorStore.getAdjacentChunks(userId, candidate.chunk.documentId, candidate.chunk.chunkIndex, 1);
+                    for (const nb of neighbors) {
+                        if (!chunkMap.has(nb.id)) {
+                            chunkMap.set(nb.id, {
+                                chunk: nb,
+                                score: Math.max(RELEVANCE_SCORE_THRESHOLD, candidate.score * 0.78),
+                                cosineScore: candidate.cosineScore ? candidate.cosineScore * 0.78 : undefined,
+                                keywordScore: candidate.keywordScore ? candidate.keywordScore * 0.75 : undefined,
+                            });
+                        }
+                    }
+                }
+            }
+            retrievedChunks = this.rerankChunks(Array.from(chunkMap.values()), analysis);
+            hasSufficientEvidence = this.checkEvidenceSufficiency(retrievedChunks, analysis);
         }
         // 6. Diagnostics Logging & Evidence Rejection Tracking
         let rejectionReason;
@@ -383,7 +420,88 @@ export class RagService {
         return reranked;
     }
     /**
-     * Checks if retrieved chunks have sufficient lexical/semantic overlap with the question
+     * Builds a keyword + academic acronym/synonym expanded query for Stage 5A retry
+     */
+    buildExpandedRetryQuery(query, analysis) {
+        const base = analysis.focusedSearchQuery || query;
+        const rawTokens = base
+            .toLowerCase()
+            .replace(/[^a-z0-9_.\-#\s]/g, ' ')
+            .split(/\s+/)
+            .filter((w) => w.length > 1);
+        const { expandedTerms, expandedPhrases } = expandAcademicQueryTerms(query, rawTokens);
+        const combined = Array.from(new Set([...rawTokens, ...Array.from(expandedPhrases), ...Array.from(expandedTerms)]));
+        return combined.slice(0, 18).join(' ');
+    }
+    /**
+     * Stage 5B: Direct full-document extracted text & heading scan across selected documentIds
+     * Ensures answers present in any slide/page/section are found even when initial vector similarity is low.
+     */
+    scanSelectedDocumentsDirectly(userId, documentIds, queryText, analysis) {
+        const stopwords = new Set([
+            'what', 'when', 'where', 'which', 'explain', 'tell', 'show', 'does', 'how', 'why',
+            'give', 'list', 'about', 'this', 'that', 'with', 'from', 'have', 'been', 'were',
+            'will', 'would', 'could', 'should', 'the', 'and', 'for', 'are', 'is', 'was',
+            'in', 'on', 'at', 'to', 'of', 'by', 'an', 'a', 'do', 'you', 'can', 'document', 'documents'
+        ]);
+        const rawTokens = queryText
+            .toLowerCase()
+            .replace(/[^a-z0-9_.\-#\s]/g, ' ')
+            .split(/\s+/)
+            .filter((t) => t.length > 1 && !stopwords.has(t));
+        if (rawTokens.length === 0)
+            return [];
+        const { expandedTerms, expandedPhrases } = expandAcademicQueryTerms(queryText, rawTokens);
+        const results = [];
+        for (const docId of documentIds) {
+            const docChunks = vectorStore.getChunksForDocument(userId, docId);
+            for (const chunk of docChunks) {
+                const textLower = chunk.text.toLowerCase();
+                const headingLower = (chunk.heading || '').toLowerCase();
+                let matchPoints = 0;
+                let coreHits = 0;
+                for (const core of rawTokens) {
+                    const coreStem = stemWord(core);
+                    const hitText = textLower.includes(core) || (coreStem.length >= 3 && textLower.includes(coreStem));
+                    const hitHeading = headingLower.includes(core) || (coreStem.length >= 3 && headingLower.includes(coreStem));
+                    if (hitText || hitHeading) {
+                        coreHits++;
+                        matchPoints += hitHeading ? 3.0 : 2.0;
+                    }
+                }
+                for (const exp of expandedTerms) {
+                    if (textLower.includes(exp))
+                        matchPoints += 1.0;
+                    if (headingLower.includes(exp))
+                        matchPoints += 1.5;
+                }
+                for (const phrase of expandedPhrases) {
+                    if (textLower.includes(phrase))
+                        matchPoints += 2.5;
+                    if (headingLower.includes(phrase))
+                        matchPoints += 3.5;
+                }
+                for (const num of analysis.extractedNumbers) {
+                    if (textLower.includes(num.toLowerCase()))
+                        matchPoints += 2.0;
+                }
+                if (matchPoints > 0 && (coreHits > 0 || expandedPhrases.size > 0)) {
+                    const denom = Math.max(rawTokens.length * 2.5, 2.5);
+                    const normScore = Math.min(0.88, Math.max(0.16, (matchPoints / denom) * 0.65));
+                    results.push({
+                        chunk,
+                        score: normScore,
+                        cosineScore: 0.25,
+                        keywordScore: normScore,
+                    });
+                }
+            }
+        }
+        results.sort((a, b) => b.score - a.score);
+        return results.slice(0, 8);
+    }
+    /**
+     * Checks if retrieved chunks have sufficient semantic, lexical, stem, or academic concept overlap with the question
      */
     checkEvidenceSufficiency(chunks, analysis) {
         if (chunks.length === 0)
@@ -391,100 +509,86 @@ export class RagService {
         const topChunk = chunks[0];
         if (topChunk.score < RELEVANCE_SCORE_THRESHOLD)
             return false;
-        // Check query tokens
         const stopwords = new Set([
             'what', 'when', 'where', 'which', 'explain', 'tell', 'show', 'does', 'how', 'why',
             'give', 'list', 'about', 'this', 'that', 'with', 'from', 'have', 'been', 'were',
             'will', 'would', 'could', 'should', 'the', 'and', 'for', 'are', 'is', 'was',
-            'in', 'on', 'at', 'to', 'of', 'by', 'an', 'a', 'do', 'you', 'can'
+            'in', 'on', 'at', 'to', 'of', 'by', 'an', 'a', 'do', 'you', 'can', 'please',
+            'describe', 'define', 'difference', 'between', 'compare', 'advantages', 'disadvantages',
+            'pros', 'cons', 'examples', 'example', 'steps', 'types', 'used', 'using', 'use'
         ]);
         const tokens = analysis.originalQuestion
             .toLowerCase()
-            .replace(/[^a-z0-9\s]/g, '')
+            .replace(/[^a-z0-9\s]/g, ' ')
             .split(/\s+/)
-            .filter((w) => w.length > 2 && !stopwords.has(w));
+            .filter((w) => w.length > 1 && !stopwords.has(w));
         if (tokens.length === 0)
             return true;
         const allChunkText = chunks
-            .slice(0, 4)
+            .slice(0, 6)
             .map((c) => `${c.chunk.text} ${c.chunk.heading || ''}`)
             .join(' ')
             .toLowerCase();
-        // Specific technical tokens (excluding ubiquitous meta-terms and common query verbs)
-        const generalTechWords = new Set([
-            'java', 'code', 'program', 'system', 'file', 'type', 'types',
-            'mechanism', 'concept', 'feature', 'process', 'technique', 'approach', 'example', 'examples',
-            'method', 'methods', 'class', 'classes', 'object', 'objects', 'variable', 'variables', 'function', 'functions',
-            'create', 'creating', 'created', 'define', 'defining', 'defined', 'use', 'using', 'used',
-            'make', 'making', 'write', 'writing', 'implement', 'implementing', 'work', 'working',
-            'run', 'running', 'call', 'calling', 'show', 'showing', 'give', 'giving'
-        ]);
         const summaryMetaWords = new Set([
             'summarize', 'summary', 'overview', 'key', 'insights', 'insight', 'main', 'points', 'point',
             'takeaways', 'takeaway', 'recap', 'briefly', 'selected', 'document', 'documents', 'uploaded',
             'pdf', 'file', 'content', 'contents', 'whole', 'entire', 'all', 'core', 'information',
-            'slide', 'slides', 'presentation', 'according', 'mentioned', 'stated', 'text'
+            'slide', 'slides', 'presentation', 'according', 'mentioned', 'stated', 'text', 'notes'
         ]);
         const isDocSummary = (analysis.intent === 'summary' ||
             /\b(summarize|summary|overview|key insights|main points|takeaways|recap)\b/i.test(analysis.originalQuestion)) &&
             /\b(document|pdf|file|paper|report|slides|presentation|uploaded|all|everything|selected)\b/i.test(analysis.originalQuestion);
-        const specificTokens = tokens.filter((t) => !generalTechWords.has(t));
-        const domainSpecificTokens = specificTokens.filter((t) => !summaryMetaWords.has(t));
+        const domainTokens = tokens.filter((t) => !summaryMetaWords.has(t));
         // Pure document-level summary query with existing document chunks is always grounded
-        if (isDocSummary && domainSpecificTokens.length === 0 && chunks.length > 0) {
+        if (isDocSummary && domainTokens.length === 0 && chunks.length > 0) {
             return true;
         }
-        // Stem matching helper
-        const hasStemMatch = (word, targetText) => {
+        // Generic structural/rhetorical modifiers whose synonyms alone shouldn't validate an unrelated document
+        const genericStructuralModifiers = new Set([
+            'formula', 'formulas', 'equation', 'equations', 'expression',
+            'step', 'steps', 'phase', 'phases', 'stage', 'stages', 'procedure', 'process',
+            'type', 'types', 'kind', 'kinds', 'category', 'categories', 'classification',
+            'advantage', 'advantages', 'benefit', 'benefits', 'pro', 'pros',
+            'disadvantage', 'disadvantages', 'limitation', 'limitations', 'drawback', 'drawbacks', 'con', 'cons',
+            'difference', 'differences', 'compare', 'comparison', 'versus', 'contrast',
+            'definition', 'define', 'meaning', 'overview', 'concept', 'introduction',
+            'example', 'examples', 'method', 'methods', 'technique', 'approach', 'system'
+        ]);
+        const subjectTokens = (domainTokens.length > 0 ? domainTokens : tokens).filter((t) => !genericStructuralModifiers.has(t));
+        const tokensForSubjectExpansion = subjectTokens.length > 0 ? subjectTokens : (domainTokens.length > 0 ? domainTokens : tokens);
+        // Expand subject tokens with morphological stems, academic acronyms, and conceptual synonyms
+        const { expandedTerms, expandedPhrases } = expandAcademicQueryTerms(analysis.originalQuestion, tokensForSubjectExpansion);
+        // Stem + acronym + synonym matching helper (uses morphological stemmer with word-boundary check)
+        const escapeRegex = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const hasConceptMatch = (word, targetText) => {
             if (targetText.includes(word))
                 return true;
-            if (word.length >= 4) {
-                const stem = word.slice(0, Math.min(word.length - 1, 5));
-                if (targetText.includes(stem))
+            const stem = stemWord(word);
+            if (stem.length >= 4) {
+                const boundaryRegex = new RegExp(`\\b${escapeRegex(stem)}`, 'i');
+                if (boundaryRegex.test(targetText))
                     return true;
             }
             return false;
         };
-        const hasAnySpecificMatch = specificTokens.length === 0 || specificTokens.some((t) => hasStemMatch(t, allChunkText));
-        // If dense semantic similarity or hybrid score is strong, evidence is relevant IF specific terms match
-        if (topChunk.score >= 0.40 || (topChunk.cosineScore && topChunk.cosineScore >= 0.55)) {
-            if (hasAnySpecificMatch) {
-                return true;
-            }
+        const anyExpandedPhraseMatch = Array.from(expandedPhrases).some((phrase) => allChunkText.includes(phrase));
+        const anyExpandedTermMatch = Array.from(expandedTerms).some((term) => term.length >= 2 && hasConceptMatch(term, allChunkText));
+        const directMatchedTokens = tokensForSubjectExpansion.filter((t) => hasConceptMatch(t, allChunkText));
+        // If an expanded academic phrase (e.g. "first normal form" for "1NF", "atomicity" for "ACID") matched, evidence is grounded
+        if (anyExpandedPhraseMatch) {
+            return true;
         }
-        // If query has distinctive terms and none match (lexically or via stem), evidence is insufficient
-        const hasAnyDistinctiveMatch = tokens.some((t) => hasStemMatch(t, allChunkText));
-        if (tokens.length >= 2 && !hasAnyDistinctiveMatch && topChunk.score < 0.25) {
-            return false;
+        // If strong semantic similarity AND at least one expanded subject concept/stem matches
+        if ((topChunk.score >= 0.35 || (topChunk.cosineScore && topChunk.cosineScore >= 0.48)) && (directMatchedTokens.length > 0 || anyExpandedTermMatch)) {
+            return true;
         }
-        // If query has specific non-generic technical entities, check if at least one matches lexically or via stem
-        if (specificTokens.length > 0) {
-            const matchedSpecific = specificTokens.filter((t) => hasStemMatch(t, allChunkText));
-            if (matchedSpecific.length === 0) {
-                return false;
-            }
+        // If any subject token or its stem/acronym/synonym is present and hybrid score meets threshold
+        if (directMatchedTokens.length > 0 || anyExpandedTermMatch) {
+            return topChunk.score >= RELEVANCE_SCORE_THRESHOLD;
         }
-        // For queries with core subject nouns, verify at least one core subject noun or its root is present
-        const primaryClause = analysis.originalQuestion.split(/\band\b|\bas well as\b/i)[0].trim();
-        const coreNounTokens = primaryClause
-            .replace(/\bin\s+[a-z0-9]+\b/gi, '')
-            .replace(/\b(?:how|what|why|when|where|does|can|do|you|create|explain|define|tell|show|use|the|a|an|is|are|of|to|for|with)\b/gi, ' ')
-            .trim()
-            .split(/\s+/)
-            .map((w) => w.replace(/[^a-z0-9]/gi, '').toLowerCase())
-            .filter((w) => w.length > 3 && !generalTechWords.has(w));
-        if (coreNounTokens.length > 0) {
-            const anyCorePresent = coreNounTokens.some((noun) => hasStemMatch(noun, allChunkText));
-            if (!anyCorePresent) {
-                return false;
-            }
-        }
-        const matchedTokens = tokens.filter((t) => hasStemMatch(t, allChunkText));
-        const tokenMatchRatio = matchedTokens.length / (tokens.length || 1);
-        if (tokenMatchRatio < 0.25 && topChunk.score < 0.25) {
-            return false;
-        }
-        return true;
+        // If zero subject tokens, zero stems, zero acronyms, and zero synonyms matched across all top chunks,
+        // the topic is genuinely absent from the selected documents!
+        return false;
     }
     /**
      * Decompose multi-part questions or questions with multiple clauses
@@ -511,7 +615,7 @@ export class RagService {
      */
     generateOfflineGroundedAnswer(question, relevantChunks, citations, retrievalLogs, analysis) {
         const topChunk = relevantChunks[0];
-        if (!topChunk || topChunk.score < 0.18 || !this.checkEvidenceSufficiency(relevantChunks, analysis)) {
+        if (!topChunk || topChunk.score < RELEVANCE_SCORE_THRESHOLD || !this.checkEvidenceSufficiency(relevantChunks, analysis)) {
             return {
                 success: true,
                 answer: DOCUMENT_FALLBACK_MESSAGE,

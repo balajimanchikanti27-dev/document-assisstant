@@ -36,7 +36,7 @@ export function chunkSections(sections, documentId, userId, documentName, chunkS
     const seenTexts = new Set();
     for (const section of sections) {
         const text = section.text.trim();
-        if (!text || text.length < 5)
+        if (!text || text.length < 2)
             continue;
         const pageOrSlidePrefix = section.slideNumber
             ? `s${section.slideNumber}`
@@ -96,7 +96,7 @@ export function chunkSections(sections, documentId, userId, documentName, chunkS
                 end = text.length;
             }
             const chunkBody = text.slice(start, end).trim();
-            if (chunkBody.length > 25) {
+            if (chunkBody.length >= 5) {
                 const chunkWithHeading = headingPrefix && !chunkBody.startsWith('[Slide')
                     ? `${headingPrefix}${chunkBody}`
                     : chunkBody;

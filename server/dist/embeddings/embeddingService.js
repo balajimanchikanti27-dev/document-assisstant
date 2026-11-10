@@ -1,5 +1,6 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import dotenv from 'dotenv';
+import { stemWord, ACADEMIC_ACRONYM_MAP } from '../utils/textNormalizer.js';
 dotenv.config();
 const VECTOR_DIMENSIONS = 256;
 export class EmbeddingService {
@@ -123,24 +124,43 @@ export class EmbeddingService {
     }
     /**
      * Deterministic 256-dimensional semantic representation based on
-     * tokenization, character tri-grams, word stems, and hash distribution.
+     * tokenization, morphological stems, academic acronym expansions, and character tri-grams.
      */
     generateDeterministicVector(text) {
         const vector = new Array(VECTOR_DIMENSIONS).fill(0);
         const clean = text.toLowerCase().replace(/[^a-z0-9\s]/g, ' ');
         const words = clean.split(/\s+/).filter((w) => w.length > 1);
-        // 1. Word tokens
         for (const word of words) {
+            // 1. Exact word token
             const hash = this.stringHash(word);
             const index = Math.abs(hash) % VECTOR_DIMENSIONS;
             vector[index] += 1.0;
-            // 2. Character tri-grams for subword similarity
+            // 2. Morphological root / stem token
+            const stem = stemWord(word);
+            if (stem && stem !== word && stem.length >= 3) {
+                const stemHash = this.stringHash(`stem:${stem}`);
+                const stemIndex = Math.abs(stemHash) % VECTOR_DIMENSIONS;
+                vector[stemIndex] += 0.85;
+            }
+            // 3. Academic acronym expansion tokens (bridges "1NF" <-> "First Normal Form", "BFS" <-> "Breadth First Search", etc.)
+            const expansions = ACADEMIC_ACRONYM_MAP[word];
+            if (expansions) {
+                for (const exp of expansions) {
+                    for (const expWord of exp.toLowerCase().split(/\s+/)) {
+                        if (expWord.length > 2) {
+                            const expIndex = Math.abs(this.stringHash(expWord)) % VECTOR_DIMENSIONS;
+                            vector[expIndex] += 0.65;
+                        }
+                    }
+                }
+            }
+            // 4. Character tri-grams for subword similarity
             if (word.length >= 3) {
                 for (let i = 0; i <= word.length - 3; i++) {
                     const tri = word.slice(i, i + 3);
                     const triHash = this.stringHash(tri);
                     const triIndex = Math.abs(triHash) % VECTOR_DIMENSIONS;
-                    vector[triIndex] += 0.4;
+                    vector[triIndex] += 0.35;
                 }
             }
         }

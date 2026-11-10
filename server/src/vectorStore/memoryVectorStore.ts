@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import { DocumentChunk } from '../types.js';
 import { embeddingService } from '../embeddings/embeddingService.js';
 import { getStorageDataDir } from '../utils/paths.js';
+import { expandAcademicQueryTerms } from '../utils/textNormalizer.js';
 
 export interface ScoredChunk {
   chunk: DocumentChunk;
@@ -106,7 +107,18 @@ export class MemoryVectorStore {
         list.push(chunk);
       }
     }
+    list.sort((a, b) => (a.chunkIndex ?? 0) - (b.chunkIndex ?? 0));
     return list;
+  }
+
+  public getAdjacentChunks(userId: string, documentId: string, chunkIndex: number, radius: number = 1): DocumentChunk[] {
+    const docChunks = this.getChunksForDocument(userId, documentId);
+    return docChunks.filter(
+      (c) =>
+        typeof c.chunkIndex === 'number' &&
+        c.chunkIndex !== chunkIndex &&
+        Math.abs(c.chunkIndex - chunkIndex) <= radius
+    );
   }
 
   /**
@@ -147,7 +159,7 @@ export class MemoryVectorStore {
       return [];
     }
 
-    // 2. Prepare Query Keywords, Plural/Singular Expansion, and Intent
+    // 2. Prepare Query Keywords, Morphological Stems, Academic Acronyms/Synonyms, and Intent
     const rawTokens = (queryText || '')
       .toLowerCase()
       .replace(/[^a-z0-9_.\-#]/g, ' ')
@@ -155,19 +167,9 @@ export class MemoryVectorStore {
       .filter((t) => t.length > 1);
 
     const keyTerms = rawTokens.filter((t) => !STOPWORDS.has(t));
+    const { expandedTerms, expandedPhrases } = expandAcademicQueryTerms(queryText || '', keyTerms);
 
-    // Expand search terms with singular and plural variants
-    const expandedTerms = new Set<string>(keyTerms);
-    for (const t of keyTerms) {
-      if (t.endsWith('s') && t.length > 3) {
-        expandedTerms.add(t.slice(0, -1));
-      } else if (!t.endsWith('s') && t.length > 2) {
-        expandedTerms.add(t + 's');
-        expandedTerms.add(t + 'es');
-      }
-    }
-
-    const queryPhrases: string[] = [];
+    const queryPhrases: string[] = Array.from(expandedPhrases);
     if (rawTokens.length >= 2) {
       for (let i = 0; i < rawTokens.length - 1; i++) {
         queryPhrases.push(`${rawTokens[i]} ${rawTokens[i + 1]}`);
@@ -204,18 +206,21 @@ export class MemoryVectorStore {
       let hasDefinitionalCopula = false;
       const textLower = chunk.text.toLowerCase();
       const headingLower = (chunk.heading || '').toLowerCase();
+      const isCoreKeyTerm = new Set(keyTerms);
 
       if (expandedTerms.size > 0) {
         for (const term of expandedTerms) {
+          const isExactKey = isCoreKeyTerm.has(term);
+          const weight = isExactKey ? (term.length > 4 || /[0-9_]/.test(term) ? 1.8 : 1.3) : 0.95;
           if (textLower.includes(term)) {
-            keywordPoints += term.length > 4 || /[0-9_]/.test(term) ? 1.5 : 1.0;
+            keywordPoints += weight;
           }
           if (headingLower.includes(term)) {
-            keywordPoints += 2.5; // Heading match bonus
+            keywordPoints += isExactKey ? 2.6 : 1.5; // Heading match bonus
           }
         }
 
-        // Phrase match bonus
+        // Phrase & expanded academic concept phrase match bonus
         for (const phrase of queryPhrases) {
           if (textLower.includes(phrase)) {
             keywordPoints += 2.5;
@@ -225,7 +230,7 @@ export class MemoryVectorStore {
           }
         }
 
-        // Definitional intent boosting
+        // Definitional intent boosting (forward and reverse definitional patterns)
         if (isDefinitional && defTarget) {
           const targetSingular = defTarget.endsWith('s') ? defTarget.slice(0, -1) : defTarget;
           const targetPlural = defTarget.endsWith('s') ? defTarget : `${defTarget}s`;
@@ -236,12 +241,16 @@ export class MemoryVectorStore {
             keywordPoints += 4.0;
           }
 
-          // Check for definitional copula in text: "X is an unwanted event...", "X refers to...", "X is defined as..."
-          const copulaPattern = new RegExp(
-            `(?:\\b${targetSingular}\\b|\\b${targetPlural}\\b)\\s+(?:is\\s+an?|are|refers\\s+to|is\\s+defined\\s+as|means)\\s+([a-z0-9_\\-\\s]{3,40})`,
+          // Check for definitional copula in text: "X is an unwanted event...", "X refers to...", "... is known as X", "Def: ..."
+          const forwardCopula = new RegExp(
+            `(?:\\b${targetSingular}\\b|\\b${targetPlural}\\b)\\s*(?:\\([a-z0-9\\s-]+\\))?\\s*(?:is\\s+an?|are|refers\\s+to|is\\s+defined\\s+as|means|:)\\s+([a-z0-9_\\-\\s]{3,50})`,
             'i'
           );
-          if (copulaPattern.test(textLower)) {
+          const reverseCopula = new RegExp(
+            `(?:is\\s+known\\s+as|is\\s+called|defined\\s+as)\\s+(?:an?\\s+|the\\s+)?(?:\\b${targetSingular}\\b|\\b${targetPlural}\\b)`,
+            'i'
+          );
+          if (forwardCopula.test(textLower) || reverseCopula.test(textLower) || (/\bdef\s*:/i.test(textLower) && textLower.includes(targetSingular))) {
             keywordPoints += 5.5;
             hasDefinitionalCopula = true;
           }
@@ -260,21 +269,22 @@ export class MemoryVectorStore {
           keywordPoints += 5.0;
         }
 
-        // Normalize keyword score to [0, 1] range
-        const maxPossible = Math.max(expandedTerms.size * 2.0 + queryPhrases.length * 2.5 + (isDefinitional ? 5.0 : 0), 1.0);
+        // Normalize keyword score to [0, 1] range using core query scale so expansions boost rather than dilute
+        const coreScale = Math.max(keyTerms.length, 1);
+        const maxPossible = Math.max(coreScale * 2.4 + Math.min(queryPhrases.length, 4) * 2.2 + (isDefinitional ? 4.5 : 0), 1.5);
         var normKeyword = Math.min(Math.max(keywordPoints / maxPossible, 0), 1.0);
       } else {
         var normKeyword = 0;
       }
 
-      // C. Hybrid Score Synthesis
+      // C. Smooth Hybrid Score Synthesis (never crush valid semantic matches when paraphrased)
       let finalScore = 0;
-      if (expandedTerms.size > 0 && normKeyword === 0) {
-        finalScore = cosine * 0.25;
-      } else if (cosine > 0 && normKeyword > 0) {
-        finalScore = 0.45 * cosine + 0.55 * normKeyword;
+      if (cosine > 0 && normKeyword > 0) {
+        finalScore = Math.max(0.45 * cosine + 0.55 * normKeyword, normKeyword * 0.85, cosine * 0.75);
       } else if (normKeyword > 0) {
-        finalScore = normKeyword * 0.85;
+        finalScore = normKeyword * 0.88;
+      } else if (expandedTerms.size > 0) {
+        finalScore = cosine * 0.65;
       } else {
         finalScore = cosine;
       }
@@ -297,12 +307,17 @@ export class MemoryVectorStore {
       scoredList.sort((a, b) => b.score - a.score);
 
       const selectedChunks: ScoredChunk[] = [];
+      const perDocCap = topK >= docIdSet.size * 2 ? 2 : 1;
 
-      // 1. Ensure each selected document with genuine relevant evidence (score >= 0.20) gets represented
+      // 1. Ensure each selected document with genuine relevant evidence (score >= 0.14) gets represented
       for (const dId of docIdSet) {
-        const bestForDoc = scoredList.find((item) => item.chunk.documentId === dId && item.score >= 0.20);
-        if (bestForDoc) {
-          selectedChunks.push(bestForDoc);
+        const topForDoc = scoredList
+          .filter((item) => item.chunk.documentId === dId && item.score >= 0.14)
+          .slice(0, perDocCap);
+        for (const item of topForDoc) {
+          if (!selectedChunks.some((s) => s.chunk.id === item.chunk.id)) {
+            selectedChunks.push(item);
+          }
         }
       }
 

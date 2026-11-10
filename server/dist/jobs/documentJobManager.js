@@ -93,7 +93,8 @@ export class DocumentJobManager {
                 progress: 20,
             });
             const sections = await parseDocument(inputBufferOrPath, filename, mimetype);
-            if (sections.length === 0) {
+            const totalExtractedChars = sections.reduce((sum, s) => sum + (s.text || '').replace(/\s+/g, '').length, 0);
+            if (sections.length === 0 || totalExtractedChars < 3) {
                 throw new Error(`No readable text content could be extracted from "${filename}".`);
             }
             const pageCount = Math.max(...sections.map((s) => s.pageNumber || 0), 0) || undefined;
@@ -106,6 +107,9 @@ export class DocumentJobManager {
                 slideCount,
             });
             const unembeddedChunks = chunkSections(sections, documentId, userId, filename);
+            if (unembeddedChunks.length === 0) {
+                throw new Error(`Chunking verification failed: No valid searchable chunks could be generated for "${filename}".`);
+            }
             // 3. Embedding Generation stage
             this.updateJob(documentId, {
                 status: 'indexing',

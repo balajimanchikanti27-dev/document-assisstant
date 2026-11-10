@@ -222,6 +222,10 @@ export const DocumentAssistantPage: React.FC = () => {
           documentIds: selectedDocIds,
           userId: effectiveUserId,
           conversationId: activeSession?.id,
+          previousMessages: messages.slice(-6).map((m) => ({
+            sender: m.sender,
+            text: m.text,
+          })),
         },
         controller.signal
       );

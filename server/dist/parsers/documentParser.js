@@ -1,8 +1,10 @@
 import fs from 'fs';
+import zlib from 'zlib';
 import pdfParse from 'pdf-parse';
 import mammoth from 'mammoth';
 import JSZip from 'jszip';
 import WordExtractor from 'word-extractor';
+import { normalizeExtractedText } from '../utils/textNormalizer.js';
 export const SUPPORTED_DOCUMENT_EXTENSIONS = [
     '.pdf',
     '.ppt',
@@ -86,15 +88,42 @@ async function parsePdf(buffer, filename) {
             pagerender: (pageData) => {
                 return pageData.getTextContent().then((textContent) => {
                     let lastY;
+                    let lastEndX;
                     let text = '';
                     for (const item of textContent.items) {
-                        if (lastY === item.transform[5] || lastY === undefined) {
-                            text += item.str;
+                        const str = item.str || '';
+                        if (!str)
+                            continue;
+                        const x = Array.isArray(item.transform) ? item.transform[4] : undefined;
+                        const y = Array.isArray(item.transform) ? item.transform[5] : undefined;
+                        const width = typeof item.width === 'number' ? item.width : 0;
+                        const isSameLine = lastY === undefined ||
+                            y === undefined ||
+                            Math.abs(y - lastY) <= 2.5;
+                        if (isSameLine) {
+                            if (text.length > 0 &&
+                                !text.endsWith(' ') &&
+                                !text.endsWith('\n') &&
+                                !text.endsWith('-') &&
+                                !text.endsWith('(') &&
+                                !text.endsWith('[') &&
+                                !text.endsWith('/') &&
+                                !str.startsWith(' ') &&
+                                !/^[.,;:!?)\]]/.test(str)) {
+                                const gap = x !== undefined && lastEndX !== undefined ? x - lastEndX : 2;
+                                if (gap > 0.8) {
+                                    text += ' ';
+                                }
+                            }
+                            text += str;
                         }
                         else {
-                            text += '\n' + item.str;
+                            text += '\n' + str;
                         }
-                        lastY = item.transform[5];
+                        if (y !== undefined)
+                            lastY = y;
+                        if (x !== undefined)
+                            lastEndX = x + width;
                     }
                     const pageNum = (pageData.pageIndex || 0) + 1;
                     return `---PAGE_START_${pageNum}---${text}---PAGE_END_${pageNum}---`;
@@ -107,21 +136,25 @@ async function parsePdf(buffer, filename) {
         let match;
         while ((match = regex.exec(rawText)) !== null) {
             const pageNum = parseInt(match[1], 10);
-            const cleaned = match[2].trim();
+            const cleaned = normalizeExtractedText(match[2]);
             if (cleaned.length > 0) {
+                const firstLine = cleaned.split('\n').map((l) => l.trim()).find((l) => l.length > 2 && l.length < 95 && !/[.!?]$/.test(l));
                 pages.push({
                     pageNumber: pageNum,
-                    heading: `Page ${pageNum}`,
+                    heading: firstLine ? `Page ${pageNum}: ${firstLine}` : `Page ${pageNum}`,
                     text: cleaned,
                 });
             }
         }
         if (pages.length === 0 && data.text && data.text.trim().length > 0) {
-            pages.push({
-                pageNumber: 1,
-                heading: 'Page 1',
-                text: data.text.trim(),
-            });
+            const normalizedFull = normalizeExtractedText(data.text);
+            if (normalizedFull.length > 0) {
+                pages.push({
+                    pageNumber: 1,
+                    heading: 'Page 1',
+                    text: normalizedFull,
+                });
+            }
         }
     }
     catch (err) {
@@ -129,14 +162,16 @@ async function parsePdf(buffer, filename) {
         try {
             const simple = await executePdfParse(buffer);
             if (simple.text && simple.text.trim()) {
-                const full = simple.text.trim();
+                const full = normalizeExtractedText(simple.text);
                 const parts = full.split(/\f|\n\s*Page \d+/i).filter((s) => s.trim().length > 0);
                 if (parts.length > 1) {
                     parts.forEach((p, idx) => {
+                        const cleanedPart = normalizeExtractedText(p);
+                        const firstLine = cleanedPart.split('\n').map((l) => l.trim()).find((l) => l.length > 2 && l.length < 95 && !/[.!?]$/.test(l));
                         pages.push({
                             pageNumber: idx + 1,
-                            heading: `Page ${idx + 1}`,
-                            text: p.trim(),
+                            heading: firstLine ? `Page ${idx + 1}: ${firstLine}` : `Page ${idx + 1}`,
+                            text: cleanedPart,
                         });
                     });
                 }
@@ -150,13 +185,106 @@ async function parsePdf(buffer, filename) {
             }
         }
         catch (e) {
-            throw new Error(`Unable to read PDF file "${filename}". The file may be password-protected or corrupt.`);
+            // Fallback: Direct PDF content-stream extraction when XRef table is malformed (e.g., "bad XRef entry")
+            const rawBinary = buffer.toString('latin1');
+            if (/\/Encrypt\b/.test(rawBinary)) {
+                throw new Error(`Unable to read PDF file "${filename}". The file is password-protected or encrypted.`);
+            }
+            const streamPages = extractTextFromPdfStreams(buffer);
+            if (streamPages.length > 0) {
+                pages.push(...streamPages);
+            }
+            else {
+                throw new Error(`Unable to read PDF file "${filename}". The file may be password-protected or corrupt.`);
+            }
         }
     }
     if (pages.length === 0 || pages.every((p) => p.text.trim().length === 0)) {
         throw new Error(`Scanned document detected: The PDF "${filename}" contains no selectable text layer. OCR extraction is required but unavailable in the current configuration.`);
     }
     return pages;
+}
+function decodePdfLiteralString(raw) {
+    return raw
+        .replace(/\\n/g, '\n')
+        .replace(/\\r/g, '\r')
+        .replace(/\\t/g, '\t')
+        .replace(/\\\(/g, '(')
+        .replace(/\\\)/g, ')')
+        .replace(/\\\\/g, '\\')
+        .replace(/\\([0-7]{1,3})/g, (_, oct) => String.fromCharCode(parseInt(oct, 8)));
+}
+function extractTextOpsFromContentStream(content) {
+    const lines = [];
+    const btBlocks = content.match(/BT[\s\S]*?ET/g) || [];
+    for (const block of btBlocks) {
+        let currentLine = '';
+        // Match TJ arrays [(...) -20 (...)] TJ or single (...) Tj / ' / "
+        const opRegex = /\[((?:[^[\]]|\([^)]*\))*)\]\s*TJ|\(((?:\\.|[^\\()])*)\)\s*(?:Tj|'|")/g;
+        let m;
+        while ((m = opRegex.exec(block)) !== null) {
+            if (m[1] !== undefined) {
+                const innerStrings = m[1].match(/\((?:\\.|[^\\()])*\)/g) || [];
+                const combined = innerStrings
+                    .map((s) => decodePdfLiteralString(s.slice(1, -1)))
+                    .join('');
+                currentLine += combined;
+            }
+            else if (m[2] !== undefined) {
+                currentLine += decodePdfLiteralString(m[2]);
+            }
+            if (/T\*|TD|Td|'|"/.test(block.slice(m.index, m.index + m[0].length + 6))) {
+                if (currentLine.trim()) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+            }
+        }
+        if (currentLine.trim()) {
+            lines.push(currentLine.trim());
+        }
+    }
+    return normalizeExtractedText(lines.join('\n'));
+}
+function extractTextFromPdfStreams(buffer) {
+    const binary = buffer.toString('latin1');
+    const sections = [];
+    const streamRegex = /<<([\s\S]*?)>>\s*stream\r?\n([\s\S]*?)\r?\nendstream/g;
+    let match;
+    let pageNum = 1;
+    while ((match = streamRegex.exec(binary)) !== null) {
+        const dict = match[1];
+        const rawStream = Buffer.from(match[2], 'latin1');
+        let decodedText = '';
+        try {
+            if (/\/FlateDecode\b/.test(dict)) {
+                const inflated = zlib.inflateSync(rawStream);
+                decodedText = inflated.toString('latin1');
+            }
+            else {
+                decodedText = match[2];
+            }
+        }
+        catch {
+            continue;
+        }
+        if (decodedText.includes('BT') && (decodedText.includes('Tj') || decodedText.includes('TJ'))) {
+            const extracted = extractTextOpsFromContentStream(decodedText);
+            if (extracted.length > 2) {
+                const firstLine = extracted
+                    .split('\n')
+                    .map((l) => l.trim())
+                    .find((l) => l.length > 2 && l.length < 95 && !/[.!?]$/.test(l));
+                sections.push({
+                    pageNumber: pageNum,
+                    heading: firstLine ? `Page ${pageNum}: ${firstLine}` : `Page ${pageNum}`,
+                    text: extracted,
+                });
+                pageNum++;
+            }
+        }
+    }
+    return sections;
 }
 function convertHtmlTableToMarkdown(tblHtml) {
     const rowMatches = tblHtml.match(/<tr[^>]*>[\s\S]*?<\/tr>/gi) || [];
@@ -282,11 +410,12 @@ async function parseDocxOpenXml(zip) {
             formattedTables.push(tableRows.join('\n'));
         }
     }
-    // 2. Extract paragraphs from <w:p>
+    // 2. Extract paragraphs and split into logical sections per heading
     const xmlWithoutTables = xml.replace(/<w:tbl[^>]*>[\s\S]*?<\/w:tbl>/gi, '');
     const pMatches = xmlWithoutTables.match(/<w:p[^>]*>[\s\S]*?<\/w:p>/gi) || [];
-    const paragraphs = [];
-    let detectedHeading = 'Word Document Content';
+    let currentHeading = 'Document Overview';
+    let currentParagraphs = [];
+    let currentPage = 1;
     for (const pXml of pMatches) {
         const tMatches = pXml.match(/<w:t[^>]*>(.*?)<\/w:t>/gi) || [];
         const lineText = tMatches
@@ -294,24 +423,50 @@ async function parseDocxOpenXml(zip) {
             .filter(Boolean)
             .join(' ');
         if (lineText) {
-            if (pXml.includes('Heading') || (lineText.length < 70 && !lineText.endsWith('.'))) {
-                detectedHeading = lineText;
+            const isHeading = /w:val="Heading/i.test(pXml) ||
+                (lineText.length >= 3 && lineText.length < 75 && !/[.!?]$/.test(lineText) && !lineText.includes(':'));
+            if (isHeading && currentParagraphs.length > 0) {
+                const body = normalizeExtractedText(currentParagraphs.join('\n\n'));
+                if (body.length > 0) {
+                    sections.push({
+                        pageNumber: currentPage++,
+                        heading: currentHeading,
+                        text: body,
+                    });
+                }
+                currentParagraphs = [];
+                currentHeading = lineText;
             }
-            paragraphs.push(lineText);
+            else if (isHeading) {
+                currentHeading = lineText;
+            }
+            else {
+                currentParagraphs.push(lineText);
+            }
         }
     }
-    const combinedBlocks = [];
-    if (paragraphs.length > 0)
-        combinedBlocks.push(paragraphs.join('\n\n'));
-    if (formattedTables.length > 0)
-        combinedBlocks.push(formattedTables.join('\n\n'));
-    const fullText = combinedBlocks.join('\n\n').trim();
-    if (fullText) {
-        sections.push({
-            pageNumber: 1,
-            heading: detectedHeading,
-            text: fullText,
-        });
+    if (currentParagraphs.length > 0) {
+        const body = normalizeExtractedText(currentParagraphs.join('\n\n'));
+        if (body.length > 0) {
+            sections.push({
+                pageNumber: currentPage++,
+                heading: currentHeading,
+                text: body,
+            });
+        }
+    }
+    if (formattedTables.length > 0) {
+        const tablesText = normalizeExtractedText(formattedTables.join('\n\n'));
+        if (sections.length > 0) {
+            sections[sections.length - 1].text = `${sections[sections.length - 1].text}\n\n${tablesText}`.trim();
+        }
+        else {
+            sections.push({
+                pageNumber: 1,
+                heading: currentHeading,
+                text: tablesText,
+            });
+        }
     }
     return sections;
 }
@@ -457,17 +612,21 @@ async function parsePptx(buffer, filename) {
     let totalTablesFound = 0;
     for (const slide of slideFiles) {
         const xml = await slide.file.async('text');
-        // 1. Extract slide title if available from title placeholder
+        // 1. Extract slide title safely per individual <p:sp> shape (avoids greedy cross-shape matching)
         let slideTitle = '';
-        const titleMatch = xml.match(/<p:sp[^>]*>[\s\S]*?<p:ph[^>]*type="(?:title|ctrTitle)"[\s\S]*?<\/p:sp>/i);
-        if (titleMatch) {
-            const titleMatches = titleMatch[0].match(/<a:t[^>]*>(.*?)<\/a:t>/gi) || [];
-            const extracted = titleMatches
-                .map((m) => unescapeXml(m.replace(/<[^>]+>/g, '')).trim())
-                .filter((t) => !isDecorativeNoise(t))
-                .join(' ');
-            if (extracted.length > 1) {
-                slideTitle = extracted;
+        const spBlocks = xml.split(/<p:sp[ >]/i).slice(1);
+        for (const spBlock of spBlocks) {
+            const spContent = spBlock.split(/<\/p:sp>/i)[0];
+            if (/<p:ph[^>]*type="(?:title|ctrTitle)"/i.test(spContent)) {
+                const titleMatches = spContent.match(/<a:t[^>]*>(.*?)<\/a:t>/gi) || [];
+                const extracted = normalizeExtractedText(titleMatches
+                    .map((m) => unescapeXml(m.replace(/<[^>]+>/g, '')).trim())
+                    .filter((t) => !isDecorativeNoise(t))
+                    .join(' '));
+                if (extracted.length > 1) {
+                    slideTitle = extracted;
+                    break;
+                }
             }
         }
         // 2. Extract structured tables (<a:tbl>)
@@ -481,34 +640,61 @@ async function parsePptx(buffer, filename) {
         for (const pBlock of pBlocks) {
             const pContent = pBlock.split(/<\/a:p>/i)[0];
             const textMatches = pContent.match(/<a:t[^>]*>(.*?)<\/a:t>/gi) || [];
-            const lineText = textMatches
+            const lineText = normalizeExtractedText(textMatches
                 .map((m) => unescapeXml(m.replace(/<[^>]+>/g, '')).trim())
                 .filter(Boolean)
-                .join(' ');
+                .join(' '));
             if (lineText && !isDecorativeNoise(lineText)) {
                 paragraphs.push(lineText);
             }
         }
+        // Also extract SmartArt / diagram text referenced by slide relationships if present
+        const relsFile = zip.file(`ppt/slides/_rels/slide${slide.num}.xml.rels`);
+        if (relsFile) {
+            try {
+                const relsXml = await relsFile.async('text');
+                const diagramTargets = relsXml.match(/Target="[^"]*diagrams\/data\d+\.xml"/gi) || [];
+                for (const dt of diagramTargets) {
+                    const targetRel = dt.replace(/^Target="|"/gi, '').replace(/^\.\.\//, 'ppt/');
+                    const diagFile = zip.file(targetRel);
+                    if (diagFile) {
+                        const diagXml = await diagFile.async('text');
+                        const diagMatches = diagXml.match(/<a:t[^>]*>(.*?)<\/a:t>/gi) || [];
+                        const diagTexts = diagMatches
+                            .map((m) => normalizeExtractedText(unescapeXml(m.replace(/<[^>]+>/g, '')).trim()))
+                            .filter((t) => t.length > 1 && !isDecorativeNoise(t) && !paragraphs.includes(t));
+                        if (diagTexts.length > 0) {
+                            paragraphs.push(...diagTexts);
+                        }
+                    }
+                }
+            }
+            catch (e) { }
+        }
         // Fallback to all a:t tags if paragraph split was empty
         if (paragraphs.length === 0) {
             const textMatches = xmlWithoutTables.match(/<a:t[^>]*>(.*?)<\/a:t>/gi) || [];
-            const fallbackText = textMatches
+            const fallbackText = normalizeExtractedText(textMatches
                 .map((m) => unescapeXml(m.replace(/<[^>]+>/g, '')).trim())
                 .filter((t) => !isDecorativeNoise(t))
-                .join(' ');
+                .join(' '));
             if (fallbackText)
                 paragraphs.push(fallbackText);
         }
-        // 4. Intelligent slide heading determination
+        // 4. Intelligent slide heading determination (skip recurring header/footer banners & slide numbers)
         if (!slideTitle && paragraphs.length > 0) {
-            const p0 = paragraphs[0];
-            const p1 = paragraphs.length > 1 ? paragraphs[1] : '';
+            const contentCandidates = paragraphs.filter((p) => !/^\d{1,3}$/.test(p) &&
+                !/^(?:dept\.?\s+of|department\s+of)\b/i.test(p) &&
+                !/^[0-9]{2}[a-z]{2,4}[0-9]{3}/i.test(p));
+            const candidates = contentCandidates.length > 0 ? contentCandidates : paragraphs;
+            const p0 = candidates[0];
+            const p1 = candidates.length > 1 ? candidates[1] : '';
             const isCategory = COMMON_SLIDE_CATEGORIES.has(p0.toUpperCase()) ||
                 (p0.length <= 35 && p0 === p0.toUpperCase() && !/[.!?]$/.test(p0));
             if (isCategory && p1 && p1.length < 100) {
                 slideTitle = `${p0} - ${p1}`;
             }
-            else if (p0.length < 90) {
+            else if (p0.length < 95) {
                 slideTitle = p0;
             }
         }
@@ -520,7 +706,7 @@ async function parsePptx(buffer, filename) {
         if (formattedTables.length > 0) {
             contentBlocks.push(formattedTables.join('\n\n'));
         }
-        const slideText = contentBlocks.join('\n\n').trim();
+        const slideText = normalizeExtractedText(contentBlocks.join('\n\n'));
         if (slideText.length > 0) {
             sections.push({
                 slideNumber: slide.num,
